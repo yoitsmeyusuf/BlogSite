@@ -1,0 +1,23 @@
+
+  <article class="postcard dark blue" *ngFor="let blog of blogs">
+    <a class="postcard__img_link" href="#">
+      <img class="postcard__img"  [src]="blog.imageURL" alt="Image Title" />
+    </a>
+    <div class="postcard__text">
+      <h1 class="postcard__title blue"><a href="#">{{ blog.title }}</a></h1>
+      <div class="postcard__subtitle small">
+        <time datetime="2020-05-25">
+          <i class="fas fa-calendar-alt mr-2"></i>{{ blog.publishDate }}
+        </time>
+      </div>
+      <div class="postcard__bar"></div>
+      <div class="postcard__preview-txt">{{ blog.content }}</div>
+      <ul class="postcard__tagbox">
+        <li class="tag__item"><i class="fas fa-clock mr-2"></i>40 mins.</li>
+        <li class="tag__item play blue">
+          
+          <a [routerLink]="['/blog', blog.postID]"><i class="fas fa-play mr-2"></i>Read The Blog</a>
+        </li>
+      </ul>
+    </div>
+  </article>

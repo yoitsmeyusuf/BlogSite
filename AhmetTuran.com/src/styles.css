@@ -1,0 +1,520 @@
+body {
+    background: linear-gradient(to right bottom, rgb(0, 33, 218), #0055ff, #0d214b, #091a3f);
+    height: 3500px;
+}
+
+.blue_tag {
+    background: linear-gradient(to right, #1f41ff 20%, #637dff 50%, #1d52ff 100%);
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.red_tag {
+    background: linear-gradient(to right, #ff1f1f 20%, #ff6363 50%, #ff1d1d 100%);
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.purple_tag {
+    background: linear-gradient(to right, #cb1fff 20%, #cb8bff 50%, #b71dff 100%);
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+#baslik {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid orange;
+    /* İmleç efekti için */
+    animation: typing 3s steps(14, end), blink-caret .5s step-end infinite;
+    min-height: 1em; /* En az bir satır yükseklik */
+    display: inline-block; /* Satır boyunca yer kaplaması için */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.418);
+    }
+}
+
+.cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -1px;
+    /* İmleç ile hizalamak için */
+    font-size: inherit;
+    color: inherit;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+#experience_domain {}
+
+.shadow__btn {
+    font-family: DM Sans;
+    position: relative;
+    top: 30px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 10px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.shadow__btn {
+    background: rgba(255, 255, 255, 0.233);
+    box-shadow: 0 0 25px rgb(0, 106, 192);
+}
+
+.shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0, 140, 255),
+        0 0 25px rgb(0, 140, 255),
+        0 0 50px rgb(0, 140, 255),
+        0 0 50px rgb(0, 140, 255);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-behavior: 100;
+    /* Daha hızlı kaydırmak için varsayılan değer */
+}
+
+.wave {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    margin-left: 0%;
+    margin-top: 0%;
+    background: linear-gradient(744deg, #406dff, #5b42f3 60%, #00ddeb);
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+    top: 120px;
+}
+
+.playing .wave {
+    border-radius: 40%;
+    animation: wave 3000ms infinite linear;
+}
+
+.wave {
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+    animation-duration: 4000ms;
+}
+
+.wave:nth-child(2) {
+    animation-duration: 50s;
+}
+
+.playing .wave:nth-child(3) {
+    animation-duration: 5000ms;
+}
+
+.wave:nth-child(3) {
+    animation-duration: 45s;
+}
+
+
+
+
+.wave2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    margin-left: 0%;
+    margin-top: 0%;
+    background: linear-gradient(744deg, #0d0081, #4529ff 60%, #0fb4c0);
+}
+
+.wave2:nth-child(2),
+.wave2:nth-child(3) {
+    top: 120px;
+}
+
+.playing .wave2 {
+    border-radius: 40%;
+    animation: wave 3000ms infinite linear;
+}
+
+.wave2 {
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
+}
+
+.playing .wave2:nth-child(2) {
+    animation-duration: 4000ms;
+}
+
+.wave2:nth-child(2) {
+    animation-duration: 50s;
+}
+
+.playing .wave2:nth-child(3) {
+    animation-duration: 5000ms;
+}
+
+.wave2:nth-child(3) {
+    animation-duration: 45s;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#logo {
+    position: relative;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+#logo_text_div {
+    position: relative;
+    left: 35px;
+    top: 1px;
+}
+
+.logo_text {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 5px;
+    /* 125% */
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: -15px;
+}
+
+.divider {
+    position: relative;
+    left: -245px;
+    background: var(--dark-blue, #ffffff);
+    /* Çizgi rengi ve özellikleri */
+    /* Alt ve üst boşluklar */
+    /* Diğer stillendirmeler */
+    width: 1px;
+    height: 35px;
+}
+
+#navbar {
+    position: relative;
+    left: 80px;
+    top: 7px;
+}
+
+.navbar_text {
+    position: relative;
+    padding-right: 15px;
+    color: var(--white, #FFF);
+    font-family: DM Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.002px;
+    /* 80.01% */
+    letter-spacing: 1.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbar_text:hover {
+    color: #ffffff8e;
+}
+
+#effect {
+    position: absolute;
+    top: -7px;
+    right: 0px;
+    width: 550px;
+    height: 550px;
+    flex-shrink: 0;
+    fill: linear-gradient(180deg, #FFF 0%, rgba(247, 247, 247, 0.15) 99.98%);
+}
+
+#baslik_div {
+    position: relative;
+    left: 130px;
+    top: 100px;
+    width: 50%;
+}
+
+.baslik_text {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: -50px;
+}
+
+.card {
+    width: 500px;
+    height: 350px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #FFF 0%, rgba(247, 247, 247, 0.15) 99.98%);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
+#mailButton:hover {
+    background-color: #001fcc !important;
+}
+
+.cookieCard {
+    border-radius: 30px;
+    background: linear-gradient(to left, rgb(2, 0, 133), rgb(0, 8, 126));
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cookieCard::before {
+    width: 200px;
+    height: 200px;
+    content: "";
+    background: linear-gradient(744deg, #0d0081, #4529ff 60%, #0fb4c0);
+    position: absolute;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    right: -25%;
+    bottom: -25%;
+}
+
+
+
+.playing .cookieCard::before {
+    border-radius: 40%;
+    animation: wave 3000ms infinite linear;
+}
+
+.cookieCard::before {
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
+}
+
+.playing .cookieCard::before:nth-child(2) {
+    animation-duration: 4000ms;
+}
+
+.cookieCard::before:nth-child(2) {
+    animation-duration: 50s;
+}
+
+.playing .cookieCard::before:nth-child(3) {
+    animation-duration: 5000ms;
+}
+
+.cookieCard::before:nth-child(3) {
+    animation-duration: 45s;
+}
+
+
+
+
+
+
+
+
+
+.card {
+    width: 100px;
+    height: 300px;
+    background: #15001f;
+    border: 1px solid #c042ff;
+    font-size: 14px;
+    font-family: monospace;
+    overflow: auto;
+}
+
+.titlebar {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 21px;
+    font-weight: 450;
+    background-color: #2e0043;
+    width: 100%;
+    text-align: right;
+}
+
+.card button {
+    width: 40px;
+    height: 35px;
+    margin-left: -5px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    transition: 0.2s;
+}
+
+button svg path,
+button svg rect,
+button svg polygon {
+    fill: #ffffff;
+}
+
+button svg {
+    width: 10px;
+    height: 10px;
+}
+
+.close:hover {
+    background-color: #e81123;
+}
+
+.maximize:hover {
+    background-color: #c042ff2e;
+}
+
+.minimize:hover {
+    background-color: #c042ff2e;
+}
+
+#pre {
+    overflow: auto;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    color: #bafff8;
+}
+
+.curlies {
+    color: #ff0000;
+}
+
+.sc {
+    color: #e600ff;
+}
+
+.rounds {
+    color: #ffffff;
+}
+
+.operator {
+    color: #ffff00;
+}
+
+.s1 {
+    color: #22ff00;
+}
+
+.s2 {
+    color: #4281ff;
+}
+
+.s3 {
+    color: #ff4284;
+}
+
+.s4 {
+    color: #ffae00;
+}
+
+.s5 {
+    color: #ffffff;
+}
+
+.s6 {
+    color: #ffff00;
+}

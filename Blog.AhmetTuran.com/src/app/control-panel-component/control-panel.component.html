@@ -1,0 +1,52 @@
+<div class="control-panel">
+    <form (submit)="createBlog()">
+    <label>
+        Title: 
+        <input [(ngModel)]="blog.title" name="title" type="text">
+    </label>
+    <label>
+        Content:
+        <textarea [(ngModel)]="blog.content" name="content"></textarea>
+    </label>
+    <label>
+        Category:
+        <select [(ngModel)]="blog.category" name="category">
+            <option value="0">Teknoloji</option>
+            <option value="1">Bilim</option>
+            <option value="2">İşletme</option>
+        </select>
+    </label>
+    <label>
+        Image:
+        <input [(ngModel)]="blog.imageURL" name="imageURL" type="text">
+    </label>
+    <button type="submit">Create</button>
+</form>
+    <!-- <h2>Edit Blog</h2>
+    <form (submit)="blogService.editBlog(id.value, title.value, content.value)">
+        <label>
+            ID:
+            <input #id type="text">
+        </label>
+        <label>
+            Title:
+            <input #title type="text">
+        </label>
+        <label>
+            Content:
+            <textarea #content></textarea>
+        </label>
+        <button type="submit">Edit</button>
+    </form> -->
+
+    <h2>Delete Blog</h2>
+    <form (submit)="deleteBlog()">
+        <label>
+            ID:
+            <input  [(ngModel)]="blog.postID" type="text" name="postID">
+        </label>
+        <button type="submit">Delete</button>
+    </form>
+
+    <button type="button" (click)="logout()">cikis</button>
+</div>
