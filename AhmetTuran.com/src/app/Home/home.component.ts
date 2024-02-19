@@ -24,7 +24,7 @@ export class HomeComponent {
       // get 3 blogs
       // the content is must be only 40 and ... at the end slice it
       blogs.forEach(blog => {
-        if(blog.content.length > 60){
+        if(blog.content.length > 120){
           blog.content = blog.content.slice(0, 40) + '...';
         }
       });

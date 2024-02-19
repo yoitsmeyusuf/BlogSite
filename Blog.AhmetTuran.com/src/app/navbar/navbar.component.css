@@ -1,0 +1,46 @@
+.navbar_baslik {
+    display: flex;
+    position: relative;
+    bottom: 22px;
+    left: 10px;
+}
+
+.baslik_icon {
+    position: relative;
+    top: 25px;
+}
+
+.baslik_text {
+    font-size: 25px;
+    position: relative;
+}
+
+.login_button {
+    position: relative;
+    display: flex;
+    right: 10px;
+    top: 10px;
+}
+
+.login_button:hover .login_text {
+    color: rgba(255, 255, 255, 0.633);
+}
+
+.login_button:hover .login_icon path {
+    fill: rgba(255, 255, 255, 0.633);
+    transition: fill 0.3s ease;
+}
+
+
+.login_icon {
+    position: relative;
+
+}
+
+.login_text {
+    position: relative;
+    right: 3px;
+    bottom: 17px;
+    color: white;
+    transition: fill 0.3s ease;
+}
