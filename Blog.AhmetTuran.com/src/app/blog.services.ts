@@ -113,4 +113,11 @@ export class BlogService {
          
         }
 
+        //get last 3 blogs by publishdate
+        getRecentBlogs(): Observable<Blog[]>{
+            return this.getBlogs().pipe(
+                map(blogs=>blogs.sort((a,b)=> new Date(b.publishDate).getTime()- new Date(b.publishDate).getTime()).slice(0,3))
+            )
+        }
+
 }
