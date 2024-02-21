@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { BlogService, Blog} from '../blog.services';
 import { FormsModule } from '@angular/forms';
+import { QuillEditorComponent } from 'ngx-quill';
 
 
 @Component({
   selector: 'app-control-panel-component',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,QuillEditorComponent],
   providers: [BlogService],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css'

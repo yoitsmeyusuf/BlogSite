@@ -6,13 +6,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { BlogService } from './blog.services';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LatestblogsComponent } from './latestblogs/latestblogs.component';
+import { QuillService } from 'ngx-quill';;
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, CardComponent,HttpClientModule, NavbarComponent,LatestblogsComponent],
-  providers: [BlogService, HttpClient],
+  providers: [BlogService, HttpClient,QuillService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

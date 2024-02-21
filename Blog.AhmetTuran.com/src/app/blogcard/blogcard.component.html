@@ -12,7 +12,7 @@
 
     </div>
     <div class="postcard__bar"></div>
-    <div class="postcard__preview-txt">{{ blog.content }}</div>
+    <div class="postcard__preview-txt" [innerHTML]="blog.content"></div>
     <ul class="postcard__tagbox">
 
       <li class="tag__item"><i class="fas fa-clock mr-2"></i>{{blog.category}}</li>

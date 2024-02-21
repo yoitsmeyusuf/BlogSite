@@ -23,12 +23,16 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   left: 50px;
   //I want to make them centered
 
-  .tag__item {
-    bottom: 80px;
+
+  color: #ffffff;
+
+  &:nth-child(2n+1) .tag__item {
+
+    bottom: 330px;
     position: relative;
-    left: 380px;
+    right: 290px;
     display: inline-block;
-    background: rgba(83, 83, 83, 0.4);
+    background: rgba(8, 0, 255, 0.4);
     border-radius: 3px;
     padding: 2.5px 10px;
     margin: 0 5px 5px 0;
@@ -39,8 +43,27 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     &:hover {
       background: rgba(83, 83, 83, 0.8);
     }
+
   }
-  color: #ffffff;
+
+  &:nth-child(2n+0) .tag__item {
+    left: 380px;
+    bottom: 355px;
+    position: relative;
+    display: inline-block;
+    background: rgba(8, 0, 255, 0.4);
+    border-radius: 3px;
+    padding: 2.5px 10px;
+    margin-left: auto; // Sağa hizala
+    cursor: default;
+    user-select: none;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background: rgba(83, 83, 83, 0.8);
+    }
+
+  }
 
   &:nth-child(2n+1) .date_text {
     color: #ffffff7d;
@@ -109,11 +132,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   .postcard__text {
     padding: 1.5rem;
-    position: relative; 
+    position: relative;
     display: flex;
     flex-direction: column;
   }
-  
+
 
   .postcard__preview-txt {
     text-overflow: ellipsis;
@@ -137,9 +160,9 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     top: 30px;
     right: 45px;
 
-    
 
-    
+
+
   }
 
   &:before {
