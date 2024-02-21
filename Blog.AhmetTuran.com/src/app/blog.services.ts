@@ -113,20 +113,11 @@ export class BlogService {
          
         }
 
-<<<<<<< HEAD
-     //get the last 3  blog post by publishdate firts make get blogs and make them array and sort them by publish date and slice the first 3
-    getRecentBlogs(): Observable<Blog[]> {
-        return this.getBlogs().pipe(
-            map(blogs => blogs.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()).slice(0, 3))
-        );}
-  
-=======
         //get last 3 blogs by publishdate
         getRecentBlogs(): Observable<Blog[]>{
             return this.getBlogs().pipe(
                 map(blogs=>blogs.sort((a,b)=> new Date(b.publishDate).getTime()- new Date(b.publishDate).getTime()).slice(0,3))
             )
         }
->>>>>>> 42775e0ad33374a9c3b64b7d1893a18cb26a5d6a
 
 }
