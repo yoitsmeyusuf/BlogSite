@@ -1,0 +1,37 @@
+<div class="topblogcard">
+    <div class="category">
+        <button href="#Isletme" class="category-button">Kategori 2</button>
+        <button class="category-button">Kategori 3</button>
+        <button class="category-button">Kategori 4</button>
+        <button class="category-button">Kategori 5</button>
+    </div>
+    <div class="blogdomain" style="display: flex; overflow-x: auto; "><a id="{{blog.category}}" class="postcard dark blue"
+            *ngFor="let blog of blogsrecent; let last = last;  let i = index"
+            [style.margin-right.px]="last ? '350' : '0'" >
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" [src]="blog.imageURL" alt="Image Title" />
+            </a>
+            <div class="postcard__text">
+                <time class="date_text" datetime="2020-05-25">
+                    <i></i>
+                    <p class="date_text2">{{ blog.publishDate }}</p>
+                </time>
+                <h1 class="postcard__title blue"><a href="#">{{ blog.title }}</a></h1>
+                <div class="postcard__subtitle small">
+
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt" [innerHTML]="blog.content"></div>
+                <ul class="postcard__tagbox">
+
+                    <li class="tag__item"><i class="fas fa-clock mr-2"></i>{{blog.category}}</li>
+
+                </ul>
+            </div>
+        </a></div>
+
+</div>
+
+<script>
+    
+</script>
