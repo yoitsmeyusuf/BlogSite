@@ -19,6 +19,8 @@ public class CreateRequest
      public DateTime PublishDate { get; set; } = DateTime.Now;
     [Required]
     public string ImageURL { get; set; }= "https://via.placeholder.com/150";
+     public string[] Images { get; set; }
+    public string[] Names { get; set; }
 }
 
 

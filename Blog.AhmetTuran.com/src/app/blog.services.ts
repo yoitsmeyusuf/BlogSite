@@ -67,14 +67,15 @@ export class BlogService {
         const headers = { 'Authorization': `Bearer ${token}` };
         return this.http.delete(`${this.url}posts/delete/${Id}`, { headers, observe: 'response', responseType: 'text' });
     }
-    createBlog(title: string, content: string, category: string, imageURL: string): Observable<any> {
+    createBlog(image: FormData): Observable<any> {
         const token = sessionStorage.getItem('token');
         if (!token) {
             console.error('No token');
         }
         const headers = { 'Authorization': `Bearer ${token}` };
-        return this.http.post(`${this.url}posts/create`, { title, content, category, imageURL }, { headers, observe: 'response', responseType: 'text' });
+        return this.http.post(`${this.url}posts/create`, image , { headers, observe: 'response', responseType: 'text' });
     }
+   
     //I want to edit spesific blog data
     editBlog(Id: string, title: string, content: string, category: string, imageURL: string): Observable<any> {
         const token = sessionStorage.getItem('token');

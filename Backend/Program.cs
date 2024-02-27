@@ -53,7 +53,7 @@ var app = builder.Build();
         .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader());
-
+app.UseStaticFiles();
     // global error handler
     app.UseMiddleware<ErrorHandlerMiddleware>();
     app.UseMiddleware<TokenAuthenticationMiddleware>();
