@@ -1,52 +1,56 @@
-<div class="control-panel">
-    <form (submit)="createBlog()">
-    <label>
-        Title: 
-        <input [(ngModel)]="blog.title" name="title" type="text">
-    </label>
-    <label>
-        Content:
-        <quill-editor [(ngModel)]="blog.content" name="content" id="editor"></quill-editor>
-    </label>
-    <label>
-        Category:
-        <select [(ngModel)]="blog.category" name="category">
-            <option value="0">Teknoloji</option>
-            <option value="1">Bilim</option>
-            <option value="2">İşletme</option>
-        </select>
-    </label>
-    <label>
-        Image:
-        <input [(ngModel)]="blog.imageURL" name="imageURL" type="text">
-    </label>
-    <button type="submit">Create</button>
-</form>
-    <!-- <h2>Edit Blog</h2>
-    <form (submit)="blogService.editBlog(id.value, title.value, content.value)">
-        <label>
-            ID:
-            <input #id type="text">
-        </label>
-        <label>
-            Title:
-            <input #title type="text">
-        </label>
-        <label>
-            Content:
-            <textarea #content></textarea>
-        </label>
-        <button type="submit">Edit</button>
-    </form> -->
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
+<div style="display: flex; justify-content: center;">
+    <div class="control-panel">
+        <form class="formStyle" (submit)="createBlog()">
+            <label class="columnSyle">
+                <p class="titleText">Title</p>
+                <input class="inputPosition" [(ngModel)]="blog.title" name="title" type="text">
+            </label>
+            <label class="columnSyle">
+                <p class="titleText">Content</p>
+                <quill-editor [modules]="quillConfig" class="inputPosition" [(ngModel)]="blog.content" name="content" id="editor"></quill-editor>
+            </label>
+            <label class="columnSyle">
+                <p class="titleText">Category</p>
+                <select class="inputPosition ql-toolbar" [(ngModel)]="blog.category" name="category">
+                    <option value="0">Teknoloji</option>
+                    <option value="1">Bilim</option>
+                    <option value="2">İşletme</option>
+                </select>
+            </label>
+            <label class="columnSyle">
+                <p class="titleText">Image</p>
+                <input class="inputPosition" [(ngModel)]="blog.imageURL" name="imageURL" type="text">
+            </label>
+            <button type="submit">Create</button>
+        </form>
+        <!-- <h2>Edit Blog</h2>
+        <form (submit)="blogService.editBlog(id.value, title.value, content.value)">
+            <label>
+                ID:
+                <input #id type="text">
+            </label>
+            <label>
+                Title:
+                <input #title type="text">
+            </label>
+            <label>
+                Content:
+                <textarea #content></textarea>
+            </label>
+            <button type="submit">Edit</button>
+        </form> -->
 
-    <h2>Delete Blog</h2>
-    <form (submit)="deleteBlog()">
-        <label>
-            ID:
-            <input  [(ngModel)]="blog.postID" type="text" name="postID">
-        </label>
-        <button type="submit">Delete</button>
-    </form>
+        <!-- <h2>Delete Blog</h2>
+        <form (submit)="deleteBlog()">
+            <label>
+                ID:
+                <input [(ngModel)]="blog.postID" type="text" name="postID">
+            </label>
+            <button type="submit">Delete</button>
+        </form> -->
 
-    <button type="button" (click)="logout()">cikis</button>
+        <!-- <button type="button" (click)="logout()">cikis</button> -->
+    </div>
+
 </div>

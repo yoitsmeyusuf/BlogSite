@@ -1,8 +1,23 @@
-<body>
-    <div class="input__container">
-    <label class="input__label">First Name</label>
-    <input required="" type="password" [(ngModel)]="model.password" id="password" autocomplete="off" placeholder="Enter your username" class="input">
-    <button (click)="login()">Login</button>
-</div>
-</body>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+</head>
+
+<div class="positionDiv">
+    <div style="background-color: rgb(29, 29, 29);" class="w-full max-w-md rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-bold text-gray-200 mb-4">Login</h2>
+      <div class="flex flex-col">
+        <input [(ngModel)]="model.password"  placeholder="Password" class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="password">
+        <div class="flex items-center justify-between flex-wrap">
+          <label class="text-sm text-gray-200 cursor-pointer" for="remember-me">
+            <input class="mr-2" id="remember-me" type="checkbox">
+            Remember me
+          </label>
+        </div>
+        <button  (click)="login()" class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150" type="submit">Login</button>
+      </div>
+    </div>
+</div>
+
+
+  

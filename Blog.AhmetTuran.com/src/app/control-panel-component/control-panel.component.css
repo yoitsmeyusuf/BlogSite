@@ -1,0 +1,27 @@
+.formStyle{
+    display: flex;
+    flex-direction: column;
+}
+
+.columnStyle{
+    display: flex;
+    flex-direction: column;
+}
+
+.control-panel{
+    max-width: 900px;
+    background-color: #1d1d1d;
+    border-radius: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.inputPosition{
+    position: relative;
+    bottom: 15px;
+}
+
+
+/* quill-editor */
