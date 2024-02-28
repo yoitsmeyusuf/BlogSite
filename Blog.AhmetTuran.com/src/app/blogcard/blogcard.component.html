@@ -1,3 +1,4 @@
+<app-topblogs></app-topblogs>
 <a [routerLink]="['/blog', blog.postID]" class="postcard dark blue" *ngFor="let blog of blogs">
   <a class="postcard__img_link" href="#">
     <img class="postcard__img" [src]="blog.imageURL" alt="Image Title" />

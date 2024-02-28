@@ -1,5 +1,8 @@
-<div>
-    <input type="password" [(ngModel)]="model.password" placeholder="Password" id="password">
+<body>
+    <div class="input__container">
+    <label class="input__label">First Name</label>
+    <input required="" type="password" [(ngModel)]="model.password" id="password" autocomplete="off" placeholder="Enter your username" class="input">
     <button (click)="login()">Login</button>
-    
 </div>
+</body>
+

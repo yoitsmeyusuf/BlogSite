@@ -1,0 +1,607 @@
+.topblogcard {
+    width: 100%;
+    height: 450px;
+    margin-bottom: 100px;
+    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+    /* İçindeki elemanların yan yana sıralanmasını sağlar */
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    flex-grow: 1;
+    /* İçeriğin doğal boyutunda genişlemesini sağlar */
+}
+
+.category-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    /* Buton içeriğinin boşlukları */
+    margin-right: 60px;
+    /* Butonlar arasındaki boşluk */
+    color: #ffffff;
+    /* Buton metin rengi */
+    border-radius: 30px;
+    /* Kenar yuvarlaklığı */
+    border: none;
+    /* Kenarlık yok */
+    cursor: pointer;
+    /* Üzerine gelindiğinde işaretçi değişsin */
+    background-color: transparent;
+    /* Buton arka plan rengi şeffaf */
+    transition: background-color 0.3s ease;
+    /* Arka plan rengi geçişi */
+    font-size: 10px;
+}
+
+.category-button:hover {
+    background-color: #007bff;
+    /* Buton arka plan rengi değişimi */
+    color: #fff;
+    /* Buton metin rengi değişimi */
+    border-radius: 30px;
+    /* Kenar yuvarlaklığı */
+}
+
+.category-button:last-child {
+    margin-right: 60px;
+    /* Son butonun sağına boşluk ekleme */
+}
+
+
+
+
+
+
+//asdaasdfsfasfasd
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+$main-green: #79dd09 !default;
+$main-green-rgb-015: rgba(121, 221, 9, 0.1) !default;
+$main-yellow: #bdbb49 !default;
+$main-yellow-rgb-015: rgba(189, 187, 73, 0.1) !default;
+$main-red: #bd150b !default;
+$main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
+$main-blue: #0076bd !default;
+$main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+
+.postcard:before {
+    display: none; /* Çapraz çizgiyi kaldırma */
+}
+.postcard {
+    
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    display: flex;
+    min-width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    /* top: 50px; */
+    /* left: 200px; */
+    flex-grow: 1;
+    /* İçeriğin doğal boyutunda genişlemesini sağlar */
+    margin: 40px 0px;
+    /* Postcard elemanları arasındaki boşluk */
+    margin-left: 300px;
+    margin-right: 100px;
+
+
+
+    //I want to make them centered
+
+
+    color: #ffffff;
+
+    &:nth-child(2n+1) .tag__item {
+
+        bottom: 330px;
+        position: relative;
+        right: 290px;
+        display: inline-block;
+        background: rgba(8, 0, 255, 0.4);
+        border-radius: 3px;
+        padding: 2.5px 10px;
+        margin: 0 5px 5px 0;
+        cursor: default;
+        user-select: none;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background: rgba(83, 83, 83, 0.8);
+        }
+
+    }
+
+    &:nth-child(2n+0) .tag__item {
+        left: 380px;
+        bottom: 355px;
+        position: relative;
+        display: inline-block;
+        background: rgba(8, 0, 255, 0.4);
+        border-radius: 3px;
+        padding: 2.5px 10px;
+        margin-left: auto; // Sağa hizala
+        cursor: default;
+        user-select: none;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background: rgba(83, 83, 83, 0.8);
+        }
+
+    }
+
+    &:nth-child(2n+1) .date_text {
+        width: 100%;
+        color: #4f4f4f7d;
+        font-size: 13px;
+        left: 20px;
+        position: relative;
+        bottom: 10px;
+        left: auto;
+    }
+
+    &:nth-child(2n+0) .date_text {
+        width: 100%;
+        color: #ffffff7d;
+        font-size: 13px;
+        position: relative;
+        bottom: 1 0px;
+        right: 20px;
+        right: auto;
+    }
+
+    &.dark {
+        background-color: #f8f8f8;
+    }
+
+    &.light {
+        background-color: #161616;
+    }
+
+    .t-dark {
+        color: #e1e5ea;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    h1,
+    .h1 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .small {
+        font-size: 80%;
+    }
+
+    .postcard__title {
+        font-size: 2rem;
+        width: 100%;
+        color: #18151f;
+    }
+
+    .postcard__img {
+        max-height: 180px;
+        width: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .postcard__img_link {
+        display: contents;
+    }
+
+    .postcard__bar {
+        width: 50px;
+        height: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #424242;
+        transition: width 0.2s ease;
+    }
+
+    .postcard__text {
+        width: 400px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .postcard__text::before {
+        display: none
+    }
+
+
+    .postcard__preview-txt {
+        text-overflow: ellipsis;
+        text-align: justify;
+        position: relative;
+        bottom: 40px;
+        height: 120%;
+        width: 100%;
+        font-size: 12px;
+        color: #2222227d;
+    }
+
+    .postcard__tagbox {
+        display: flex;
+        flex-flow: row wrap;
+        font-size: 14px;
+        margin: 20px 0 0 0;
+        padding: 0;
+        justify-content: center;
+        position: relative;
+        top: 30px;
+        right: 45px;
+
+
+
+
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(-70deg, #424242, transparent 50%);
+        opacity: 1;
+        border-radius: 10px;
+    }
+
+    &:hover .postcard__bar {
+        width: 100px;
+    }
+}
+
+
+
+@media screen and (max-width: 769px) {
+    .topblogcard {
+        height: 200px;
+    }
+
+    .category-button {
+        margin-top: 5px;
+        padding: 10px 20px;
+        /* Buton içeriğinin boşlukları */
+        margin-right: 10px;
+        /* Butonlar arasındaki boşluk */
+        color: #ffffff;
+        /* Buton metin rengi */
+        border-radius: 30px;
+        /* Kenar yuvarlaklığı */
+        border: none;
+        /* Kenarlık yok */
+        cursor: pointer;
+        /* Üzerine gelindiğinde işaretçi değişsin */
+        background-color: transparent;
+        /* Buton arka plan rengi şeffaf */
+        transition: background-color 0.3s ease;
+        /* Arka plan rengi geçişi */
+        font-size: 7px;
+    }
+
+    .category-button:hover {
+        background-color: #007bff;
+        /* Buton arka plan rengi değişimi */
+        color: #fff;
+        /* Buton metin rengi değişimi */
+        border-radius: 30px;
+        /* Kenar yuvarlaklığı */
+    }
+
+    .category-button:last-child {
+        margin-right: 0px;
+        /* Son butonun sağına boşluk ekleme */
+    }
+
+
+
+
+    .postcard {
+        flex-wrap: inherit;
+        flex-wrap: wrap;
+        display: flex;
+        width: 200px;
+        height: 100px;
+        box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        /* top: 50px; */
+        /* left: 200px; */
+        flex-grow: 1;
+        /* İçeriğin doğal boyutunda genişlemesini sağlar */
+        margin: 40px 0px;
+        /* Postcard elemanları arasındaki boşluk */
+        margin-left: 10px;
+        margin-right: 100px;
+
+        .postcard__title {
+            font-size: 7px;
+            position: relative;
+            bottom: 25px;
+        }
+
+        .postcard__tagbox {
+            justify-content: start;
+        }
+
+        .postcard__img {
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .postcard__text {
+            padding: 1rem;
+            font-size: 4px;
+            width: 150px;
+        }
+
+        .media.postcard__text:before {
+            content: "";
+            position: absolute;
+            display: block;
+            background: #e1e5ea;
+            top: -20%;
+            height: 130%;
+            width: 55px;
+        }
+
+        &:hover .postcard__img {
+            transform: scale(1.1);
+        }
+
+        &:nth-child(2n+1) {
+            flex-direction: row;
+        }
+
+        &:nth-child(2n+0) {
+            flex-direction: row-reverse;
+        }
+
+        &:nth-child(2n+1) .postcard__text::before {
+            left: -12px !important;
+            transform: rotate(4deg);
+        }
+
+        &:nth-child(2n+0) .postcard__text::before {
+            right: -12px !important;
+            transform: rotate(-4deg);
+        }
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    .postcard {
+        flex-wrap: inherit;
+
+        .postcard__title {
+            font-size: 1rem;
+            position: relative;
+            bottom: 25px;
+        }
+
+        .postcard__tagbox {
+            justify-content: start;
+        }
+
+        .postcard__img {
+            max-width: 300px;
+            max-height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .postcard__text {
+            padding: 3rem;
+            width: 300px;
+        }
+
+        .media.postcard__text:before {
+            content: "";
+            position: absolute;
+            display: block;
+            background: #e1e5ea;
+            top: -20%;
+            height: 130%;
+            width: 55px;
+        }
+
+        &:hover .postcard__img {
+            transform: scale(1.1);
+        }
+
+        &:nth-child(2n+1) {
+            flex-direction: row;
+        }
+
+        &:nth-child(2n+0) {
+            flex-direction: row-reverse;
+        }
+
+        &:nth-child(2n+1) .postcard__text::before {
+            left: -12px !important;
+            transform: rotate(4deg);
+        }
+
+        &:nth-child(2n+0) .postcard__text::before {
+            right: -12px !important;
+            transform: rotate(-4deg);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .postcard__text {
+        padding: 2rem 3.5rem;
+    }
+
+    .postcard__text:before {
+        content: "";
+        position: absolute;
+        display: block;
+
+        top: -20%;
+        height: 130%;
+        width: 55px;
+    }
+
+    .postcard.dark {
+        .postcard__text:before {
+            background: #18151f;
+        }
+    }
+
+    .postcard.light {
+        .postcard__text:before {
+            background: #e1e5ea;
+        }
+    }
+}
+
+/* COLORS */
+.postcard .postcard__tagbox .green.play:hover {
+    background: $main-green;
+    color: black;
+}
+
+.green .postcard__title:hover {
+    color: $main-green;
+}
+
+.green .postcard__bar {
+    background-color: $main-green;
+}
+
+.green::before {
+    background-image: linear-gradient(-30deg,
+            $main-green-rgb-015,
+            transparent 50%);
+}
+
+.green:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .blue.play:hover {
+    background: $main-blue;
+}
+
+.blue .postcard__title:hover {
+    color: $main-blue;
+}
+
+.blue .postcard__bar {
+    background-color: $main-blue;
+}
+
+.blue::before {
+    background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
+}
+
+.blue:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .red.play:hover {
+    background: $main-red;
+}
+
+.red .postcard__title:hover {
+    color: $main-red;
+}
+
+.red .postcard__bar {
+    background-color: $main-red;
+}
+
+.red::before {
+    background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+}
+
+.red:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .yellow.play:hover {
+    background: $main-yellow;
+    color: black;
+}
+
+.yellow .postcard__title:hover {
+    color: $main-yellow;
+}
+
+.yellow .postcard__bar {
+    background-color: $main-yellow;
+}
+
+.yellow::before {
+    background-image: linear-gradient(-30deg,
+            $main-yellow-rgb-015,
+            transparent 50%);
+}
+
+.yellow:nth-child(2n)::before {
+    background-image: linear-gradient(30deg,
+            $main-yellow-rgb-015,
+            transparent 50%);
+}
+
+@media screen and (min-width: 769px) {
+    .green::before {
+        background-image: linear-gradient(-80deg,
+                $main-green-rgb-015,
+                transparent 50%);
+    }
+
+    .green:nth-child(2n)::before {
+        background-image: linear-gradient(80deg,
+                $main-green-rgb-015,
+                transparent 50%);
+    }
+
+    .blue::before {
+        background-image: linear-gradient(-80deg,
+                $main-blue-rgb-015,
+                transparent 50%);
+    }
+
+    .blue:nth-child(2n)::before {
+        background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
+    }
+
+    .red::before {
+        background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
+    }
+
+    .red:nth-child(2n)::before {
+        background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
+    }
+
+    .yellow::before {
+        background-image: linear-gradient(-80deg,
+                $main-yellow-rgb-015,
+                transparent 50%);
+    }
+
+    .yellow:nth-child(2n)::before {
+        background-image: linear-gradient(80deg,
+                $main-yellow-rgb-015,
+                transparent 50%);
+    }
+}

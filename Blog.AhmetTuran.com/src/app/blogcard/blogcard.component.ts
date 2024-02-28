@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.services';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TopblogsComponent } from "../topblogs/topblogs.component";
 
 @Component({
-  standalone: true,
-  selector: 'app-blog',
-  templateUrl: 'blogcard.component.html',
-  styleUrls: ['./blogcard.component.scss'],
-  imports: [CommonModule, RouterModule]
+    standalone: true,
+    selector: 'app-blog',
+    templateUrl: 'blogcard.component.html',
+    providers: [],
+    styleUrls: ['./blogcard.component.scss'],
+    imports: [CommonModule, RouterModule, TopblogsComponent]
 })
 export class CardComponent implements OnInit {
   blogs: any = [];

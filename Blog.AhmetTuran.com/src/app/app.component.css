@@ -1,0 +1,10 @@
+/* Firefox için scrollbar track */
+* {
+    scrollbar-color: #cccccc00 #f0f0f000; /* Track ve handle rengi */
+}
+
+/* Firefox için scrollbar handle */
+*::-moz-scrollbar-thumb {
+    background-color: #ccc; /* Handle rengi */
+    border-radius: 10px; /* Kenar yarıçapı */
+}
