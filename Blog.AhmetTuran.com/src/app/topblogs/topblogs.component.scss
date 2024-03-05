@@ -1,8 +1,9 @@
 .topblogcard {
-    width: 100%;
     height: 450px;
     margin-bottom: 100px;
-    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+    background-image: radial-gradient(circle, #2e2e2e, #363636, #3f3f3f, #484848, #515151, #5e5e5e, #6c6c6c, #7a7a7a, #909090, #a7a7a7, #bebebe, #d6d6d6);
+
+
     /* İçindeki elemanların yan yana sıralanmasını sağlar */
 }
 
@@ -49,6 +50,48 @@
     /* Son butonun sağına boşluk ekleme */
 }
 
+.blogdomain {
+    scrollbar-width: none;
+    /* Firefox için */
+}
+
+.blogdomain::-webkit-scrollbar {
+    display: none;
+    /* Diğer tarayıcılar için */
+}
+
+.scroll-button-left {
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.scroll-button-right {
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.scroll-button-left svg,
+.scroll-button-right svg {
+    fill: rgb(35, 35, 35);
+}
+
+
 
 
 
@@ -67,10 +110,12 @@ $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .postcard:before {
-    display: none; /* Çapraz çizgiyi kaldırma */
+    display: none;
+    /* Çapraz çizgiyi kaldırma */
 }
+
 .postcard {
-    
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     flex-shrink: 0;
     flex-wrap: wrap;
     display: flex;
@@ -87,7 +132,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     margin: 40px 0px;
     /* Postcard elemanları arasındaki boşluk */
     margin-left: 300px;
-    margin-right: 100px;
+    margin-right: 102px;
 
 
 
