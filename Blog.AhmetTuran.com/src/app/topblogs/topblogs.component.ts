@@ -5,25 +5,40 @@ import { CommonModule } from '@angular/common';
 import { ElementRef } from '@angular/core';
 
 @Component({
-    selector: 'app-topblogs',
-    standalone: true,
-    templateUrl: './topblogs.component.html',
-    styleUrl: './topblogs.component.scss',
-    imports: [CommonModule]
+  selector: 'app-topblogs',
+  standalone: true,
+  templateUrl: './topblogs.component.html',
+  styleUrl: './topblogs.component.scss',
+  imports: [CommonModule]
 })
-export class TopblogsComponent{
+export class TopblogsComponent {
+  scrollRight() {
+    const blogdomainElement = document.querySelector('.blogdomain');
+    blogdomainElement?.scrollBy({
+      left: 1000,
+      behavior: 'smooth'
+    })
+  }
 
-  
+  scrollLeft() {
+    const blogdomainElement = document.querySelector('.blogdomain');
+    blogdomainElement?.scrollBy({
+      left: -1000,
+      behavior: 'smooth'
+    })
+  }
+
+
 
   constructor(private blogservice: BlogService, private elementRef: ElementRef) { }
-  blogsrecent :any =[];
-  
-  ngOnInit():void{
+  blogsrecent: any = [];
+
+  ngOnInit(): void {
     setInterval(() => {
       this.scrollHorizontally();
     }, 2000); // 2 saniyede bir kaydırma işlemi
-    this.blogservice.getRecentBlogs().subscribe(blogs=>{
-      
+    this.blogservice.getRecentBlogs().subscribe(blogs => {
+
       blogs.forEach((blog: any) => {
         if (blog.category == 0) {
           blog.category = "Teknoloji";
@@ -43,7 +58,7 @@ export class TopblogsComponent{
           blog.content = blog.content.substring(0, 300) + "...";
         }
       });
-      
+
       //the times format 2024-02-19T00:00:00.000Z to 2024-02-19
       // Ay isimlerini içeren bir dizi oluştur
       const months = [
@@ -72,7 +87,8 @@ export class TopblogsComponent{
       blogs.forEach((blog: any) => {
         console.log(blog)
         blog.publishDate = blog.publishDate.split("T")[0];
-      });this.blogsrecent=blogs})
+      }); this.blogsrecent = blogs
+    })
   }
   scrollHorizontally(): void {
     const container = this.elementRef.nativeElement.querySelector('.blogdomainn');
@@ -81,7 +97,7 @@ export class TopblogsComponent{
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
       const scrollAmount = 1000; // Her 2 saniyede ne kadar kaydırılacağını ayarla (örneğin 10px)
-  
+
       const slide = () => {
         scrollLeft += scrollAmount;
         console.log(clientWidth);
@@ -91,9 +107,9 @@ export class TopblogsComponent{
         }
         container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
       };
-  
+
       setInterval(slide, 4000); // 2 saniyede bir kaydırma işlemi yap
-  
+
       // En sona geldiğinde en başa dönmesi gerekiyorsa:
       container.addEventListener('scroll', () => {
         if (container.scrollLeft === scrollWidth - clientWidth + 700) {
@@ -103,15 +119,15 @@ export class TopblogsComponent{
         }
       });
     }
-  
-  }
-
-
-
-
-
-
 
   }
+
+
+
+
+
+
+
+}
 
 

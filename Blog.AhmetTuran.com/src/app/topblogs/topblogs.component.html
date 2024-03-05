@@ -5,9 +5,9 @@
         <button class="category-button">Kategori 4</button>
         <button class="category-button">Kategori 5</button>
     </div>
-    <div class="blogdomain" style="display: flex; overflow-x: auto; "><a id="{{blog.category}}" class="postcard dark blue"
-            *ngFor="let blog of blogsrecent; let last = last;  let i = index"
-            [style.margin-right.px]="last ? '350' : '0'" >
+    <div class="blogdomain" style="display: flex; overflow-x: hidden; "><a id="{{blog.category}}"
+            class="postcard dark blue" *ngFor="let blog of blogsrecent; let last = last;  let i = index"
+            [style.margin-right.px]="last ? '350' : '0'">
             <a class="postcard__img_link" href="#">
                 <img class="postcard__img" [src]="blog.imageURL" alt="Image Title" />
             </a>
@@ -28,10 +28,28 @@
 
                 </ul>
             </div>
-        </a></div>
+        </a>
+        <div style="position: absolute; justify-content: space-between; width: 98.9%; display: flex; margin-top: 12%;">
+            <div>
+                <button (click)="scrollLeft()" class="scroll-button-left" style="padding-top: 2px; cursor: pointer;"><svg width="25px" height="25px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"  >
+
+                    <path d="M0 0h48v48H0z" fill="none"/>
+                    <g id="Shopicon">
+                        <polygon points="40,22 14.828,22 28.828,8 26,5.172 7.172,24 26,42.828 28.828,40 14.828,26 40,26 	"/>
+                    </g>
+                    </svg></button>
+            </div>
+            <div>
+                <button (click)="scrollRight()" class="scroll-button-right" style="padding-top: 2px; cursor: pointer;"><svg width="25px" height="25px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" >
+
+                    <path d="M0 0h48v48H0z" fill="none"/>
+                    <g id="Shopicon">
+                        <polygon points="8,26 33.172,26 19.172,40 22,42.828 40.828,24 22,5.172 19.172,8 33.172,22 8,22 	"/>
+                    </g>
+                    </svg></button>
+            </div>
+        </div>
+    </div>
 
 </div>
 
-<script>
-    
-</script>

@@ -5,6 +5,35 @@
     left: 10px;
 }
 
+#logo {
+    position: relative;
+    left: 25px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+#logo_text_div {
+    position: relative;
+    left: 35px;
+    top: 80px;
+    top: 1px;
+}
+
+.logo_text {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1px;
+    /* 125% */
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: -15px;
+}
+
 .baslik_icon {
     position: relative;
     top: 25px;
