@@ -7,14 +7,12 @@ import { BlogService } from './blog.services';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TopblogsComponent } from './topblogs/topblogs.component';
 import { LatestblogsComponent } from './latestblogs/latestblogs.component';
-import { QuillService } from 'ngx-quill';;
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, CardComponent,HttpClientModule, NavbarComponent, TopblogsComponent,LatestblogsComponent],
-  providers: [BlogService, HttpClient,QuillService],
+  providers: [BlogService, HttpClient],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

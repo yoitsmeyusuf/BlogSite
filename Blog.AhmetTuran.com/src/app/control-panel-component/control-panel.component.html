@@ -1,4 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
+
 <div style="display: flex; justify-content: center;">
     <div class="control-panel">
         <form class="formStyle" (submit)="createBlog()">
@@ -8,7 +8,8 @@
             </label>
             <label class="columnSyle">
                 <p class="titleText">Content</p>
-                <quill-editor [modules]="quillConfig" class="inputPosition" [(ngModel)]="blog.content" name="content" id="editor"></quill-editor>
+                
+                <jodit-editor name="content"  [(ngModel)]="blog.content" [config]="config" style="color: black;"></jodit-editor>
             </label>
             <label class="columnSyle">
                 <p class="titleText">Category</p>
@@ -20,7 +21,10 @@
             </label>
             <label class="columnSyle">
                 <p class="titleText">Image</p>
-                <input class="inputPosition" [(ngModel)]="blog.imageURL" name="imageURL" type="text">
+                <input #imageInput
+                type="file"
+                accept="image/*"
+                (change)="processFile(imageInput)">
             </label>
             <button type="submit">Create</button>
         </form>

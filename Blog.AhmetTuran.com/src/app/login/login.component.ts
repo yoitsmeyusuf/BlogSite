@@ -3,14 +3,14 @@ import { Router } from '@angular/router';
 import { BlogService } from '../blog.services';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularEditorModule } from '@kolkov/angular-editor';
+
 
 
 
 @Component({
   standalone: true,
   selector: 'app-login',
-  imports: [FormsModule,AngularEditorModule],
+  imports: [FormsModule],
   providers: [BlogService, HttpClientModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],

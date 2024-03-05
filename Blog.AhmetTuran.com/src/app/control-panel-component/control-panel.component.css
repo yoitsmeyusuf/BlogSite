@@ -1,7 +1,10 @@
+
+
 .formStyle{
     display: flex;
     flex-direction: column;
 }
+
 
 .columnStyle{
     display: flex;
@@ -9,7 +12,7 @@
 }
 
 .control-panel{
-    max-width: 900px;
+    width: 900px;
     background-color: #1d1d1d;
     border-radius: 30px;
     padding-left: 50px;

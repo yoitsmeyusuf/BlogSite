@@ -1,106 +1,154 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BlogService, Blog} from '../blog.services';
 import { FormsModule } from '@angular/forms';
-import { QuillEditorComponent } from 'ngx-quill';
-import Quill from 'quill';
+
+
 import { v4 as uuid } from 'uuid';
+
+
+
+import { JoditAngularModule } from 'jodit-angular';
+import { JoditAngularComponent } from 'jodit-angular';
+
+
 
 
 @Component({
   selector: 'app-control-panel-component',
   standalone: true,
-  imports: [FormsModule,QuillEditorComponent],
+  imports: [FormsModule,JoditAngularModule],
   providers: [BlogService],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css'
 })
-export class ControlPanelComponent {
-  blog: Blog = {
+export class ControlPanelComponent  {
+  blog: any = {
     postID: '',
     title: '',
     content: '',
     category: '',
     publishDate: '',
-    imageURL: ''
   };
-  
-  model = this.blog;
-  //write me an confguration for quill editor
-  quill: any;
+  selectedFile: any;
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
 
-  quillConfig = {
-<<<<<<< Updated upstream
-    modules: {
-      toolbar: [
-        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-        ['blockquote', 'code-block'],
+    reader.addEventListener('load', (event: any) => {
   
-        [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-        [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-        [{ 'direction': 'rtl' }],                         // text direction
-  
-        [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-  
-        [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-        [{ 'font': [] }],
-        [{ 'align': [] }],
-  
-        ['clean'],                                        // remove formatting button
-        ['link', 'image', 'video']                        // link and image, video
-      ]
-    },
-    theme: 'snow'  // or 'bubble'
-  };
-  //how can I get the images from quil editor
-  // how to use quillconfig at quill
+        this.selectedFile = event.target.result;
+    });
 
-  constructor(private blogService: BlogService) { }
-=======
-    theme: 'snow',
-    toolbar: [
-      ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-      ['blockquote', 'code-block'],
-      [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-      [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-      [{ 'direction': 'rtl' }],                         // text direction
-      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-      [{ 'color': [] }],          // dropdown with defaults from theme
-      [{ 'font': [] }],
-      [{ 'align': [] }],
-      ['clean'],                                         // remove formatting button
-      ['link', 'image', 'video']         // link and image, video
-    ],
-    handlers: {
-      
+    reader.readAsDataURL(file);
+    reader.onload = (event: any) => {
+      this.selectedFile = event.target.result;
     }
+    console.log(this.selectedFile);
     
-  };
-  //how can I get the images from quil editor
-  
+  }
+  model = this.blog;
+ 
   constructor(private blogService: BlogService) {
     
    }
->>>>>>> Stashed changes
+   config: object = { 
+    uploader: { "insertImageAsBase64URI": true },
+    zIndex: 0,
+   readonly: false,
+   activeButtonsInReadOnly: ['source', 'fullsize', 'print', 'about', 'dots'],
+   toolbarButtonSize: 'middle',
+   theme: 'default',
+   saveModeInCookie: false,
+   spellcheck: true,
+   editorCssClass: false,
+   triggerChangeEvent: true,
+   width: 'auto',
+   height: 'auto',
+   minHeight: 100,
+   direction: '',
+   language: 'auto',
+   debugLanguage: false,
+   i18n: 'en',
+   tabIndex: -1,
+   toolbar: true,
+   enter: "P",
+   useSplitMode: false,
+   colors: {
+       greyscale:  ['#000000', '#434343', '#666666', '#999999', '#B7B7B7', '#CCCCCC', '#D9D9D9', '#EFEFEF', '#F3F3F3', '#FFFFFF'],
+       palette:    ['#980000', '#FF0000', '#FF9900', '#FFFF00', '#00F0F0', '#00FFFF', '#4A86E8', '#0000FF', '#9900FF', '#FF00FF'],
+       full: [
+           '#E6B8AF', '#F4CCCC', '#FCE5CD', '#FFF2CC', '#D9EAD3', '#D0E0E3', '#C9DAF8', '#CFE2F3', '#D9D2E9', '#EAD1DC',
+           '#DD7E6B', '#EA9999', '#F9CB9C', '#FFE599', '#B6D7A8', '#A2C4C9', '#A4C2F4', '#9FC5E8', '#B4A7D6', '#D5A6BD',
+           '#CC4125', '#E06666', '#F6B26B', '#FFD966', '#93C47D', '#76A5AF', '#6D9EEB', '#6FA8DC', '#8E7CC3', '#C27BA0',
+           '#A61C00', '#CC0000', '#E69138', '#F1C232', '#6AA84F', '#45818E', '#3C78D8', '#3D85C6', '#674EA7', '#A64D79',
+           '#85200C', '#990000', '#B45F06', '#BF9000', '#38761D', '#134F5C', '#1155CC', '#0B5394', '#351C75', '#733554',
+           '#5B0F00', '#660000', '#783F04', '#7F6000', '#274E13', '#0C343D', '#1C4587', '#073763', '#20124D', '#4C1130'
+       ]
+   },
+   colorPickerDefaultTab: 'background',
+   imageDefaultWidth: 300,
+   removeButtons: [],
+   disablePlugins: [],
+   extraButtons: [],
+   sizeLG: 900,
+   sizeMD: 700,
+   sizeSM: 400,
+   buttons: [
+       'source', '|',
+       'bold',
+       'strikethrough',
+       'underline',
+       'italic', '|',
+       'ul',
+       'ol', '|',
+       'outdent', 'indent',  '|',
+       'font',
+       'fontsize',
+       'brush',
+       'paragraph', '|',
+       'image',
+       'video',
+       'table',
+       'link', '|',
+       'align', 'undo', 'redo', '|',
+       'hr',
+       'eraser',
+       'copyformat', '|',
+       'symbol',
+       'fullsize',
+       'print',
+       'about'
+   ],
+   buttonsXS: [
+       'bold',
+       'image', '|',
+       'brush',
+       'paragraph', '|',
+       'align', '|',
+       'undo', 'redo', '|',
+       'eraser',
+       'dots'
+   ],
+   events: {},
+   textIcons: false,
+};
 
-  // how to use quillconfig at quill
-  ngAfterViewInit() {
-    this.quill = new Quill('#editor', this.quillConfig);
-  }
   async createBlog() {
-    
+    // eger title ve content bos ise alert ver
+    if (!this.blog.title || !this.blog.content) {
+      alert('Başlık ve içerik alanlarını doldurunuz.');
+      return;
+    }
+
+
+
     let newcon = this.processHtmlContent(this.blog.content);
-    const editor = new Quill('#editor');
+    
 
     const formData = new FormData();
     
     // HTML içeriğin alınması
-    const htmlContent = editor.getSemanticHTML();
+    const htmlContent = this.blog.content;
     
     // Resim verilerinin HTML kodundan ayrıştırılması
     const images = htmlContent.match(/<img src="(.*?)"/g);
@@ -108,11 +156,15 @@ export class ControlPanelComponent {
 //match with img if its not link
 
     for (const image of images!) {
+     console.log(image);
       //remove data:image/png;base64, from the base64 string and the last "
-      const img = image.match(/data:image\/png;base64,(.*)"/);
-
+      //or data:image/jpg;base64  from the base64 string and the last "
+      const img = image.match(/data:image\/(png|jpg);base64,(.*)"/);
+      
+      
       if (img) {
-        formData.append('images', img[1]);
+        console.log("selam")
+        formData.append('images', img[2]);
         const imageSrcMatch = image.match(/"(.*?)"/);
         if (imageSrcMatch) {
           const imageSrc = imageSrcMatch[1];
@@ -125,10 +177,13 @@ export class ControlPanelComponent {
         }
       }
     }
+    // delete the selectedfile's data:image/png;base64, from the base64 string
+    this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
+    console.log(this.selectedFile);
     formData.append('content', newcon);
     formData.append('Title', this.blog.title);
     formData.append('Category', this.blog.category);
-    formData.append('ImageURL', this.blog.imageURL);
+    formData.append('ImageURL', this.selectedFile);
     console.log(formData);
     this.blogService.createBlog( formData)
       .subscribe(response => {
@@ -142,7 +197,7 @@ export class ControlPanelComponent {
 
 
   
-   processHtmlContent(html: string): string {
+processHtmlContent(html: string): string {
 
 const baseUrl = '';
     const parser = new DOMParser();

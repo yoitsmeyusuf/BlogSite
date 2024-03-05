@@ -38,6 +38,8 @@ export class CardComponent implements OnInit {
         }
       });
       blogs.forEach((blog: any) => {
+        // delete the img tags from the content
+        blog.content = blog.content.replace(/<img[^>]*>/g, '');
         if (blog.content.length > 300) {
           blog.content = blog.content.substring(0, 300) + "...";
         }

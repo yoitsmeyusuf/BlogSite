@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using WebApi.Entities;
 using WebApi.Models.Posts;
 using WebApi.Services;
+// uuid for unique id
+
 
 
 [ApiController]
@@ -48,19 +50,18 @@ public class PostsController : ControllerBase
 public async Task<IActionResult> Create([FromForm]CreateRequest model)
 {
  
-
   var imageData = model.Images; // Assuming model has image data property
+  if(model.ImageURL != null)
+  {
+    string isim = System.Guid.NewGuid().ToString();
+    byte[] imageBytes = Convert.FromBase64String(model.ImageURL);
+    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images",isim+".jpg");
+    await System.IO.File.WriteAllBytesAsync(path, imageBytes);
+    model.ImageURL = Path.Combine("http://localhost:4000","images",isim+".jpg");
+    
+  }
 
-  // Create blog post
 
-  var blog = new Post{
-    Title = model.Title,
-    Content = model.Content,
-    Category = model.Category,
-    PublishDate = model.PublishDate,
-    ImageURL = model.ImageURL
-  };
-  
 
   await _PostService.Create(model);
 
@@ -76,6 +77,7 @@ public async Task<IActionResult> Create([FromForm]CreateRequest model)
 
     }
   }
+
 
   return Ok(new { message = "Post created" });
 }

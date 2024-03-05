@@ -39,6 +39,7 @@ export class TopblogsComponent{
         }
       });
       blogs.forEach((blog: any) => {
+        blog.content = blog.content.replace(/<img[^>]*>/g, '');
         if (blog.content.length > 300) {
           blog.content = blog.content.substring(0, 300) + "...";
         }
