@@ -52,11 +52,11 @@
 }
 
 .login_button:hover .login_text {
-    color: rgba(255, 255, 255, 0.633);
+    color: rgba(0, 0, 0, 0.633);
 }
 
 .login_button:hover .login_icon path {
-    fill: rgba(255, 255, 255, 0.633);
+    fill: rgba(0, 0, 0, 0.633);
     transition: fill 0.3s ease;
 }
 
@@ -70,6 +70,8 @@
     position: relative;
     right: 3px;
     bottom: 17px;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: fill 0.3s ease;
+    font-weight: 600;
+    font-style: DM Sans;
 }

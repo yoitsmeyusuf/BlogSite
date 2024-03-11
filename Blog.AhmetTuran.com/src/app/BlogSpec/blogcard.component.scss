@@ -11,10 +11,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .postcard {
     flex-wrap: wrap;
-    display: flex;
-    width: 80%;
-    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-    border-radius: 10px;
+    width: 100%;
     margin: 0 auto 2rem auto;
     overflow: hidden;
     position: relative;
@@ -24,10 +21,10 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     color: #ffffff;
   
       &.dark {
-          background-color: #18151f;
+
       }
       &.light {
-          background-color: #e1e5ea;
+
       }
       
       .t-dark {
@@ -49,11 +46,12 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       }
   
     .postcard__title {
+      color: #18151f;
       font-size: 1.75rem;
     }
   
     .postcard__img {
-      max-height: 180px;
+      height: 450px;
       width: 100%;
       object-fit: cover;
       position: relative;
@@ -68,7 +66,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       height: 10px;
       margin: 10px 0;
       border-radius: 5px;
-      background-color: #424242;
       transition: width 0.2s ease;
     }
   
@@ -77,6 +74,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       position: relative;
       display: flex;
       flex-direction: column;
+      color: #565656;
     }
   
     .postcard__preview-txt {
@@ -96,7 +94,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   
       .tag__item {
         display: inline-block;
-        background: rgba(83, 83, 83, 0.4);
         border-radius: 3px;
         padding: 2.5px 10px;
         margin: 0 5px 5px 0;
@@ -117,14 +114,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: linear-gradient(-70deg, #424242, transparent 50%);
       opacity: 1;
       border-radius: 10px;
     }
   
-    &:hover .postcard__bar {
-      width: 100px;
-    }
+    
   }
   
   @media screen and (min-width: 769px) {
@@ -140,8 +134,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       }
   
       .postcard__img {
-        max-width: 300px;
-        max-height: 100%;
+
         transition: transform 0.3s ease;
       }
   
@@ -160,9 +153,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
         width: 55px;
       }
   
-      &:hover .postcard__img {
-        transform: scale(1.1);
-      }
+     
   
       &:nth-child(2n+1) {
         flex-direction: row;
@@ -188,15 +179,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
         padding: 2rem 3.5rem;
       }
           
-          .postcard__text:before {
-        content: "";
-        position: absolute;
-        display: block;
-        
-        top: -20%;
-        height: 130%;
-        width: 55px;
-      }
+
       
     .postcard.dark {
           .postcard__text:before {
@@ -211,130 +194,8 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   }
   
   /* COLORS */
-  .postcard .postcard__tagbox .green.play:hover {
-      background: $main-green;
-      color: black;
-  }
-  .green .postcard__title:hover {
-      color: $main-green;
-  }
-  .green .postcard__bar {
-      background-color: $main-green;
-  }
-  .green::before {
-      background-image: linear-gradient(
-          -30deg,
-          $main-green-rgb-015,
-          transparent 50%
-      );
-  }
-  .green:nth-child(2n)::before {
-      background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
-  }
   
-  .postcard .postcard__tagbox .blue.play:hover {
-      background: $main-blue;
-  }
-  .blue .postcard__title:hover {
-      color: $main-blue;
-  }
-  .blue .postcard__bar {
-      background-color: $main-blue;
-  }
-  .blue::before {
-      background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
-  }
-  .blue:nth-child(2n)::before {
-      background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
-  }
-  
-  .postcard .postcard__tagbox .red.play:hover {
-      background: $main-red;
-  }
-  .red .postcard__title:hover {
-      color: $main-red;
-  }
-  .red .postcard__bar {
-      background-color: $main-red;
-  }
-  .red::before {
-      background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
-  }
-  .red:nth-child(2n)::before {
-      background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
-  }
-  
-  .postcard .postcard__tagbox .yellow.play:hover {
-      background: $main-yellow;
-      color: black;
-  }
-  .yellow .postcard__title:hover {
-      color: $main-yellow;
-  }
-  .yellow .postcard__bar {
-      background-color: $main-yellow;
-  }
-  .yellow::before {
-      background-image: linear-gradient(
-          -30deg,
-          $main-yellow-rgb-015,
-          transparent 50%
-      );
-  }
-  .yellow:nth-child(2n)::before {
-      background-image: linear-gradient(
-          30deg,
-          $main-yellow-rgb-015,
-          transparent 50%
-      );
-  }
   
   @media screen and (min-width: 769px) {
-      .green::before {
-          background-image: linear-gradient(
-              -80deg,
-              $main-green-rgb-015,
-              transparent 50%
-          );
-      }
-      .green:nth-child(2n)::before {
-          background-image: linear-gradient(
-              80deg,
-              $main-green-rgb-015,
-              transparent 50%
-          );
-      }
-  
-      .blue::before {
-          background-image: linear-gradient(
-              -80deg,
-              $main-blue-rgb-015,
-              transparent 50%
-          );
-      }
-      .blue:nth-child(2n)::before {
-          background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
-      }
-  
-      .red::before {
-          background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
-      }
-      .red:nth-child(2n)::before {
-          background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
-      }
       
-      .yellow::before {
-          background-image: linear-gradient(
-              -80deg,
-              $main-yellow-rgb-015,
-              transparent 50%
-          );
-      }
-      .yellow:nth-child(2n)::before {
-          background-image: linear-gradient(
-              80deg,
-              $main-yellow-rgb-015,
-              transparent 50%
-          );
-      }
   }

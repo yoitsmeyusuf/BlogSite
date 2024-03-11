@@ -17,10 +17,14 @@ body {
 	color: #ffffff;
 	text-rendering: optimizeLegibility;
 	font-weight: initial;
+	scrollbar-width: none;
+	margin: 0;
+    padding: 0;
 }
 
 .dark {
-	background: #212121;
+	scrollbar-width: none;
+	background: #f7f7f7;
 }
 #pageHeaderTitle {
 	margin: 2rem 0;
