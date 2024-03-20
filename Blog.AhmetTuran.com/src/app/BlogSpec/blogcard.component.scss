@@ -8,194 +8,302 @@ $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
+.headers {
 
+  width: 20%;
+  position: fixed;
+  margin-top: 80px;
+  margin-left: 20px;
+
+  display: flex; flex-direction: column;
+  height: 100%;
+  z-index: 100;
+}
+
+.headers_container_domain{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.headers_container_domain::after{
+  content: ''; 
+  width: 10px;
+  height: 10px;
+  border: 3px solid #80808083; 
+  border-radius: 50%; 
+  margin-left: 10px; 
+}
+
+.headers_container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 50%;
+  width: 80%;
+  background-color: transparent; /* Arka plan rengini saydam yapar */
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1); /* Renksiz gölge oluşturur */
+  border-radius: 10px;
+}
+
+.headers_container p {
+  display: inline-block; /* Bağlantıların blok seviyesinde hizalanmasını sağlar */
+  color: #18151f;
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: 600;
+}
+ 
+html {
+  display: flex;
+  scroll-behavior: smooth;
+}
+.latestblogs{
+  width: 15%;
+  background-color: transparent; /* Arka plan rengini saydam yapar */
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1); /* Renksiz gölge oluşturur */
+  border-radius: 10px;
+  position: fixed;
+  bottom: 70px;
+  right: 3%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .postcard {
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto 2rem auto;
-    overflow: hidden;
+  width: 50%;
+  margin: 0 auto; /* Ortada olmasını sağlar */
+
+  padding-top: 100px;
+  padding-left: 0px;
+  overflow: hidden;
+  position: relative;
+  //I want to make them centered
+
+
+  color: #ffffff;
+
+  &.dark {}
+
+  &.light {}
+
+  .t-dark {
+    color: #18151f;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  .h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .small {
+    font-size: 80%;
+  }
+
+  .postcard__title {
+    color: #18151f;
+    font-size: 1.75rem;
     position: relative;
-    //I want to make them centered
+    bottom: 30px;
+  }
 
-    
-    color: #ffffff;
-  
-      &.dark {
+  .postcard__img {
+    border-radius: 20px;
+    height: 400px;
+    width: 100%;
+    object-fit: fill;
+    position: relative;
+  }
 
-      }
-      &.light {
+  .postcard__img_link {
+    display: contents;
+  }
 
-      }
-      
-      .t-dark {
-          color: #18151f;
-      }
-      
-    a {
-      color: inherit;
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #565656;
+  }
+
+  .postcard__preview-txt {
+    margin-top: 15%;
+    overflow: hidden;
+    width: 90%;
+    height: 100%;
+    position: relative;
+    bottom: 150px;
+  }
+
+
+
+
+  .editor {
+    display: flex;
+    margin: 0px 0 30px 0;
+    width: 100%;
+  }
+
+  .editor_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+  }
+
+  .editor_info {
+    width: 100%;
+    margin-left: 15px;
+    display: flex;
+    /* Dikeyde ortalamak için flexbox kullan */
+    flex-direction: column;
+    /* Öğeleri dikey olarak sırala */
+    justify-content: center;
+    /* Öğeleri dikeyde ortala */
+  }
+
+  .editor_info p {
+    margin: 0;
+    /* Container div'in dış boşluğunu sıfırla */
+    padding: 0;
+    /* Container div'in iç boşluğunu sıfırla */
+    line-height: 1.2; /* Satır yüksekliğini sıfıra ayarlar */
+  }
+  .editor_info .editor_name {
+    color: #000000;
+    font-weight: 500;
+  }
+
+  .tag__item {
+    float: right;
+    position: relative;
+    border-radius: 3px;
+    display: flex;
+    padding: 2.5px 10px;
+    cursor: default;
+    user-select: none;
+    transition: background-color 0.3s;
+    color: white;
+    background-color: #bd140ba1;
+
+    &:hover {
+      background: #950700a1;
     }
-      
-      h1,	.h1 {
-          margin-bottom: 0.5rem;
-          font-weight: 500;
-          line-height: 1.2;
-      }
-      
-      .small {
-          font-size: 80%;
-      }
-  
+  }
+
+  .postcard__subtitle {
+    width: 130px;
+    position: relative;
+    bottom: 30px;
+  }
+
+  .date_text {
+    position: relative;
+    top: 3px;
+  }
+
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    border-radius: 10px;
+  }
+
+
+}
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+
     .postcard__title {
-      color: #18151f;
-      font-size: 1.75rem;
+      font-size: 2rem;
     }
-  
-    .postcard__img {
-      height: 450px;
-      width: 100%;
-      object-fit: cover;
-      position: relative;
-    }
-  
-    .postcard__img_link {
-      display: contents;
-    }
-  
-    .postcard__bar {
-      width: 50px;
-      height: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      transition: width 0.2s ease;
-    }
-  
-    .postcard__text {
-      padding: 1.5rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      color: #565656;
-    }
-  
-    .postcard__preview-txt {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: justify;
-      height: 100%;
-    }
-  
+
     .postcard__tagbox {
-      display: flex;
-      flex-flow: row wrap;
-      font-size: 14px;
-      margin: 20px 0 0 0;
-          padding: 0;
-      justify-content: center;
-  
-      .tag__item {
-        display: inline-block;
-        border-radius: 3px;
-        padding: 2.5px 10px;
-        margin: 0 5px 5px 0;
-        cursor: default;
-        user-select: none;
-        transition: background-color 0.3s;
-  
-        &:hover {
-          background: rgba(83, 83, 83, 0.8);
-        }
-      }
+      justify-content: start;
     }
-  
-    &:before {
+
+    .postcard__img {
+
+      transition: transform 0.3s ease;
+    }
+
+    .postcard__text {
+      width: 100%;
+    }
+
+    .media.postcard__text:before {
       content: "";
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: 1;
-      border-radius: 10px;
+      display: block;
+      background: #18151f;
+      top: -20%;
+      height: 130%;
+      width: 55px;
     }
-  
-    
-  }
-  
-  @media screen and (min-width: 769px) {
-    .postcard {
-      flex-wrap: inherit;
-  
-      .postcard__title {
-        font-size: 2rem;
-      }
-  
-      .postcard__tagbox {
-        justify-content: start;
-      }
-  
-      .postcard__img {
 
-        transition: transform 0.3s ease;
-      }
-  
-      .postcard__text {
-        padding: 3rem;
-        width: 100%;
-      }
-  
-      .media.postcard__text:before {
-        content: "";
-        position: absolute;
-        display: block;
-        background: #18151f;
-        top: -20%;
-        height: 130%;
-        width: 55px;
-      }
-  
-     
-  
-      &:nth-child(2n+1) {
-        flex-direction: row;
-      }
-  
-      &:nth-child(2n+0) {
-        flex-direction: row-reverse;
-      }
-  
-      &:nth-child(2n+1) .postcard__text::before {
-        left: -12px !important;
-        transform: rotate(4deg);
-      }
-  
-      &:nth-child(2n+0) .postcard__text::before {
-        right: -12px !important;
-        transform: rotate(-4deg);
-      }
-    }
-  }
-  @media screen and (min-width: 1024px){
-          .postcard__text {
-        padding: 2rem 3.5rem;
-      }
-          
 
-      
-    .postcard.dark {
-          .postcard__text:before {
-              background: #18151f;
-          }
+
+    &:nth-child(2n+1) {
+      flex-direction: row;
     }
-      .postcard.light {
-          .postcard__text:before {
-              background: #e1e5ea;
-          }
+
+    &:nth-child(2n+0) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(2n+1) .postcard__text::before {
+      left: -12px !important;
+      transform: rotate(4deg);
+    }
+
+    &:nth-child(2n+0) .postcard__text::before {
+      right: -12px !important;
+      transform: rotate(-4deg);
     }
   }
-  
-  /* COLORS */
-  
-  
-  @media screen and (min-width: 769px) {
-      
+}
+
+@media screen and (min-width: 1024px) {
+  .postcard__text {
+    padding: 2rem 3.5rem;
   }
+
+
+
+  .postcard.dark {
+    .postcard__text:before {
+      background: #18151f;
+    }
+  }
+
+  .postcard.light {
+    .postcard__text:before {
+      background: #e1e5ea;
+    }
+  }
+}
+
+/* COLORS */
+
+
+@media screen and (min-width: 769px) {}

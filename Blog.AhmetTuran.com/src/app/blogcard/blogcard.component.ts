@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../blog.services';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TopblogsComponent } from "../topblogs/topblogs.component";
+import { BlogService, User } from '../blog.services';
 
 @Component({
     standalone: true,
@@ -15,8 +15,17 @@ import { TopblogsComponent } from "../topblogs/topblogs.component";
 export class CardComponent implements OnInit {
   blogs: any = [];
   blogsrecent: any = [];
+  daysAgo: number[] = []; // Yayınlanalı kaç gün geçtiğini tutacak dizi
 
   constructor(private blogService: BlogService) { }
+
+  name!: User;
+  ngAfterViewInit(): void {
+    this.blogService.whoami().subscribe((data: any) => {
+
+      return this.name = data;
+    });
+  }
 
   ngOnInit(): void {
 
@@ -24,17 +33,17 @@ export class CardComponent implements OnInit {
       //make blogs content only 80 characters and add ... to the end
       // if category is 0 its string Teknoloji, if its 1 its string Bilim, if its 2 its string işletme, if its 3 its string Diğer
       blogs.forEach((blog: any) => {
-        if (blog.category == 0) {
-          blog.category = "Teknoloji";
+        if (blog.category == "0") {
+          blog.category = "0";
         }
-        else if (blog.category == 1) {
-          blog.category = "Bilim";
+        else if (blog.category == "1") {
+          blog.category = "1";
         }
-        else if (blog.category == 2) {
-          blog.category = "İşletme";
+        else if (blog.category == "2") {
+          blog.category = "2";
         }
-        else if (blog.category == 3) {
-          blog.category = "Diğer";
+        else if (blog.category == "3") {
+          blog.category = "3";
         }
       });
       blogs.forEach((blog: any) => {
@@ -46,6 +55,7 @@ export class CardComponent implements OnInit {
       });
       //the times format 2024-02-19T00:00:00.000Z to 2024-02-19
       // Ay isimlerini içeren bir dizi oluştur
+      const currentDate = new Date(); // Şu anki tarihi al
       const months = [
         "Ocak",
         "Şubat",
@@ -62,7 +72,7 @@ export class CardComponent implements OnInit {
       ];
 
       // Blogları döngüyle işle ve her birinin yayın tarihini güncelle
-      blogs.forEach((blog) => {
+      blogs.forEach((blog: any) => {
         // Yayın tarihini "T" karakterine göre ayır ve yıl, ay ve gün kısımlarını al
         const [year, month, day] = blog.publishDate.split("T")[0].split("-");
 

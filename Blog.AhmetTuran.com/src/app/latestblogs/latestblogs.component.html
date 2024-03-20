@@ -1,5 +1,14 @@
-<article class="postcard dark blue" *ngFor="let blog of blogsrecent">
-    {{blog.title}}
-    <p>{{blog.publishDate}}
-    </p>
+<div>
+    <p class="otherblogs_text">Other Blogs</p>
+    <article class="postcard dark blue" *ngFor="let blog of blogsrecent">
+    <img class="editor" src="localhost:4000/Username.jpg" alt="">
+    <div>
+        <div class="blog_title">
+            <span class="ellipsis">{{blog.title}}</span>
+        </div>
+
+        <p class="blog_date">{{blog.publishDate}}</p>
+    </div>
+
 </article>
+</div>

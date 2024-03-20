@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { BlogService, Blog} from '../blog.services';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { BlogService, Blog, User} from '../blog.services';
 import { FormsModule } from '@angular/forms';
 
 
@@ -21,7 +21,7 @@ import { JoditAngularComponent } from 'jodit-angular';
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css'
 })
-export class ControlPanelComponent  {
+export class ControlPanelComponent implements AfterViewInit {
   blog: any = {
     postID: '',
     title: '',
@@ -29,7 +29,19 @@ export class ControlPanelComponent  {
     category: '',
     publishDate: '',
   };
+  user : User ={
+    userID: '',
+    username: '',
+    password: '',
+    imageURL: ''
+  }
+  name: string = "";
   selectedFile: any;
+  ngAfterViewInit(): void {
+  //get param from url and if there is a param
+  }
+// write an function with  whoami and get the name of the user
+ 
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];
     const reader = new FileReader();
@@ -51,6 +63,7 @@ export class ControlPanelComponent  {
   constructor(private blogService: BlogService) {
     
    }
+
    config: object = { 
     uploader: { "insertImageAsBase64URI": true },
     zIndex: 0,
@@ -159,7 +172,7 @@ export class ControlPanelComponent  {
      console.log(image);
       //remove data:image/png;base64, from the base64 string and the last "
       //or data:image/jpg;base64  from the base64 string and the last "
-      const img = image.match(/data:image\/(png|jpg);base64,(.*)"/);
+      const img = image.match(/data:image\/(png|jpg|jpeg);base64,(.*)"/);
       
       
       if (img) {
@@ -193,8 +206,42 @@ export class ControlPanelComponent  {
         // Handle error here
         console.error(error);
       });
+
+      //refresh
+      window.location.reload();
   }
 
+
+  updateUser() {
+    this.blogService.Userupdate(this.user.username, this.user.password)
+      .subscribe(response => {
+      
+
+      }, error => {
+        // Handle error here
+        console.error(error);
+      });
+
+      //upload image
+     
+      if (this.selectedFile) {
+        this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
+        const formData = new FormData();
+        formData.append('Filecode', this.selectedFile);
+        formData.append('Names', "profile");
+        this.blogService.uploadImage(formData).subscribe(response => {
+         console.log(response);
+        }
+        ,error => {
+          // Handle error here
+          console.error(error);
+        });
+      }
+  
+      
+
+
+  }
 
   
 processHtmlContent(html: string): string {

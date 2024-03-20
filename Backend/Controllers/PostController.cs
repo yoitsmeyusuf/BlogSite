@@ -4,6 +4,7 @@ namespace WebApi.Controllers;
 
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using WebApi.Entities;
 using WebApi.Models.Posts;
 using WebApi.Services;
@@ -17,10 +18,12 @@ using WebApi.Services;
 public class PostsController : ControllerBase
 {
     private IPostService _PostService;
+    private IAuthServices _AuthService;
 
-    public PostsController(IPostService PostService)
+    public PostsController(IPostService PostService,IAuthServices AuthService)
     {
         _PostService = PostService;
+        _AuthService = AuthService;
     }
 
     [HttpGet]
@@ -44,6 +47,7 @@ public class PostsController : ControllerBase
         var Post = await _PostService.GetById(id);
         return Ok(Post);
     }
+//update user
 
    
 [HttpPost("create")]
@@ -100,6 +104,37 @@ public async Task<IActionResult> Upload([FromBody] UploadModel uploadModel)
     }
      return Ok(new { message = "upload successs"});
 }
+
+[HttpPost("UpdatethisUser")]
+public async Task<IActionResult> UpdatethisUser([FromForm]User a)
+{
+    var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+    string usernameold =  _AuthService.GetUsernameFromToken(token);
+    
+    await _PostService.Updatea(usernameold,a.Username,a.Password);
+    return Ok(new { message = "User updated" });
+}
+
+    [HttpPost("uploadProfile")]
+public async Task<IActionResult> UploadProfile([FromForm]UploadModel uploadModel)
+{
+   
+    
+    byte[] fileBytes = Convert.FromBase64String(uploadModel.Filecode[0]);
+    
+
+    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot","images", "Profile.jpg");
+    Console.WriteLine(path);
+  
+    //if there is a another Profile picture delete it
+    if(System.IO.File.Exists(path))
+    {
+        System.IO.File.Delete(path);
+    }
+      await System.IO.File.WriteAllBytesAsync(path, fileBytes);
+     return Ok(new { message = "upload successs"});
+}
+
 
 
 

@@ -12,6 +12,12 @@ export interface Blog {
     publishDate: string;
     imageURL: string;
 }
+export interface User{
+    userID : string;
+    username: string;
+    password: string;
+    imageURL: string;
+    }
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +27,22 @@ export class BlogService {
     private url = 'http://localhost:4000/'; // Replace with your server URL
 
     constructor(private http: HttpClient) { }
+    Userupdate(username: string, password: string): Observable<any> {
+        const token = sessionStorage.getItem('token');
+        if (!token) {
+            console.error('No token');
+        }
+        const headers = { 'Authorization': `Bearer ${token}` };
+        var a = new FormData();
+        a.append("Username", username);
+        console.log(username);
+        a.append("Password", password);
+        a.append("ImageURL", "asdasd");
+        a.append("UserID", "12");
 
+        
+        return this.http.post(`${this.url}posts/updatethisuser`, a, { headers, observe: 'response', responseType: 'text' });
+    }
     checkToken(): Observable<boolean> {
         const token = sessionStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
@@ -86,8 +107,8 @@ export class BlogService {
         return this.http.put(`${this.url}posts/update/${Id}`, {title,content,category,imageURL}, { headers, observe: 'response', responseType: 'text' });
     }
     //make an login function 
-    login(password: string): Observable<any> {
-        return this.http.post(`${this.url}Auth`, { password }, { observe: 'response', responseType: 'text' })
+    login(password: string,username: string): Observable<any> {
+        return this.http.post(`${this.url}Auth`, { password,username }, { observe: 'response', responseType: 'text' })
             .pipe(
                 map((response: HttpResponse<any>) => {
                     if (response.status === 200) {
@@ -113,12 +134,32 @@ export class BlogService {
         sessionStorage.removeItem('token');
          
         }
+        //GET /whoami to get the username
+        whoami(): Observable<User | null> {
+            const token = sessionStorage.getItem('token');
+            if (!token) {
+                console.error('No token');
+            }
+            const headers = { 'Authorization': `Bearer ${token}` };
+            return this.http.get<User>(`${this.url}Auth/whoami`, { headers, observe: 'response' }).pipe(
+                map((response: HttpResponse<User>) => response.body)
+            );
+        }
 
         //get last 3 blogs by publishdate
         getRecentBlogs(): Observable<Blog[]>{
             return this.getBlogs().pipe(
-                map(blogs=>blogs.sort((a,b)=> new Date(b.publishDate).getTime()- new Date(b.publishDate).getTime()).slice(0,3))
+                map(blogs=>blogs.sort((a,b)=> new Date(b.publishDate).getTime()- new Date(b.publishDate).getTime()).slice(0,6))
             )
+        }
+
+        uploadImage(image: FormData): Observable<any> {
+            const token = sessionStorage.getItem('token');
+            if (!token) {
+                console.error('No token');
+            }
+            const headers = { 'Authorization': `Bearer ${token}` };
+            return this.http.post(`${this.url}posts/uploadProfile`, image, { headers, observe: 'response', responseType: 'text' });
         }
 
 }

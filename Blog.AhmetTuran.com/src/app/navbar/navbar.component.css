@@ -5,6 +5,15 @@
     left: 10px;
 }
 
+.navbar{
+    position: fixed;
+    background: #ffffff56;
+    z-index: 10000;
+    top: -5px;
+    backdrop-filter: blur(20px); /* Arkaplanı blur yap */
+    border-bottom: 1px solid #cccccc78;
+}
+
 #logo {
     position: relative;
     left: 25px;
@@ -13,6 +22,434 @@
     height: 30px;
     flex-shrink: 0;
 }
+
+.user {
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.user_image {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    bottom: 3px;
+    /* Resim ile metin arasındaki boşluğu ayarlar */
+
+
+}
+
+.create_button {
+    position: relative;
+    right: 20px;
+    top: 0px;
+    width: 50px;
+    height: 30px;
+    background-color: rgba(50, 50, 255, 0);
+
+    border: #20202060 1px solid;
+    color: white;
+    font-weight: 500;
+    font-style: DM Sans;
+    font-size: 10px;
+    padding-left: 7px;
+    padding-top: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.create_button:hover {
+    transition: 0.3s ease;
+}
+
+.tooltipblog {
+    visibility: hidden;
+    background-color: #20202000;
+    color: #fff;
+    font-size: 10px;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 105%;
+    width: 100px;
+    margin-left: -90px;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    border: #00000019 1px solid;
+
+    backdrop-filter: blur(20px); /* Arkaplanı blur yap */
+    /* Normal durumda geçiş efekti */
+}
+
+.create_button:hover .tooltipblog {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    /* :hover durumunda geçiş efekti */
+}
+
+
+
+
+
+.tt_create_blog {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_create_blog:hover {
+    background-color: rgba(0, 110, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_user_account_icon {
+        fill: rgba(255, 255, 255, 0.915);
+        transition: 0.3s ease;
+    }
+}
+
+.tt_create_blog_icon {
+    fill: rgb(46, 46, 46);
+    position: relative;
+    top: 1px;
+}
+
+.tt_create_blog_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 11px;
+    top: 0.7px;
+}
+
+.tt_import_blog {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_import_blog:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_user_profile_icon {
+        fill: rgba(255, 255, 255, 0.915);
+        transition: 0.3s ease;
+    }
+}
+
+.tt_import_blog_icon {
+    fill: rgb(46, 46, 46);
+}
+
+.tt_import_blog_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 8px;
+    top: 1px;
+}
+
+
+
+
+.user .tooltiptext {
+    visibility: hidden;
+    background-color: #20202000;
+    color: #fff;
+    font-size: 10px;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 105%;
+    width: 170px;
+    margin-left: -157px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: #00000019 1px solid;
+    backdrop-filter: blur(20px); /* Arkaplanı blur yap */
+    /* Normal durumda geçiş efekti */
+}
+
+.user:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+    /* :hover durumunda geçiş efekti */
+}
+
+
+
+.user_text {
+    color: black;
+    position: relative;
+
+    margin: 0;
+    /* Metnin dış boşluğunu sıfırlar */
+    background-color: red;
+    width: 50%;
+
+}
+
+.tt_user {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.tt_user_image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+
+.tt_user_name::before {
+    content: "@";
+}
+
+.tt_user_name {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    bottom: 3px;
+}
+
+.tt_user_account {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_user_account:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_user_account_icon {
+
+        transition: 0.3s ease;
+    }
+}
+
+.tt_user_account_icon {
+    fill: rgb(46, 46, 46);
+    position: relative;
+    top: 1px;
+}
+
+.tt_user_account_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 11px;
+    top: 0.7px;
+}
+
+.tt_user_add_profile {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_user_add_profile:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_user_profile_icon {
+
+        transition: 0.3s ease;
+    }
+}
+
+.tt_user_profile_icon {
+    fill: rgb(46, 46, 46);
+}
+
+.tt_user_profile_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 8px;
+    top: 1px;
+}
+
+.tt_blogs {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_blogs:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_blogs_icon {
+
+        transition: 0.3s ease;
+    }
+
+}
+
+.tt_blogs_icon {
+    fill: rgb(46, 46, 46);
+    position: relative;
+    top: 1px;
+}
+
+.tt_blogs_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 8px;
+    top: 0.7px;
+}
+
+.tt_top_blogs {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_top_blogs:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_top_blogs_icon {
+
+        transition: 0.3s ease;
+    }
+}
+
+.tt_top_blogs_icon {
+    fill: rgb(46, 46, 46);
+    position: relative;
+    top: 1px;
+}
+
+.tt_top_blogs_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 8px;
+    top: 0.7px;
+}
+
+.tt_favorites {
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_favorites:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_favorites_icon {
+
+        transition: 0.3s ease;
+    }
+}
+
+
+.tt_favorites_icon {
+    fill: rgb(46, 46, 46);
+    position: relative;
+    top: 1px;
+}
+
+.tt_favorites_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 8px;
+    top: 1px;
+}
+
+.tt_settings {
+
+    width: 98%;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 7px;
+}
+
+.tt_settings:hover {
+    background-color: rgba(72, 151, 255, 0.357);
+    transition: 0.3s ease;
+
+    .tt_settings_icon {
+
+        transition: 0.3s ease;
+    }
+}
+
+.tt_settings_icon {
+    fill: rgb(46, 46, 46);
+    position: relative;
+    top: 1.2px;
+}
+
+.tt_settings_text {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(32, 32, 32, 0.915);
+    position: relative;
+    margin-left: 8px;
+    top: 1.2px;
+}
+
+
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.085);
+    margin-top: 5px;
+    margin-bottom: 9px;
+    border-radius: 20px;
+}
+
+
+
 
 #logo_text_div {
     position: relative;

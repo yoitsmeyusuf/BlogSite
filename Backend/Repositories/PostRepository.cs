@@ -13,6 +13,12 @@ public interface IPostRepository
     Task Create(Post Post);
     Task Update(Post Post);
     Task Delete(int id);
+    
+    Task<User> GetByUsername(string username);
+    Task Create(User user);
+      Task Update(string usernameold,string username,string password);
+    Task Deleteu(int id);
+
 }
 
 public class PostRepository : IPostRepository
@@ -98,4 +104,50 @@ public class PostRepository : IPostRepository
         """;
         await connection.ExecuteAsync(sql, new { id });
     }
+
+  // write samething but for user
+    public async Task<User> GetByUsername(string username)
+    {
+        using var connection = _context.CreateConnection();
+        var sql = """
+            SELECT * FROM Users 
+            WHERE Username = @username
+        """;
+        return await connection.QuerySingleOrDefaultAsync<User>(sql, new { username });
+    }
+
+    public async Task Create(User user)
+    {
+        using var connection = _context.CreateConnection();
+        var sql = """
+           INSERT INTO Users (Username, Password) VALUES (@Username, @Password)
+        """;
+        await connection.ExecuteAsync(sql, user);
+    }
+
+    public async Task Update(string usernameold, string Username, string Password)
+    {
+        using var connection = _context.CreateConnection();
+
+        var sql = @"
+            UPDATE Users 
+            SET Username = @Username,
+            Password = @Password
+            WHERE Username = @usernameold
+        ";
+
+        await connection.ExecuteAsync(sql, new { usernameold, Username, Password });
+    }
+
+    public async Task Deleteu(int id)
+    {
+        using var connection = _context.CreateConnection();
+        var sql = """
+            DELETE FROM Users 
+            WHERE UserID = @id
+        """;
+        await connection.ExecuteAsync(sql, new { id });
+    }
+
+    
 }

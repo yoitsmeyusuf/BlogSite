@@ -7,7 +7,7 @@ using WebApi.Helpers;
 using WebApi.Models.Posts;
 using WebApi.Repositories;
 
-public interface IPostService
+public interface  IPostService
 {
     Task<IEnumerable<Post>> GetAll();
     Task<Post> GetById(int id);
@@ -15,6 +15,8 @@ public interface IPostService
     Task Update(int id, UpdateRequest model);
     Task Delete(int id);
     Task<Post> GetByCategory(string category);
+    Task<User> GetByUsername(string username);
+     Task Updatea(string usernameold,string username, string password);
 }
 
 public class PostService : IPostService
@@ -93,4 +95,38 @@ public class PostService : IPostService
     {
         await _PostRepository.Delete(id);
     }
+
+    public async Task<User> GetByUsername(string username)
+    {
+        return await _PostRepository.GetByUsername(username);
+    }
+
+    public async Task Create(User user)
+    {
+        // validate
+        if (string.IsNullOrWhiteSpace(user.Password))
+            throw new AppException("Password is required");
+
+        // hash password
+
+        // save user
+        await _PostRepository.Create(user);
+    }
+
+    public async Task Updatea(string usernameold,string username, string password)
+    {
+        // validate
+
+
+        // hash password
+
+        // save user
+        await _PostRepository.Update(usernameold,username,password);
+    }
+
+    public async Task Deleteu(int id)
+    {
+        await _PostRepository.Deleteu(id);
+    }
+
 }

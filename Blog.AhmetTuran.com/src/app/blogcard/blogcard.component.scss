@@ -8,19 +8,129 @@ $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
+.page{
+  display: flex;
+  margin-top: 100px;
+  font-size: 'Red Hat Display', sans-serif;;
+}
+
+.gundem{
+  width: 15%;
+  position: fixed;
+  right: 100px;
+
+  height: 100%;
+  z-index: 100;
+  line-height: 7px;
+}
+
+.gundem_text{
+  color: #18151f;
+  font-weight: 600;
+  font-family: 'Red Hat Display', sans-serif;;
+}
+
+.gundemler{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.gundemler:hover{
+  background-color: rgba(128, 128, 128, 0.205);
+  transition: 0.3s ease;
+}
+
+.gundemler_text{
+  color: #232323;
+}
+
+.gundemler_adet{
+  color: #30303090;
+}
+
+.category{
+  align-self: flex-end;
+  margin: 20px 0 0 0;
+  padding: 0;
+  position: relative;
+  color: #ffffff;
+  bottom: 10px;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #ff0000, #ff9595);
+}
+
+.category svg{
+  margin: auto;
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+
+}
+
+.category p{
+  margin: auto;
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+  right: 5px;
+}
+
+.user{
+  margin: 10px;
+  margin-bottom: 10px;
+  left: 15px;
+  position: relative;
+  top: 3px;
+  display: flex;
+  width: 93%;
+  justify-content: space-between;
+}
+
+.user_image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user_text{
+  position: relative;
+  top: 3px;
+  line-height: 0px;
+}
+
+.editor{
+  color: #24242494;
+  font-size: 10px;
+  position: relative;
+  bottom: 5px;
+}
+
+.user_name{
+  color: #232323;
+  position: relative;
+  bottom: 3px;
+}
 
 .postcard {
-  float: left;
   flex-wrap: wrap;
-  display: flex;
-  width: 70%;
-  height: 300px;
+  width: 50%;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
-  margin: 0 auto 2rem auto;
+  margin-bottom: 80px;
   overflow: hidden;
   position: relative;
-  left: 50px;
+  border: #42424231 1px solid;
+  font-family: 'Red Hat Display', sans-serif;;
   //I want to make them centered
 
 
@@ -32,7 +142,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     position: relative;
     right: 290px;
     display: inline-block;
-    background: rgba(8, 0, 255, 0.4);
     border-radius: 3px;
     padding: 2.5px 10px;
     margin: 0 5px 5px 0;
@@ -40,9 +149,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     user-select: none;
     transition: background-color 0.3s;
 
-    &:hover {
-      background: rgba(83, 83, 83, 0.8);
-    }
+    
 
   }
 
@@ -51,7 +158,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     bottom: 355px;
     position: relative;
     display: inline-block;
-    background: rgba(8, 0, 255, 0.4);
     border-radius: 3px;
     padding: 2.5px 10px;
     margin-left: auto; // Sağa hizala
@@ -59,28 +165,30 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     user-select: none;
     transition: background-color 0.3s;
 
-    &:hover {
-      background: rgba(83, 83, 83, 0.8);
-    }
+    
 
   }
 
   &:nth-child(2n+1) .date_text {
-    color: #ffffff7d;
-    font-size: 13px;
+    color: #0000004e;
+    font-size: 11px;
     left: 20px;
     left: auto;
+    bottom: 30px;
+    position: relative;
   }
 
   &:nth-child(2n+0) .date_text {
-    color: #ffffff7d;
-    font-size: 13px;
+    bottom: 30px;
+    position: relative;
+    color: #0000004e;
+    font-size: 11px;
     right: 20px;
     right: auto;
   }
 
   &.dark {
-    background-color: #18151f;
+    background-color: #18151f00;
   }
 
   &.light {
@@ -97,9 +205,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   h1,
   .h1 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 500;
     line-height: 1.2;
+    color: #da4646;
+    width: 90%;
+    bottom: 30px;
+    position: relative;
   }
 
   .small {
@@ -111,9 +223,9 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   }
 
   .postcard__img {
-    max-height: 180px;
+    max-height: 80px;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
     position: relative;
   }
 
@@ -121,14 +233,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     display: contents;
   }
 
-  .postcard__bar {
-    width: 50px;
-    height: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    background-color: #424242;
-    transition: width 0.2s ease;
-  }
+
 
   .postcard__text {
     padding: 1.5rem;
@@ -142,11 +247,12 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     text-overflow: ellipsis;
     text-align: justify;
     position: relative;
-    bottom: 40px;
+    bottom: 65px;
     height: 120%;
-    width: 100%;
+    width: 87%;
     font-size: 12px;
-    color: #ffffff7d;
+    color: #0000007d;
+
   }
 
   .postcard__tagbox {
@@ -172,14 +278,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(-70deg, #424242, transparent 50%);
     opacity: 1;
     border-radius: 10px;
   }
 
-  &:hover .postcard__bar {
-    width: 100px;
-  }
+  
 }
 
 
@@ -190,9 +293,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     flex-wrap: inherit;
 
     .postcard__title {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       position: relative;
-      bottom: 25px;
+      color: #303030;
+      font-weight: 600;
+      bottom: 52px;
     }
 
     .postcard__tagbox {
@@ -200,13 +305,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     }
 
     .postcard__img {
-      max-width: 300px;
-      max-height: 100%;
+      max-height: 70%;
       transition: transform 0.3s ease;
     }
 
     .postcard__text {
-      padding: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
       width: 100%;
     }
 
@@ -220,9 +325,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       width: 55px;
     }
 
-    &:hover .postcard__img {
-      transform: scale(1.1);
-    }
+    
 
     &:nth-child(2n+1) {
       flex-direction: row;
@@ -249,15 +352,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     padding: 2rem 3.5rem;
   }
 
-  .postcard__text:before {
-    content: "";
-    position: absolute;
-    display: block;
-
-    top: -20%;
-    height: 130%;
-    width: 55px;
-  }
+  
 
   .postcard.dark {
     .postcard__text:before {
@@ -272,135 +367,3 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   }
 }
 
-/* COLORS */
-.postcard .postcard__tagbox .green.play:hover {
-  background: $main-green;
-  color: black;
-}
-
-.green .postcard__title:hover {
-  color: $main-green;
-}
-
-.green .postcard__bar {
-  background-color: $main-green;
-}
-
-.green::before {
-  background-image: linear-gradient(-30deg,
-      $main-green-rgb-015,
-      transparent 50%);
-}
-
-.green:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
-}
-
-.postcard .postcard__tagbox .blue.play:hover {
-  background: $main-blue;
-}
-
-.blue .postcard__title:hover {
-  color: $main-blue;
-}
-
-.blue .postcard__bar {
-  background-color: $main-blue;
-}
-
-.blue::before {
-  background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
-}
-
-.blue:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
-}
-
-.postcard .postcard__tagbox .red.play:hover {
-  background: $main-red;
-}
-
-.red .postcard__title:hover {
-  color: $main-red;
-}
-
-.red .postcard__bar {
-  background-color: $main-red;
-}
-
-.red::before {
-  background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
-}
-
-.red:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
-}
-
-.postcard .postcard__tagbox .yellow.play:hover {
-  background: $main-yellow;
-  color: black;
-}
-
-.yellow .postcard__title:hover {
-  color: $main-yellow;
-}
-
-.yellow .postcard__bar {
-  background-color: $main-yellow;
-}
-
-.yellow::before {
-  background-image: linear-gradient(-30deg,
-      $main-yellow-rgb-015,
-      transparent 50%);
-}
-
-.yellow:nth-child(2n)::before {
-  background-image: linear-gradient(30deg,
-      $main-yellow-rgb-015,
-      transparent 50%);
-}
-
-@media screen and (min-width: 769px) {
-  .green::before {
-    background-image: linear-gradient(-80deg,
-        $main-green-rgb-015,
-        transparent 50%);
-  }
-
-  .green:nth-child(2n)::before {
-    background-image: linear-gradient(80deg,
-        $main-green-rgb-015,
-        transparent 50%);
-  }
-
-  .blue::before {
-    background-image: linear-gradient(-80deg,
-        $main-blue-rgb-015,
-        transparent 50%);
-  }
-
-  .blue:nth-child(2n)::before {
-    background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
-  }
-
-  .red::before {
-    background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
-  }
-
-  .red:nth-child(2n)::before {
-    background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
-  }
-
-  .yellow::before {
-    background-image: linear-gradient(-80deg,
-        $main-yellow-rgb-015,
-        transparent 50%);
-  }
-
-  .yellow:nth-child(2n)::before {
-    background-image: linear-gradient(80deg,
-        $main-yellow-rgb-015,
-        transparent 50%);
-  }
-}

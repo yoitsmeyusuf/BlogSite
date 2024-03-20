@@ -35,24 +35,59 @@ public class DataContext
         await connection.ExecuteAsync(sql);
     }
 
+    // private async Task _initTables()
+    // {
+    //     // create tables if they don't exist
+    //     using var connection = CreateConnection();
+    //     await _initUsers();
+
+    //             async Task _initUsers()
+    //             {
+    //                 var sql = @"
+    //                    CREATE TABLE IF NOT EXISTS Posts (
+    //         PostID INT PRIMARY KEY AUTO_INCREMENT,
+    //         Title VARCHAR(255) NOT NULL,
+    //         Content TEXT NOT NULL,
+    //         Category TEXT NOT NULL,
+    //         PublishDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    //         ImageURL VARCHAR(255)
+    //     );";
+    //                 await connection.ExecuteAsync(sql);
+    //             }
+    // }
+
+//_initdatabase but add User table
     private async Task _initTables()
     {
         // create tables if they don't exist
         using var connection = CreateConnection();
         await _initUsers();
+        await _initPosts();
 
-                async Task _initUsers()
-                {
-                    var sql = @"
-                       CREATE TABLE IF NOT EXISTS Posts (
-            PostID INT PRIMARY KEY AUTO_INCREMENT,
-            Title VARCHAR(255) NOT NULL,
-            Content TEXT NOT NULL,
-            Category TEXT NOT NULL,
-            PublishDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            ImageURL VARCHAR(255)
-        );";
-                    await connection.ExecuteAsync(sql);
-                }
+        async Task _initUsers()
+        {
+            var sql = @"
+                CREATE TABLE IF NOT EXISTS Users (
+                    UserID INT PRIMARY KEY AUTO_INCREMENT,
+                    Username VARCHAR(255) NOT NULL,
+                    Password VARCHAR(255) NOT NULL,
+                    ImageURL VARCHAR(255)
+                );";
+            await connection.ExecuteAsync(sql);
+        }
+
+        async Task _initPosts()
+        {
+            var sql = @"
+                CREATE TABLE IF NOT EXISTS Posts (
+                    PostID INT PRIMARY KEY AUTO_INCREMENT,
+                    Title VARCHAR(255) NOT NULL,
+                    Content TEXT NOT NULL,
+                    Category TEXT NOT NULL,
+                    PublishDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    ImageURL VARCHAR(255)
+                );";
+            await connection.ExecuteAsync(sql);
+        }
     }
 }

@@ -19,12 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
 export class LoginComponent {
   
  
-  model = { password: ''}
+  model = { password: '' , username: ''}
 
   constructor(private blogService: BlogService, private router: Router) { }
 
   login() {
-    this.blogService.login(this.model.password).subscribe(
+    this.blogService.login(this.model.password,this.model.username).subscribe(
       (response) => {
         if (response == 200) {
           console.log("selam")

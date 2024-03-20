@@ -1,23 +1,90 @@
-<app-topblogs></app-topblogs>
-<a [routerLink]="['/blog', blog.postID]" class="postcard dark blue" *ngFor="let blog of blogs">
-  <a class="postcard__img_link" href="#">
-    <img class="postcard__img" [src]="blog.imageURL" alt="Image Title" />
-  </a>
-  <div class="postcard__text">
-    <time class="date_text" datetime="2020-05-25">
-      <i></i>
-      <p class="date_text2">{{ blog.publishDate }}</p>
-    </time>
-    <h1 class="postcard__title blue"><a href="#">{{ blog.title }}</a></h1>
-    <div class="postcard__subtitle small">
+<div class="page">
+  <div style="margin-top: 0px; display: flex; flex-direction: column; align-items: center;">
+    <a [routerLink]="['/blog', blog.postID]" class="postcard dark blue" *ngFor="let blog of blogs">
+      <div class="user">
+        <div style="display: flex;">
+          <img class="user_image" src="http://localhost:4000/images/Profile.jpg" alt="">
+          <div class="user_text">
+            <p class="user_name">{{name?.username}}</p>
+            <p class="editor">Editor</p>
+          </div>
+        </div>
 
-    </div>
-    <div class="postcard__bar"></div>
-    <div class="postcard__preview-txt" [innerHTML]="blog.content"></div>
-    <ul class="postcard__tagbox">
+        <div class="category">
+          <ng-container *ngIf="blog.category == '0'">
+            <!-- Teknoloji için SVG simgesi -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <!-- Burada Teknoloji için SVG kodu yer almalı -->
+            </svg>
+          </ng-container>
+          <ng-container style="display: flex;" *ngIf="blog.category == '1'">
+            <!-- Bilim için SVG simgesi -->
+            <svg width="14px" height="14px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: white;
+                    stroke: #ffffff;
+                    position: relative;
+                  }
+                </style>
+              </defs>
+              <line class="cls-1" x1="7.23" y1="1.5" x2="16.77" y2="1.5" />
+              <path class="cls-1"
+                d="M14.86,6.27V1.5H9.14V6.27L2.7,19.15a2.3,2.3,0,0,0-.25,1h0A2.32,2.32,0,0,0,4.77,22.5H19.23a2.32,2.32,0,0,0,2.32-2.32h0a2.3,2.3,0,0,0-.25-1Z" />
+              <path class="cls-1" d="M6.89,10.76c5-2.17,5.31,1.9,10.42.41" />
+              <line class="cls-1" x1="7.23" y1="18.68" x2="9.14" y2="18.68" />
+              <line class="cls-1" x1="10.09" y1="14.86" x2="12" y2="14.86" />
+              <line class="cls-1" x1="14.86" y1="16.77" x2="16.77" y2="16.77" />
+            </svg>
+            <p>Bilim</p>
+          </ng-container>
+          <ng-container *ngIf="blog.category === '2'">
+            <!-- İşletme için SVG simgesi -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <!-- Burada İşletme için SVG kodu yer almalı -->
+            </svg>
+          </ng-container>
+          <ng-container *ngIf="blog.category === '3'">
+            <!-- Diğer için SVG simgesi -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <!-- Burada Diğer için SVG kodu yer almalı -->
+            </svg>
+          </ng-container>
+        </div>
+      </div>
 
-      <li class="tag__item"><i class="fas fa-clock mr-2"></i>{{blog.category}}</li>
+      <a class="postcard__img_link" href="#">
+        <img class="postcard__img" [src]="blog.imageURL" alt="Image Title" />
+      </a>
+      <div class="postcard__text">
+        <time class="date_text" datetime="2020-05-25">
+          <i></i>
+          <p class="date_text2">{{ blog.publishDate }}</p>
+        </time>
+        <h1 class="postcard__title blue"><a href="#">{{ blog.title }}</a></h1>
+        <div class="postcard__subtitle small">
 
-    </ul>
+        </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt" [innerHTML]="blog.content"></div>
+
+      </div>
+    </a>
+
   </div>
-</a>
+  <div class="gundem">
+    <div style="padding-left: 10px;"><p class="gundem_text">Gündem</p></div>
+    <div class="gundemler"><p class="gundemler_text">Matematik</p><p class="gundemler_adet">1002 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Kalp</p><p class="gundemler_adet">17 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Fizik</p><p class="gundemler_adet">2 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Kapitalizm</p><p class="gundemler_adet">26 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Femboylar</p><p class="gundemler_adet">31 Katrilyon gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Burak</p><p class="gundemler_adet">3 Sextilyon gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Biyoloji</p><p class="gundemler_adet">12 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Samsun</p><p class="gundemler_adet">55 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Bitkiler</p><p class="gundemler_adet">22 gönderi</p></div>
+    <div class="gundemler"><p class="gundemler_text">Virüsler</p><p class="gundemler_adet">2024 gönderi</p></div>
+  </div>
+</div>

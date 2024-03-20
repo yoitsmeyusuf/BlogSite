@@ -10,7 +10,9 @@ $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 
-
+html{
+	scroll-behavior: smooth;
+}
 body {
 	font-family: "Baloo 2", cursive;
 	font-size: 16px;

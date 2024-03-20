@@ -12,7 +12,7 @@ import { LatestblogsComponent } from './latestblogs/latestblogs.component';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, CardComponent,HttpClientModule, NavbarComponent, TopblogsComponent,LatestblogsComponent],
-  providers: [BlogService, HttpClient],
+  providers: [BlogService,  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

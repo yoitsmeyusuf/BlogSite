@@ -1,6 +1,7 @@
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; margin-top: 100px;">
     <div class="control-panel">
+  
         <form class="formStyle" (submit)="createBlog()">
             <label class="columnSyle">
                 <p class="titleText">Title</p>
@@ -28,33 +29,29 @@
             </label>
             <button type="submit">Create</button>
         </form>
-        <!-- <h2>Edit Blog</h2>
-        <form (submit)="blogService.editBlog(id.value, title.value, content.value)">
-            <label>
-                ID:
-                <input #id type="text">
-            </label>
-            <label>
-                Title:
-                <input #title type="text">
-            </label>
-            <label>
-                Content:
-                <textarea #content></textarea>
-            </label>
-            <button type="submit">Edit</button>
-        </form> -->
+  
+    <div style="height: 50px;"></div>
+    <P>KULLANICI ISLEMLERI</P>
+       <form class="formStyle" (submit)="updateUser()">
+        <label class="columnSyle">
+            <p class="titleText">Kullanıcı Adı</p>
+            <input class="inputPosition" [(ngModel)]="user.username" name="title" type="text" >
+        </label>
+        <label class="columnSyle">
+            <p class="titleText">Şifre</p>
+            
+            <input class="inputPosition" [(ngModel)]="user.password" name="title" type="text" >
+        </label>
+        <label class="columnSyle">
+            <p class="titleText">Resim</p>
+            <input #imageInputa
+            type="file"
+            accept="image/*"
+            (change)="processFile(imageInputa)">
+        </label>
+        <button type="submit">Guncelle</button>
 
-        <!-- <h2>Delete Blog</h2>
-        <form (submit)="deleteBlog()">
-            <label>
-                ID:
-                <input [(ngModel)]="blog.postID" type="text" name="postID">
-            </label>
-            <button type="submit">Delete</button>
-        </form> -->
-
-        <!-- <button type="button" (click)="logout()">cikis</button> -->
+       </form>
     </div>
 
 </div>
