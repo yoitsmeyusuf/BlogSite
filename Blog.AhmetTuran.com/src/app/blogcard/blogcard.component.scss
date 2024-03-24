@@ -8,16 +8,131 @@ $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
+.username_div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin_badge{
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(97,154,255,1) 0%, rgba(36,115,255,1) 64%, rgba(0,93,255,1) 100%);
+  position: relative;
+  left: 5px;
+  svg{
+    fill: #ffffff;
+    position: relative;
+    top: 6px;
+    left: 3.3px;
+  }
+  .svg2{
+    fill: #ffffff;
+    position: relative;
+    top: 4.7px;
+    left: 3.3px;
+  }
+}
+
+.writer_badge{
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(97,154,255,1) 0%, rgba(36,115,255,1) 64%, rgba(0,93,255,1) 100%);
+  position: relative;
+  left: 10px;
+  svg{
+    fill: #ffffff;
+    position: relative;
+    top: 4.7px;
+    left: 3.3px;
+  }
+
+}
+
+.makale{
+  display: flex;
+  height: 30px;
+  margin-left: 15px;
+  position: relative;
+  bottom: 5px;
+}
+
+.makale_text{
+  color: #002fff;
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 'Red Hat Display', sans-serif;
+}
+
+.makale_category{
+  color: #18151f;
+  font-size: 'Red Hat Display', sans-serif;
+}
+
 .page{
   display: flex;
   margin-top: 100px;
-  font-size: 'Red Hat Display', sans-serif;;
+
+}
+
+.search{
+  border: none;
+  height: 35px;
+  width: 70%;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+  padding-left: 35px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.secenekler{
+  width: 20%;
+  position: fixed;
+  left: 30px;
+  height: 100%;
+  z-index: 100;
+  line-height: 7px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.8rem;
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+    color: #777777;
+}
+
+.search:focus{
+  outline: none;
+  border-color: rgb(60, 79, 255);
+  box-shadow: 0 0 0 2px rgba(10, 35, 255, 0.822);
+}
+
+.lorem{
+  &:hover{
+    background-color: #0000001e;
+  }
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 5%;
+  width: 75%;
+
+  .lorem_text{
+    color: #18151f;
+    margin-left: 5px;
+  }
 }
 
 .gundem{
-  width: 15%;
+  width: 20%;
   position: fixed;
-  right: 100px;
+  right: 30px;
 
   height: 100%;
   z-index: 100;
@@ -27,7 +142,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 .gundem_text{
   color: #18151f;
   font-weight: 600;
-  font-family: 'Red Hat Display', sans-serif;;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 .gundemler{
@@ -86,10 +201,10 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .user{
   margin: 10px;
-  margin-bottom: 10px;
-  left: 15px;
+  margin-bottom: 0px;
+  left: 5px;
   position: relative;
-  top: 3px;
+  top: 0px;
   display: flex;
   width: 93%;
   justify-content: space-between;
@@ -106,31 +221,34 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   position: relative;
   top: 3px;
   line-height: 0px;
+  right: 5px;
 }
 
 .editor{
   color: #24242494;
-  font-size: 10px;
+  font-size: 15px;
   position: relative;
-  bottom: 5px;
+  bottom: 23px;
 }
 
 .user_name{
   color: #232323;
   position: relative;
-  bottom: 3px;
+  bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .postcard {
   flex-wrap: wrap;
-  width: 50%;
+  width: 60%;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   border: #42424231 1px solid;
-  font-family: 'Red Hat Display', sans-serif;;
+  height: 100%;
   //I want to make them centered
 
 
@@ -138,40 +256,20 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   &:nth-child(2n+1) .tag__item {
 
-    bottom: 330px;
-    position: relative;
-    right: 290px;
-    display: inline-block;
-    border-radius: 3px;
-    padding: 2.5px 10px;
-    margin: 0 5px 5px 0;
-    cursor: default;
-    user-select: none;
-    transition: background-color 0.3s;
 
-    
+
 
   }
 
   &:nth-child(2n+0) .tag__item {
-    left: 380px;
-    bottom: 355px;
-    position: relative;
-    display: inline-block;
-    border-radius: 3px;
-    padding: 2.5px 10px;
-    margin-left: auto; // Sağa hizala
-    cursor: default;
-    user-select: none;
-    transition: background-color 0.3s;
 
-    
+
 
   }
 
   &:nth-child(2n+1) .date_text {
     color: #0000004e;
-    font-size: 11px;
+    font-size: 13px;
     left: 20px;
     left: auto;
     bottom: 30px;
@@ -182,7 +280,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     bottom: 30px;
     position: relative;
     color: #0000004e;
-    font-size: 11px;
+    font-size: 13px;
     right: 20px;
     right: auto;
   }
@@ -205,12 +303,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   h1,
   .h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #da4646;
+    color: #1100ff;
     width: 90%;
-    bottom: 30px;
     position: relative;
   }
 
@@ -223,7 +320,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   }
 
   .postcard__img {
-    max-height: 80px;
+    max-height: 120px;
     width: 100%;
     object-fit: fill;
     position: relative;
@@ -236,7 +333,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 
   .postcard__text {
-    padding: 1.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -247,29 +343,14 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     text-overflow: ellipsis;
     text-align: justify;
     position: relative;
-    bottom: 65px;
-    height: 120%;
     width: 87%;
     font-size: 12px;
     color: #0000007d;
+    bottom: 45px;
 
   }
 
-  .postcard__tagbox {
-    display: flex;
-    flex-flow: row wrap;
-    font-size: 14px;
-    margin: 20px 0 0 0;
-    padding: 0;
-    justify-content: center;
-    position: relative;
-    top: 30px;
-    right: 45px;
 
-
-
-
-  }
 
   &:before {
     content: "";
@@ -282,7 +363,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     border-radius: 10px;
   }
 
-  
+
 }
 
 
@@ -297,7 +378,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       position: relative;
       color: #303030;
       font-weight: 600;
-      bottom: 52px;
+      bottom: 50px;
     }
 
     .postcard__tagbox {
@@ -305,7 +386,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     }
 
     .postcard__img {
-      max-height: 70%;
+      max-height: 100%;
       transition: transform 0.3s ease;
     }
 
@@ -315,17 +396,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       width: 100%;
     }
 
-    .media.postcard__text:before {
-      content: "";
-      position: absolute;
-      display: block;
-      background: #18151f;
-      top: -20%;
-      height: 130%;
-      width: 55px;
-    }
 
-    
 
     &:nth-child(2n+1) {
       flex-direction: row;
@@ -352,7 +423,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     padding: 2rem 3.5rem;
   }
 
-  
+
 
   .postcard.dark {
     .postcard__text:before {

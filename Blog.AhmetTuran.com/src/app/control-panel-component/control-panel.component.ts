@@ -38,16 +38,18 @@ export class ControlPanelComponent implements AfterViewInit {
   name: string = "";
   selectedFile: any;
   ngAfterViewInit(): void {
-  //get param from url and if there is a param
+ //refresh
+
+
   }
 // write an function with  whoami and get the name of the user
- 
+
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];
     const reader = new FileReader();
 
     reader.addEventListener('load', (event: any) => {
-  
+
         this.selectedFile = event.target.result;
     });
 
@@ -56,15 +58,15 @@ export class ControlPanelComponent implements AfterViewInit {
       this.selectedFile = event.target.result;
     }
     console.log(this.selectedFile);
-    
+
   }
   model = this.blog;
- 
+
   constructor(private blogService: BlogService) {
-    
+
    }
 
-   config: object = { 
+   config: object = {
     uploader: { "insertImageAsBase64URI": true },
     zIndex: 0,
    readonly: false,
@@ -77,7 +79,8 @@ export class ControlPanelComponent implements AfterViewInit {
    triggerChangeEvent: true,
    width: 'auto',
    height: 'auto',
-   minHeight: 100,
+   minHeight: 500,
+   maxWidth: 30000,
    direction: '',
    language: 'auto',
    debugLanguage: false,
@@ -156,16 +159,16 @@ export class ControlPanelComponent implements AfterViewInit {
 
 
     let newcon = this.processHtmlContent(this.blog.content);
-    
+
 
     const formData = new FormData();
-    
+
     // HTML içeriğin alınması
     const htmlContent = this.blog.content;
-    
+
     // Resim verilerinin HTML kodundan ayrıştırılması
     const images = htmlContent.match(/<img src="(.*?)"/g);
-    
+
 //match with img if its not link
 
     for (const image of images!) {
@@ -173,8 +176,8 @@ export class ControlPanelComponent implements AfterViewInit {
       //remove data:image/png;base64, from the base64 string and the last "
       //or data:image/jpg;base64  from the base64 string and the last "
       const img = image.match(/data:image\/(png|jpg|jpeg);base64,(.*)"/);
-      
-      
+
+
       if (img) {
         console.log("selam")
         formData.append('images', img[2]);
@@ -208,14 +211,14 @@ export class ControlPanelComponent implements AfterViewInit {
       });
 
       //refresh
-      window.location.reload();
+
   }
 
 
   updateUser() {
     this.blogService.Userupdate(this.user.username, this.user.password)
       .subscribe(response => {
-      
+
 
       }, error => {
         // Handle error here
@@ -223,7 +226,7 @@ export class ControlPanelComponent implements AfterViewInit {
       });
 
       //upload image
-     
+
       if (this.selectedFile) {
         this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
         const formData = new FormData();
@@ -237,19 +240,19 @@ export class ControlPanelComponent implements AfterViewInit {
           console.error(error);
         });
       }
-  
-      
+
+
 
 
   }
 
-  
+
 processHtmlContent(html: string): string {
 
 const baseUrl = '';
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
-  
+
     const imgTags = doc.getElementsByTagName('img');
     for (let i = 0; i < imgTags.length; i++) {
       const img = imgTags[i];
@@ -258,12 +261,12 @@ const baseUrl = '';
         img.setAttribute('src', baseUrl + src);
       }
     }
-  
+
     return doc.body.innerHTML;
   }
 
 
-  
+
 
   deleteBlog() {
     this.blogService.deleteBlog(this.blog.postID)
@@ -275,7 +278,7 @@ const baseUrl = '';
         console.error(error);
       });
   }
-  
+
   logout() {
     this.blogService.logout();
     window.location.reload();

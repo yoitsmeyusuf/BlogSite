@@ -1,0 +1,154 @@
+.imageDesign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Buraya input alanınızın istediğiniz stilini ekleyin */
+  /* Örnek olarak: */
+  border: 1px solid #ccc;
+  padding: 0px;
+  border-radius: 100px;
+  background-color: #f9f9f9;
+  height: 120px;
+  width: 120px;
+}
+.imageDesign input{
+  display: none;
+}
+
+
+
+.columnSyle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.preview-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  opacity: 0.7;
+}
+
+.imageElement{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 0px;
+}
+
+.inputPosition:-webkit-autofill,
+.inputPosition:-webkit-autofill:hover,
+.inputPosition:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Şeffaflık */
+  -webkit-text-fill-color: black !important; /* Metin rengi */
+}
+
+
+.imageElement p{
+  color: rgba(0, 0, 0, 0.450);;
+  font-size: 10px;
+}
+
+.imageDesign .imageIcon{
+  fill: rgba(0, 0, 0, 0.450);
+}
+
+/* İsteğe Bağlı Olarak Ekstra Stil Ekleyebilirsiniz */
+.imageDesign:focus {
+  outline: none; /* Seçildiğinde kenarlığı kaldırır */
+}
+
+.columnSyle input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
+
+.titleText{
+  color: black;
+  position: relative;
+  bottom: 15px;
+  margin-right: 15px;
+}
+
+.input_icon{
+  position: absolute;
+    top: -0.2rem;
+    left: 0.6rem;
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+    color: #777777;
+    z-index: 10000;
+}
+
+.input_icon2{
+  position: absolute;
+    top: 3rem;
+    left: 0.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    color: #777777;
+    z-index: 10000;
+}
+
+::placeholder {
+  color: #000; /* Placeholder metin rengi */
+  background-color: #fff; /* Placeholder arkaplan rengi */
+}
+
+:-ms-input-placeholder {
+  color: #000; /* Microsoft Edge için Placeholder metin rengi */
+  background-color: #fff; /* Microsoft Edge için Placeholder arkaplan rengi */
+}
+
+::-webkit-input-placeholder {
+  color: #000; /* Google Chrome ve Safari için Placeholder metin rengi */
+  background-color: #fff; /* Google Chrome ve Safari için Placeholder arkaplan rengi */
+}
+
+input:-moz-placeholder {
+  color: #000 !important; /* Placeholder metin rengi */
+  background-color: #fff !important; /* Placeholder arkaplan rengi */
+}
+
+
+.formStyle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.inputPosition{
+  position: relative;
+  bottom: 15px;
+  border: none;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1); /* Renksiz gölge oluşturur */
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  height: 20px;
+  width: 100%;
+  padding: 10px;
+  padding-left: 35px;
+  font-size: 15px;
+}
+
+.inputPosition:focus{
+  outline: none;
+  /* border-color: rgb(60, 79, 255);
+  box-shadow: 0 0 0 5px rgba(10, 35, 255, 0.822); */
+}
+
+
+.submit_button{
+  width: 14%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(44, 44, 255);
+  color: white;
+}

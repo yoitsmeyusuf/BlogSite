@@ -1,57 +1,46 @@
-
 <div style="display: flex; justify-content: center; margin-top: 100px;">
-    <div class="control-panel">
-  
-        <form class="formStyle" (submit)="createBlog()">
-            <label class="columnSyle">
-                <p class="titleText">Title</p>
-                <input class="inputPosition" [(ngModel)]="blog.title" name="title" type="text">
-            </label>
-            <label class="columnSyle">
-                <p class="titleText">Content</p>
-                
-                <jodit-editor name="content"  [(ngModel)]="blog.content" [config]="config" style="color: black;"></jodit-editor>
-            </label>
-            <label class="columnSyle">
-                <p class="titleText">Category</p>
-                <select class="inputPosition ql-toolbar" [(ngModel)]="blog.category" name="category">
-                    <option value="0">Teknoloji</option>
-                    <option value="1">Bilim</option>
-                    <option value="2">İşletme</option>
-                </select>
-            </label>
-            <label class="columnSyle">
-                <p class="titleText">Image</p>
-                <input #imageInput
-                type="file"
-                accept="image/*"
-                (change)="processFile(imageInput)">
-            </label>
-            <button type="submit">Create</button>
-        </form>
-  
-    <div style="height: 50px;"></div>
-    <P>KULLANICI ISLEMLERI</P>
-       <form class="formStyle" (submit)="updateUser()">
-        <label class="columnSyle">
-            <p class="titleText">Kullanıcı Adı</p>
-            <input class="inputPosition" [(ngModel)]="user.username" name="title" type="text" >
-        </label>
-        <label class="columnSyle">
-            <p class="titleText">Şifre</p>
-            
-            <input class="inputPosition" [(ngModel)]="user.password" name="title" type="text" >
-        </label>
-        <label class="columnSyle">
-            <p class="titleText">Resim</p>
-            <input #imageInputa
-            type="file"
-            accept="image/*"
-            (change)="processFile(imageInputa)">
-        </label>
-        <button type="submit">Guncelle</button>
+  <div class="control-panel">
 
-       </form>
-    </div>
+    <form class="formStyle" (submit)="createBlog()">
+      <label class="columnSyle imageDesign">
+        <img [src]="selectedFile ? selectedFile : '#' " alt=" " class="preview-image">
+        <div class="imageElement">
+          <svg class="imageIcon" width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm11 9l-3-3-6 6h16l-5-5-2 2zm4-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+          </svg>
+          <p>Choose Image</p>
+        </div>
+
+        <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
+      </label>
+      <div class="ex">
+        <label class="columnSyle titledomain">
+          <p class="titleText">Title</p>
+          <input class="inputPosition" [(ngModel)]="blog.title" name="title" type="text">
+        </label>
+        <label class="columnSyle categorydomain">
+          <p class="titleText"> </p>
+          <select class="inputPosition ql-toolbar category" [(ngModel)]="blog.category" name="category">
+            <option class="option" value="0">Teknoloji</option>
+            <option class="option" value="1">Bilim</option>
+            <option class="option" value="2">İşletme</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="columnSyle">
+        <p class="titleText">Content</p>
+
+        <jodit-editor name="content" [(ngModel)]="blog.content" [config]="config" style="color: black; border-radius: 20px; box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);"></jodit-editor>
+      </label>
+
+      <div class="buttonDomain">
+        <button class="submitButton" type="submit">Create</button>
+      </div>
+
+    </form>
+
+
 
 </div>

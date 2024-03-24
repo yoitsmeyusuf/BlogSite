@@ -40,13 +40,13 @@ export class BlogService {
         a.append("ImageURL", "asdasd");
         a.append("UserID", "12");
 
-        
+
         return this.http.post(`${this.url}posts/updatethisuser`, a, { headers, observe: 'response', responseType: 'text' });
     }
     checkToken(): Observable<boolean> {
         const token = sessionStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
-        return this.http.get(`${this.url}Auth`, { headers, observe: 'response' }).pipe(
+        return this.http.get(`${this.url}posts/whoami`, { headers, observe: 'response' }).pipe(
             map((response: HttpResponse<Object>) => {
                 // Check the status of the response
                 if (response.status === 200) {
@@ -71,7 +71,7 @@ export class BlogService {
                 title: blog.title,
                 content: blog.content,
                 publishDate: blog.publishDate, // Add the missing property
-                imageURL: blog.imageURL, 
+                imageURL: blog.imageURL,
                 category:blog.category// Add the missing property
             })))
         );
@@ -96,7 +96,7 @@ export class BlogService {
         const headers = { 'Authorization': `Bearer ${token}` };
         return this.http.post(`${this.url}posts/create`, image , { headers, observe: 'response', responseType: 'text' });
     }
-   
+
     //I want to edit spesific blog data
     editBlog(Id: string, title: string, content: string, category: string, imageURL: string): Observable<any> {
         const token = sessionStorage.getItem('token');
@@ -106,7 +106,7 @@ export class BlogService {
         const headers = { 'Authorization': `Bearer ${token}` };
         return this.http.put(`${this.url}posts/update/${Id}`, {title,content,category,imageURL}, { headers, observe: 'response', responseType: 'text' });
     }
-    //make an login function 
+    //make an login function
     login(password: string,username: string): Observable<any> {
         return this.http.post(`${this.url}Auth`, { password,username }, { observe: 'response', responseType: 'text' })
             .pipe(
@@ -114,7 +114,7 @@ export class BlogService {
                     if (response.status === 200) {
                         //jwt token is stored in local storage
                         sessionStorage.setItem('token', response.body);
-                      
+
                     }
                     return response.status;
                 }),
@@ -132,7 +132,7 @@ export class BlogService {
 
         logout() {
         sessionStorage.removeItem('token');
-         
+
         }
         //GET /whoami to get the username
         whoami(): Observable<User | null> {
@@ -141,7 +141,7 @@ export class BlogService {
                 console.error('No token');
             }
             const headers = { 'Authorization': `Bearer ${token}` };
-            return this.http.get<User>(`${this.url}Auth/whoami`, { headers, observe: 'response' }).pipe(
+            return this.http.get<User>(`${this.url}posts/whoami`, { headers, observe: 'response' }).pipe(
                 map((response: HttpResponse<User>) => response.body)
             );
         }

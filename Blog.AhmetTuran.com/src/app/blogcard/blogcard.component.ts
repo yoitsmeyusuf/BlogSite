@@ -34,23 +34,23 @@ export class CardComponent implements OnInit {
       // if category is 0 its string Teknoloji, if its 1 its string Bilim, if its 2 its string işletme, if its 3 its string Diğer
       blogs.forEach((blog: any) => {
         if (blog.category == "0") {
-          blog.category = "0";
+          blog.category = "Teknoloji";
         }
         else if (blog.category == "1") {
-          blog.category = "1";
+          blog.category = "Bilim";
         }
         else if (blog.category == "2") {
-          blog.category = "2";
+          blog.category = "İşletme";
         }
         else if (blog.category == "3") {
-          blog.category = "3";
+          blog.category = "Diğer";
         }
       });
       blogs.forEach((blog: any) => {
         // delete the img tags from the content
         blog.content = blog.content.replace(/<img[^>]*>/g, '');
-        if (blog.content.length > 300) {
-          blog.content = blog.content.substring(0, 300) + "...";
+        if (blog.content.length > 500) {
+          blog.content = blog.content.substring(0, 500) + "...";
         }
       });
       //the times format 2024-02-19T00:00:00.000Z to 2024-02-19

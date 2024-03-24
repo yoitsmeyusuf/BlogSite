@@ -3,6 +3,7 @@
 namespace WebApi.Controllers;
 
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
 using WebApi.Entities;
@@ -26,6 +27,30 @@ public class PostsController : ControllerBase
         _AuthService = AuthService;
     }
 
+
+
+        [HttpGet("whoami")]
+        public async Task<IActionResult> whoami()
+        {
+            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+            if (string.IsNullOrEmpty(token))
+            {
+                return BadRequest();
+            }
+            var handler = new JwtSecurityTokenHandler();
+            if (!handler.CanReadToken(token))
+            {
+                return BadRequest("Invalid token");
+            }
+            Console.WriteLine("asdsad");
+            User? a = await _PostService.GetByUsername(_AuthService.GetUsernameFromToken(token));
+
+            if (a == null)
+            {
+                return Unauthorized();
+            }
+            return Ok(a);
+        }
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {

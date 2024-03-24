@@ -15,7 +15,7 @@ export class NavbarComponent implements AfterViewInit {
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { }
   name!: User;
- 
+
   ngAfterViewInit(): void {
     // URL'den alınan parametrelere göre yönlendirmeyi kontrol edin
     this.blogService.whoami().subscribe((data: any) => {

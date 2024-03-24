@@ -10,13 +10,12 @@ import { CommonModule } from '@angular/common';
   imports: [FormsModule,CommonModule],
   providers: [BlogService],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
 })
 export class HomeComponent {
   blogs: Blog[] = [];
 
-  constructor(private blogService: BlogService) { 
-    
+  constructor(private blogService: BlogService) {
+
   }
 
   ngOnInit(){

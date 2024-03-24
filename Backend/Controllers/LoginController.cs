@@ -1,4 +1,6 @@
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
 using WebApi.Entities;
 using WebApi.Services;
@@ -9,14 +11,14 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {
-    private IAuthServices _AuthService;
-    private IPostService _PostService;
+        private IAuthServices _AuthService;
+        private IPostService _PostService;
 
-    public AuthController(IAuthServices AuthService, IPostService PostService)
-    {
-        _PostService = PostService;
-        _AuthService = AuthService;
-    }
+        public AuthController(IAuthServices AuthService, IPostService PostService)
+        {
+            _PostService = PostService;
+            _AuthService = AuthService;
+        }
         [HttpPost]
         public IActionResult Login([FromBody] LoginRequest request)
         {
@@ -34,28 +36,13 @@ namespace WebApi.Controllers
             else
             {
                 // Password is invalid, send an error response
-         
+
                 return Unauthorized(new { message = "1Invalid password" });
             }
         }
 
-        [HttpGet("whoami")]
-        public async Task<IActionResult> whoami()
-        {
-            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
-            if (token == null)
-            {
-                return Ok();
-            }
-            User? a = await _PostService.GetByUsername(_AuthService.GetUsernameFromToken(token));
-            if (a == null)
-            {
-                return Unauthorized();
-            }
-            return Ok(a);
-        }
 
-         [HttpGet]
+        [HttpGet]
         public IActionResult Check()
         {
             //get bareer token
@@ -64,17 +51,17 @@ namespace WebApi.Controllers
             // Check the password and validate it
             bool? isValidPassword = _AuthService.ValidateToken(token);
 
-            if (isValidPassword==true)
+            if (isValidPassword == true)
             {
                 User a = new User();
-               a.Username = _AuthService.GetUsernameFromToken(token);
+                a.Username = _AuthService.GetUsernameFromToken(token);
                 // Password is valid, send a success response
                 return Ok(
                     new
                     {
                         message = "Password is valid",
                         token = _AuthService.GenerateToken(a),
-                        
+
 
                     }
                 );
@@ -82,13 +69,13 @@ namespace WebApi.Controllers
             else
             {
                 // Password is invalid, send an error response
-         
+
                 return Unauthorized(new { message = "2Invalid password" });
             }
         }
-        
 
-    
+
+
     }
     //Make an jwt token
 
