@@ -30,8 +30,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
 
     this.blogService.getBlogs().subscribe(blogs => {
-      //make blogs content only 80 characters and add ... to the end
-      // if category is 0 its string Teknoloji, if its 1 its string Bilim, if its 2 its string işletme, if its 3 its string Diğer
+   
       blogs.forEach((blog: any) => {
         if (blog.category == "0") {
           blog.category = "Teknoloji";
@@ -46,8 +45,12 @@ export class CardComponent implements OnInit {
           blog.category = "Diğer";
         }
       });
+     
       blogs.forEach((blog: any) => {
-        // delete the img tags from the content
+        console.log(blog);
+        this.blogService.getUser(blog.author).subscribe((data: any) => {
+          blog.author = data.username;
+        });
         blog.content = blog.content.replace(/<img[^>]*>/g, '');
         if (blog.content.length > 500) {
           blog.content = blog.content.substring(0, 500) + "...";

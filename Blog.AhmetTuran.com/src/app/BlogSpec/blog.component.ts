@@ -21,6 +21,7 @@ export class BlogComponent implements OnInit {
   blogsrecent: any = [];
   baslik: any = [];
   public href: string = "";
+  timeSincePublished: string = '';
 
   removeHyphens(text: string): string {
     //make first letter uppercase and replace - with space
@@ -97,7 +98,9 @@ export class BlogComponent implements OnInit {
         this.setupSmoothScroll();
         // get content from blog.content and change all the h1 tags and make them class names same as inner texts
 
-
+        this.blogService.getUser(blog.author).subscribe((data: any) => {
+          blog.author = data.username;
+        });
         blog.content = this.transformContent(blog.content) as string;
 
 
@@ -117,27 +120,39 @@ export class BlogComponent implements OnInit {
 
 
         const months = [
-          "Ocak",
-          "Şubat",
-          "Mart",
-          "Nisan",
-          "Mayıs",
-          "Haziran",
-          "Temmuz",
-          "Ağustos",
-          "Eylül",
-          "Ekim",
-          "Kasım",
-          "Aralık"
-        ];
+    "Ocak",
+    "Şubat",
+    "Mart",
+    "Nisan",
+    "Mayıs",
+    "Haziran",
+    "Temmuz",
+    "Ağustos",
+    "Eylül",
+    "Ekim",
+    "Kasım",
+    "Aralık"
+];
 
-        // Blogları döngüyle işle ve her birinin yayın tarihini güncelle
+const [year, month, day] = blog.publishDate.split("T")[0].split("-");
 
-        // Yayın tarihini "T" karakterine göre ayır ve yıl, ay ve gün kısımlarını al
-        const [year, month, day] = blog.publishDate.split("T")[0].split("-");
+// Ayı sayıdan isme dönüştür
+const monthName = months[parseInt(month) - 1];
 
-        // Ayı sayıdan isme dönüştür ve blog nesnesine kaydet
-        blog.publishDate = `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
+// Yayınlanma tarihi formatını oluştur
+const formattedPublishDate = `${parseInt(day)} ${monthName} ${year}`;
+
+// Ek olarak, gün ve saat geçişini hesapla
+const publishedDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+const currentDate = new Date();
+const timeDifference = currentDate.getTime() - publishedDate.getTime();
+const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+// Blog nesnesine tarihleri güncelle
+blog.publishDate = formattedPublishDate;
+this.timeSincePublished = `${daysDifference} gün ${hoursDifference} saat önce`;
+
 
         this.blogs = blog;
       });

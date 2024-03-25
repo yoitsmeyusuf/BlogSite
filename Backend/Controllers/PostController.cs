@@ -55,8 +55,12 @@ public class PostsController : ControllerBase
     public async Task<IActionResult> GetAll()
     {
         var Posts = await _PostService.GetAll();
+      
         return Ok(Posts);
     }
+   
+    //GET user by ID
+    
 
     [HttpGet("category/{category}")]
     public async Task<IActionResult> GetByCategory(string category)
@@ -65,14 +69,19 @@ public class PostsController : ControllerBase
         return Ok(Posts);
     }    
  
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    [HttpGet("User/{id}")]
+    public async Task<IActionResult> GetUserById(int id)
     {
-     
+        var Post = await _PostService.GetUserById(id);
+        return Ok(Post);
+    }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GeById(int id)
+    {
         var Post = await _PostService.GetById(id);
         return Ok(Post);
     }
-//update user
+
 
    
 [HttpPost("create")]
@@ -131,12 +140,13 @@ public async Task<IActionResult> Upload([FromBody] UploadModel uploadModel)
 }
 
 [HttpPost("UpdatethisUser")]
-public async Task<IActionResult> UpdatethisUser([FromForm]User a)
+public async Task<IActionResult> UpdatethisUser([FromForm]string username,[FromForm]
+string password)
 {
     var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
     string usernameold =  _AuthService.GetUsernameFromToken(token);
     
-    await _PostService.Updatea(usernameold,a.Username,a.Password);
+    await _PostService.Updatea(usernameold,username,password);
     return Ok(new { message = "User updated" });
 }
 

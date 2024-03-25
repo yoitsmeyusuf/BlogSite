@@ -71,7 +71,9 @@ public class DataContext
                     UserID INT PRIMARY KEY AUTO_INCREMENT,
                     Username VARCHAR(255) NOT NULL,
                     Password VARCHAR(255) NOT NULL,
-                    ImageURL VARCHAR(255)
+                    ImageURL VARCHAR(255),
+                    AuthorID INT,
+                    FOREIGN KEY (AuthorID) REFERENCES Users(UserID)
                 );";
             await connection.ExecuteAsync(sql);
         }

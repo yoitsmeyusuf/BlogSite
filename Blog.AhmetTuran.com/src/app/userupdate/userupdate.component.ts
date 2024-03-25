@@ -14,6 +14,10 @@ export class UserupdateComponent {
   constructor(private blogService: BlogService) {
 
   }
+  inputType: string = 'password';
+  toggleInputType() {
+    this.inputType = this.inputType === 'password' ? 'text' : 'password';
+  }
   user : User ={
     userID: '',
     username: '',
@@ -54,7 +58,10 @@ export class UserupdateComponent {
   updateUser() {
     this.blogService.Userupdate(this.user.username, this.user.password)
       .subscribe(response => {
-
+        console.log(this.user.password);
+        console.log(this.user.username);
+      
+console.log(response);
 
       }, error => {
         // Handle error here

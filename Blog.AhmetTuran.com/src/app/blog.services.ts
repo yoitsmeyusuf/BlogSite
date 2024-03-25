@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
+import { validate } from 'uuid';
 
 export interface Blog {
     postID: string;
@@ -11,6 +12,7 @@ export interface Blog {
     category: string;
     publishDate: string;
     imageURL: string;
+    author: string;
 }
 export interface User{
     userID : string;
@@ -33,15 +35,11 @@ export class BlogService {
             console.error('No token');
         }
         const headers = { 'Authorization': `Bearer ${token}` };
-        var a = new FormData();
-        a.append("Username", username);
-        console.log(username);
-        a.append("Password", password);
-        a.append("ImageURL", "asdasd");
-        a.append("UserID", "12");
+        var formData = new FormData();
+        formData.append("username", username);
+        formData.append("password", password);
 
-
-        return this.http.post(`${this.url}posts/updatethisuser`, a, { headers, observe: 'response', responseType: 'text' });
+        return this.http.post(`${this.url}posts/updatethisuser`, formData, { headers, observe: 'response', responseType: 'text' });
     }
     checkToken(): Observable<boolean> {
         const token = sessionStorage.getItem('token');
@@ -63,7 +61,10 @@ export class BlogService {
             })
         );
     }
-
+//get user by id
+    getUser(Id: string): Observable<User> {
+        return this.http.get<User>(`${this.url}posts/user/${Id}`);
+    }
     getBlogs(): Observable<Blog[]> {
         return this.http.get<Blog[]>(this.url+"posts").pipe(
             map(blogs => blogs.map(blog => ({
@@ -72,7 +73,8 @@ export class BlogService {
                 content: blog.content,
                 publishDate: blog.publishDate, // Add the missing property
                 imageURL: blog.imageURL,
-                category:blog.category// Add the missing property
+                category:blog.category,
+                author:blog.author// Add the missing property
             })))
         );
     }

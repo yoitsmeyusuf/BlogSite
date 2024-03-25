@@ -15,6 +15,7 @@ public interface IPostRepository
     Task Delete(int id);
     
     Task<User> GetByUsername(string username);
+    Task<User> GetUserById(int id);
     Task Create(User user);
       Task Update(string usernameold,string username,string password);
     Task Deleteu(int id);
@@ -74,7 +75,7 @@ public class PostRepository : IPostRepository
     {
         using var connection = _context.CreateConnection();
         var sql = """
-           INSERT INTO Posts (Title, Content, PublishDate, ImageURL,Category) VALUES (@Title, @Content, @PublishDate, @ImageURL,@Category)
+           INSERT INTO Posts (Title, Content, PublishDate, ImageURL,Category,Author) VALUES (@Title, @Content, @PublishDate, @ImageURL,@Category,@Author)
         """;
         await connection.ExecuteAsync(sql, Post);
     }
@@ -114,6 +115,16 @@ public class PostRepository : IPostRepository
             WHERE Username = @username
         """;
         return await connection.QuerySingleOrDefaultAsync<User>(sql, new { username });
+    }
+
+    public async Task<User> GetUserById(int id)
+    {
+        using var connection = _context.CreateConnection();
+        var sql = @"
+            SELECT * FROM Users 
+            WHERE UserID = @id
+        ";
+        return await connection.QuerySingleOrDefaultAsync<User>(sql, new { id });
     }
 
     public async Task Create(User user)

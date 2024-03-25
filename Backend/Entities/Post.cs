@@ -10,6 +10,7 @@ public class Post
     public string Content { get; set; }
     public string Category { get; set; }
     public DateTime PublishDate { get; set; } = DateTime.Now;
+    public int Author { get; set; }
     public string ImageURL { get; set; }= "https://via.placeholder.com/150";
 }
 
@@ -17,6 +18,7 @@ public class Post
 public class User
 {
     public int UserID { get; set; }
+  
     public string Username { get; set; }
     public string Password { get; set; }
 

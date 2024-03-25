@@ -8,25 +8,27 @@ $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
-.username_div{
+.username_div {
   display: flex;
   justify-content: space-between;
 }
 
-.admin_badge{
+.admin_badge {
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background: linear-gradient(90deg, rgba(97,154,255,1) 0%, rgba(36,115,255,1) 64%, rgba(0,93,255,1) 100%);
+  background: linear-gradient(90deg, rgba(97, 154, 255, 1) 0%, rgba(36, 115, 255, 1) 64%, rgba(0, 93, 255, 1) 100%);
   position: relative;
   left: 5px;
-  svg{
+
+  svg {
     fill: #ffffff;
     position: relative;
     top: 6px;
     left: 3.3px;
   }
-  .svg2{
+
+  .svg2 {
     fill: #ffffff;
     position: relative;
     top: 4.7px;
@@ -34,14 +36,15 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   }
 }
 
-.writer_badge{
+.writer_badge {
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background: linear-gradient(90deg, rgba(97,154,255,1) 0%, rgba(36,115,255,1) 64%, rgba(0,93,255,1) 100%);
+  background: linear-gradient(90deg, rgba(97, 154, 255, 1) 0%, rgba(36, 115, 255, 1) 64%, rgba(0, 93, 255, 1) 100%);
   position: relative;
   left: 10px;
-  svg{
+
+  svg {
     fill: #ffffff;
     position: relative;
     top: 4.7px;
@@ -50,7 +53,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 }
 
-.makale{
+.makale {
   display: flex;
   height: 30px;
   margin-left: 15px;
@@ -58,25 +61,25 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   bottom: 5px;
 }
 
-.makale_text{
+.makale_text {
   color: #002fff;
   margin-right: 5px;
   font-weight: 600;
   font-size: 'Red Hat Display', sans-serif;
 }
 
-.makale_category{
+.makale_category {
   color: #18151f;
   font-size: 'Red Hat Display', sans-serif;
 }
 
-.page{
+.page {
   display: flex;
   margin-top: 100px;
 
 }
 
-.search{
+.search {
   border: none;
   height: 35px;
   width: 70%;
@@ -87,7 +90,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   transition: 0.3s ease;
 }
 
-.secenekler{
+.secenekler {
   width: 20%;
   position: fixed;
   left: 30px;
@@ -97,25 +100,26 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 }
 
 .search-icon {
-    position: absolute;
-    top: 0.6rem;
-    left: 0.8rem;
-    fill: none;
-    width: 1rem;
-    height: 1rem;
-    color: #777777;
+  position: absolute;
+  top: 0.6rem;
+  left: 0.8rem;
+  fill: none;
+  width: 1rem;
+  height: 1rem;
+  color: #777777;
 }
 
-.search:focus{
+.search:focus {
   outline: none;
   border-color: rgb(60, 79, 255);
   box-shadow: 0 0 0 2px rgba(10, 35, 255, 0.822);
 }
 
-.lorem{
-  &:hover{
+.lorem {
+  &:hover {
     background-color: #0000001e;
   }
+
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -123,13 +127,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   height: 5%;
   width: 75%;
 
-  .lorem_text{
+  .lorem_text {
     color: #18151f;
     margin-left: 5px;
   }
 }
 
-.gundem{
+.gundem {
   width: 20%;
   position: fixed;
   right: 30px;
@@ -139,13 +143,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   line-height: 7px;
 }
 
-.gundem_text{
+.gundem_text {
   color: #18151f;
   font-weight: 600;
   font-family: 'Red Hat Display', sans-serif;
 }
 
-.gundemler{
+.gundemler {
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
@@ -154,20 +158,20 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   cursor: pointer;
 }
 
-.gundemler:hover{
+.gundemler:hover {
   background-color: rgba(128, 128, 128, 0.205);
   transition: 0.3s ease;
 }
 
-.gundemler_text{
+.gundemler_text {
   color: #232323;
 }
 
-.gundemler_adet{
+.gundemler_adet {
   color: #30303090;
 }
 
-.category{
+.category {
   align-self: flex-end;
   margin: 20px 0 0 0;
   padding: 0;
@@ -181,7 +185,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   background-image: linear-gradient(to right, #ff0000, #ff9595);
 }
 
-.category svg{
+.category svg {
   margin: auto;
   font-size: 15px;
   text-align: center;
@@ -190,7 +194,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 }
 
-.category p{
+.category p {
   margin: auto;
   font-size: 15px;
   text-align: center;
@@ -199,9 +203,9 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   right: 5px;
 }
 
-.user{
+.user {
   margin: 10px;
-  margin-bottom: 0px;
+  margin-bottom: -10px;
   left: 5px;
   position: relative;
   top: 0px;
@@ -210,28 +214,28 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   justify-content: space-between;
 }
 
-.user_image{
+.user_image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 15px;
 }
 
-.user_text{
+.user_text {
   position: relative;
   top: 3px;
   line-height: 0px;
   right: 5px;
 }
 
-.editor{
+.editor {
   color: #24242494;
   font-size: 15px;
   position: relative;
   bottom: 23px;
 }
 
-.user_name{
+.user_name {
   color: #232323;
   position: relative;
   bottom: 10px;
@@ -254,18 +258,9 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   color: #ffffff;
 
-  &:nth-child(2n+1) .tag__item {
+  &:nth-child(2n+1) .tag__item {}
 
-
-
-
-  }
-
-  &:nth-child(2n+0) .tag__item {
-
-
-
-  }
+  &:nth-child(2n+0) .tag__item {}
 
   &:nth-child(2n+1) .date_text {
     color: #0000004e;
@@ -274,6 +269,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     left: auto;
     bottom: 30px;
     position: relative;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 5px;
+      fill: #0000004e;
+    }
   }
 
   &:nth-child(2n+0) .date_text {
@@ -283,6 +285,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     font-size: 13px;
     right: 20px;
     right: auto;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 5px;
+      fill: #0000004e;
+    }
   }
 
   &.dark {
@@ -347,6 +356,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     font-size: 12px;
     color: #0000007d;
     bottom: 45px;
+    margin-bottom: -100px;
 
   }
 
@@ -437,4 +447,3 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     }
   }
 }
-

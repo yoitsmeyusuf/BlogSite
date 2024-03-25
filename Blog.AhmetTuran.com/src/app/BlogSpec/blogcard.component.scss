@@ -188,31 +188,41 @@ html {
   }
 
   .tag__item {
-    float: right;
+    float: left;
     position: relative;
     border-radius: 3px;
     display: flex;
     padding: 2.5px 10px;
+    margin-left: 5px;
     cursor: default;
     user-select: none;
     transition: background-color 0.3s;
     color: white;
-    background-color: #bd140ba1;
+    background-color: #0b34bda1;
 
-    &:hover {
-      background: #950700a1;
-    }
   }
 
   .postcard__subtitle {
     width: 130px;
     position: relative;
     bottom: 30px;
+    
   }
 
-  .date_text {
+  .date_domain {
+    display: flex;
+    width: 200%;
+    align-items: center;
+    svg {
+      margin-right: 2px;
+      fill: #0000006f;
+    }
+  }
+  .date_text{
     position: relative;
-    top: 3px;
+    color: #0000006f;
+    width: 150%;
+  
   }
 
 

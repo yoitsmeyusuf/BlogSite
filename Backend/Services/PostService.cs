@@ -16,6 +16,12 @@ public interface  IPostService
     Task Delete(int id);
     Task<Post> GetByCategory(string category);
     Task<User> GetByUsername(string username);
+
+    Task<User> GetUserById(int id);
+    // user get by id
+    Task Create(User user);
+    Task Deleteu(int id);
+
      Task Updatea(string usernameold,string username, string password);
 }
 
@@ -127,6 +133,15 @@ public class PostService : IPostService
     public async Task Deleteu(int id)
     {
         await _PostRepository.Deleteu(id);
+    }
+    
+
+  //user get by id
+    public async Task<User> GetUserById(int id)
+    {
+        var user = await _PostRepository.GetUserById(id);
+        if (user == null) throw new KeyNotFoundException("User not found");
+        return user;
     }
 
 }
