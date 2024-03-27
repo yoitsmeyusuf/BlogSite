@@ -111,8 +111,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .search:focus {
   outline: none;
-  border-color: rgb(60, 79, 255);
-  box-shadow: 0 0 0 2px rgba(10, 35, 255, 0.822);
 }
 
 .lorem {
@@ -128,7 +126,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   width: 75%;
 
   .lorem_text {
-    color: #18151f;
+    color: #000000a7;
     margin-left: 5px;
   }
 }
@@ -141,10 +139,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   height: 100%;
   z-index: 100;
   line-height: 7px;
+  color: #18151f;
 }
 
 .gundem_text {
-  color: #18151f;
+
   font-weight: 600;
   font-family: 'Red Hat Display', sans-serif;
 }
@@ -156,10 +155,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   padding-right: 10px;
   border-radius: 7px;
   cursor: pointer;
+  color: #303030bb;
 }
 
 .gundemler:hover {
-  background-color: rgba(128, 128, 128, 0.205);
+  background-color: rgba(128, 128, 128, 0.086);
   transition: 0.3s ease;
 }
 
@@ -246,13 +246,12 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 .postcard {
   flex-wrap: wrap;
   width: 60%;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  box-shadow: 0 5px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
-  border: #42424231 1px solid;
-  height: 100%;
+
   //I want to make them centered
 
 
@@ -329,7 +328,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   }
 
   .postcard__img {
-    max-height: 120px;
+    max-height: 10px;
     width: 100%;
     object-fit: fill;
     position: relative;
@@ -396,7 +395,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     }
 
     .postcard__img {
-      max-height: 100%;
+      max-height: 60%;
       transition: transform 0.3s ease;
     }
 

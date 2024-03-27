@@ -1,5 +1,6 @@
 namespace WebApi.Entities;
 
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 
@@ -12,6 +13,14 @@ public class Post
     public DateTime PublishDate { get; set; } = DateTime.Now;
     public int Author { get; set; }
     public string ImageURL { get; set; }= "https://via.placeholder.com/150";
+    
+    public string Tags { get; set; } = "";
+    [NotMapped]    
+    public List<string> TagsList
+    {
+        get { return Tags.Split(',').ToList(); }
+        set { Tags = String.Join(",", value); }
+    }
 }
 
 

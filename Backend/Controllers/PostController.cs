@@ -68,6 +68,21 @@ public class PostsController : ControllerBase
         var Posts = await _PostService.GetByCategory(category);
         return Ok(Posts);
     }    
+
+    [HttpGet("tags/{tag}")]
+public async Task<IActionResult> GetByTags(string tag)
+{
+    var posts = await _PostService.GetByTags(tag);
+    return Ok(posts);
+}
+
+
+[HttpGet("tags")]
+public async Task<IActionResult> GetAllTags()
+{
+    var tags = await _PostService.GetAllTags();
+    return Ok(tags);
+}
  
     [HttpGet("User/{id}")]
     public async Task<IActionResult> GetUserById(int id)
@@ -88,19 +103,30 @@ public class PostsController : ControllerBase
 public async Task<IActionResult> Create([FromForm]CreateRequest model)
 {
  
-  var imageData = model.Images; // Assuming model has image data property
-  if(model.ImageURL != null)
-  {
+var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+if (string.IsNullOrEmpty(token))
+{
+    return BadRequest();    
+}
+User? a = await _PostService.GetByUsername(_AuthService.GetUsernameFromToken(token));
+  var imageData = model.Images; 
+
+model.Author = a.UserID.ToString();
+Console.WriteLine(model);
+if (model.ImageURL != null)
+{
     string isim = System.Guid.NewGuid().ToString();
     byte[] imageBytes = Convert.FromBase64String(model.ImageURL);
-    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images",isim+".jpg");
+    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", isim + ".jpg");
     await System.IO.File.WriteAllBytesAsync(path, imageBytes);
-    model.ImageURL = Path.Combine("http://localhost:4000","images",isim+".jpg");
-    
-  }
+    model.ImageURL = Path.Combine("http://localhost:4000", "images", isim + ".jpg");
+}
 
 
-
+    if (a == null)
+    {
+        return Unauthorized();
+    }
   await _PostService.Create(model);
 
   // Save images if present
@@ -186,6 +212,7 @@ public async Task<IActionResult> UploadProfile([FromForm]UploadModel uploadModel
     [HttpDelete("delete/{id}")]
     public async Task<IActionResult> Delete(int id)
     {
+        Console.WriteLine("babalar sözünü tutar");
         await _PostService.Delete(id);
         return Ok(new { message = "Post deleted" });
     }

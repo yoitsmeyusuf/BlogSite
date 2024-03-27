@@ -13,6 +13,7 @@ export interface Blog {
     publishDate: string;
     imageURL: string;
     author: string;
+    tags: string;
 }
 export interface User{
     userID : string;
@@ -74,10 +75,26 @@ export class BlogService {
                 publishDate: blog.publishDate, // Add the missing property
                 imageURL: blog.imageURL,
                 category:blog.category,
-                author:blog.author// Add the missing property
+                author:blog.author,
+                tags:blog.tags// Add the missing property
             })))
         );
     }
+    getBlogsByTag(tag: string): Observable<Blog[]> {
+        return this.http.get<Blog[]>(`${this.url}posts/tags/${tag}`);
+    }
+    
+    getAllTags(): Observable<string[]> {
+        return this.http.get<string[]>(`${this.url}posts/tags`);
+    }
+    // Get this.url/posts/tags
+    getBlogsByCategory(category: string): Observable<Blog[]> {
+        return this.http.get<Blog[]>(`${this.url}posts/category/${category}`);
+    }
+    getPostsBytags(name: string): Observable<string[]> {
+        return this.http.get<string[]>(`${this.url}posts/tags/${name}`);
+    }
+
 
     getBlog(Id: string): Observable<Blog> {
         return this.http.get<Blog>(`${this.url}posts/${Id}`);

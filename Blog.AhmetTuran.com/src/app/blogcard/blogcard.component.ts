@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TopblogsComponent } from "../topblogs/topblogs.component";
+import { FormsModule } from '@angular/forms';
 import { BlogService, User } from '../blog.services';
+import { KeyValue } from '@angular/common';
 
 @Component({
     standalone: true,
@@ -10,13 +12,14 @@ import { BlogService, User } from '../blog.services';
     templateUrl: 'blogcard.component.html',
     providers: [],
     styleUrls: ['./blogcard.component.scss'],
-    imports: [CommonModule, RouterModule, TopblogsComponent]
+    imports: [CommonModule, RouterModule, TopblogsComponent,FormsModule]
 })
 export class CardComponent implements OnInit {
   blogs: any = [];
   blogsrecent: any = [];
-  daysAgo: number[] = []; // Yayınlanalı kaç gün geçtiğini tutacak dizi
-
+  daysAgo: number[] = [];
+  alltags: any = []; // Yayınlanalı kaç gün geçtiğini tutacak dizi
+  tagcounts: any = [];
   constructor(private blogService: BlogService) { }
 
   name!: User;
@@ -26,10 +29,35 @@ export class CardComponent implements OnInit {
       return this.name = data;
     });
   }
-
+  
+  tagValueComparator = (a: KeyValue<string, number>, b: KeyValue<string, number>): number => {
+    return b.value - a.value;
+  }
   ngOnInit(): void {
 
+     // use blogservice.getalltags func
+     
+
+    
+
     this.blogService.getBlogs().subscribe(blogs => {
+
+      this.blogService.getAllTags().subscribe(tags => {
+        this.alltags = tags;
+        console.log(this.alltags);
+  
+        let tagCounts: { [tag: string]: number } = {};
+  
+        this.alltags.forEach((tag: string) => {
+          let count = blogs.filter(blog => blog.tags.includes(tag)).length;
+          tagCounts[tag] = count;
+        });
+  
+        this.tagcounts = tagCounts;
+      });
+      
+
+    
    
       blogs.forEach((blog: any) => {
         if (blog.category == "0") {
@@ -45,6 +73,8 @@ export class CardComponent implements OnInit {
           blog.category = "Diğer";
         }
       });
+
+      
      
       blogs.forEach((blog: any) => {
         console.log(blog);

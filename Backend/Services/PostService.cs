@@ -23,6 +23,8 @@ public interface  IPostService
     Task Deleteu(int id);
 
      Task Updatea(string usernameold,string username, string password);
+     Task<IEnumerable<Post>> GetByTags(string tag);
+     Task<IEnumerable<string>> GetAllTags();
 }
 
 public class PostService : IPostService
@@ -66,11 +68,37 @@ public class PostService : IPostService
 
         return Post;
     }
+public async Task<IEnumerable<Post>> GetByTags(string tag)
+{
+    // get all posts
+    var posts = await _PostRepository.GetAll();
 
+    // filter posts by tag
+    var postsWithTag = posts.Where(p => p.Tags.Split(',').Contains(tag));
+
+    return postsWithTag;
+}
+
+public async Task<IEnumerable<string>> GetAllTags()
+{
+    // get all posts
+    var posts = await _PostRepository.GetAll();
+
+    // get all tags
+    var allTags = posts.SelectMany(p => p.Tags.Split(','));
+
+  Console.WriteLine(allTags.ToString());
+    var uniqueTags = allTags.Distinct();
+
+    return uniqueTags;
+}
+
+
+  
     public async Task Create(CreateRequest model)
     {
         // validate
-       
+    
 
         // map model to new Post object
         var Post = _mapper.Map<Post>(model);

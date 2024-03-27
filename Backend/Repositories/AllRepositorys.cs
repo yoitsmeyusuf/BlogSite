@@ -75,7 +75,7 @@ public class PostRepository : IPostRepository
     {
         using var connection = _context.CreateConnection();
         var sql = """
-           INSERT INTO Posts (Title, Content, PublishDate, ImageURL,Category,Author) VALUES (@Title, @Content, @PublishDate, @ImageURL,@Category,@Author)
+           INSERT INTO Posts (Title, Content, PublishDate, ImageURL,Category,Author,Tags) VALUES (@Title, @Content, @PublishDate, @ImageURL,@Category,@Author,@Tags)
         """;
         await connection.ExecuteAsync(sql, Post);
     }
@@ -89,7 +89,9 @@ public class PostRepository : IPostRepository
             SET Title = @Title,
             Category = @Category,
             Content = @Content,
-            ImageURL = @ImageURL 
+            ImageURL = @ImageURL,
+            Author = @Author,
+            Tags = @Tags
             WHERE PostID = @PostID
         """;
 
@@ -159,6 +161,10 @@ public class PostRepository : IPostRepository
         """;
         await connection.ExecuteAsync(sql, new { id });
     }
+
+
+
+
 
     
 }

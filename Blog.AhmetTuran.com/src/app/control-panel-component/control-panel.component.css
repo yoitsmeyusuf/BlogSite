@@ -1,40 +1,90 @@
+.tagislem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 94.5vw; /* Add this line */
+  height: 50px;
+  position: relative;
+  margin-top: 20px;
+  overflow-x: auto; /* Add this line */
+  white-space: nowrap; /* Add this line */
+  input{
+    width: 70px;
+    height: 50px;
+    border: none;
+    padding: 0 20px;
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  button{
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(0, 89, 255);
+    color: #f9f9f9;
+    cursor: pointer;
+    margin-right: 10px;
+    p{
+      &::before{
+        content: "#";
+      }
+    }
+  }
+}
 
-
-.formStyle{
-    display: flex;
-    flex-direction: column;
+.formStyle {
+  display: flex;
+  flex-direction: column;
 }
 
 
-.columnSyle{
-    display: flex;
-    flex-direction: column;
-    line-height: 30px;
+.columnSyle {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
 }
 
-.control-panel{
+.control-panel {
   padding-left: 50px;
   padding-right: 50px;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.category{
+.category {
   position: relative;
-  top: 15px;
   background-color: #ffffff;
 }
 
-.inputPosition{
-    position: relative;
-    bottom: 15px;
-    height: 50px;
-    border: none;
-    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1); /* Renksiz gölge oluşturur */
-    border-radius: 10px;
+.inputPosition {
+  position: relative;
+  bottom: 15px;
+  height: 70px;
+  border: none;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+  /* Renksiz gölge oluşturur */
+  border-radius: 10px;
+  padding-left: 20px;
+  transition: .3s ease;
+  font-size: 18px;
+
+  &::placeholder {
+    color: #000000;
+    font-size: 18px;
+  }
 }
 
-.titledomain{
+input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(76, 105, 234, 0.772);
+  background-color: #fff;
+  box-shadow: 0 0 0 2.5px rgba(76, 87, 234, 0.724);
+}
+
+.titledomain {
   width: 95%;
   margin-right: 10px;
 
@@ -49,27 +99,28 @@
   color: #333;
 }
 
-.submitButton{
+.submitButton {
   cursor: pointer;
   height: 50px;
-  width: 200px;
+  width: 100%;
   border: none;
   border-radius: 10px;
   background-color: rgb(0, 89, 255);
   margin-bottom: 20px;
   color: #f9f9f9;
-  &:hover{
+
+  &:hover {
     background-color: rgb(0, 79, 226);
     transition: 0.3s ease;
   }
 }
 
-:root {
-  --jd-color-border: #ffffff;
-  --jd-color-panel: #f8f8f8;
-  }
+.customeditor {
+  border: none;
 
-.buttonDomain{
+}
+
+.buttonDomain {
   height: 20%;
   display: flex;
   justify-content: center;
@@ -77,16 +128,23 @@
   position: relative;
   top: 20px;
 }
+
 /* Açılır menüdeki seçeneklerin stilini ayarlamak için */
 
 
-.titleText{
+.titleText {
   color: #161616;
   font-size: 25px;
 }
 
-.ex{
+.ex {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  position: relative;
+  margin-top: 35px;
 }
 
 .imageDesign {
@@ -99,20 +157,31 @@
   padding: 0px;
   border-radius: 10px;
   background-color: #f9f9f9;
-  height: 300px;
+  height: 500px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+    transition: 0.3s ease;
+  }
 }
-.imageDesign input{
+
+.imageDesign input {
   display: none;
 }
 
-.preview-image{
+:root {
+  --jd-color-border: #ffffff00;
+}
+
+.preview-image {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   opacity: 0.2;
 }
 
-.imageElement{
+.imageElement {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -122,21 +191,23 @@
 }
 
 
-.imageElement p{
-  color: rgba(0, 0, 0, 0.123);;
+.imageElement p {
+  color: rgba(0, 0, 0, 0.123);
+  ;
 }
 
-.imageDesign .imageIcon{
+.imageDesign .imageIcon {
   fill: rgba(0, 0, 0, 0.123);
 }
 
 /* İsteğe Bağlı Olarak Ekstra Stil Ekleyebilirsiniz */
 .imageDesign:focus {
-  outline: none; /* Seçildiğinde kenarlığı kaldırır */
+  outline: none;
+  /* Seçildiğinde kenarlığı kaldırır */
 }
 
 .columnSyle input[type="file"]::-webkit-file-upload-button {
   display: none;
 }
-/* quill-editor */
 
+/* quill-editor */

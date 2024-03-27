@@ -20,8 +20,12 @@ public class CreateRequest
      public DateTime PublishDate { get; set; } = DateTime.Now;
     [Required]
     public string ImageURL { get; set; }
+
+    public string Author { get; set; }
      public string[] Images { get; set; }
     public string[] Names { get; set; }
+    public  List<string> TagsList { get; set; }
+ 
 }
 
 

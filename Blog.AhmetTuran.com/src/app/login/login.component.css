@@ -6,43 +6,60 @@
     height: 100%;
     position: relative;
     top: 100px;
+}
+
+.islemler{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    transition: .3s ease;
     
 }
 
-.loginDomain{
-    position: relative;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #1d1d1d;
-    width: 300px;
-    height: 400px;
-    border-radius: 30px;
+h2{
+    color: black;
 }
 
-.loginText{
-    position: relative;
-    bottom: 50px;
-    font-size: 40px;
-    font-family: fantasy;
-    text-transform: uppercase;
-}
-
-.input {
-    background-color: #292929;
-    border: 1px solid #3e3e3e;
-    border-radius: 8px;
-    color: #fff;
-    padding: 14px 24px;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 12px 14px;
+.submit_button{
+    background-color: #2353ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-  }
+}
+
+.remember_div{
+    color: black;
+    font-size: 12px;
+    input{
+        border: none;
+    }
+}
+
+
+
   
-  .input:hover {
-    border: 1px solid #fff;
+  .password-toggle-icon {
+    position: absolute;
+    right: 40.5%;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    opacity: 0.5;
   }
-  
+
+  input:focus, input:hover {
+    outline: none;
+    border-color: rgba(76, 105, 234, 0.772);
+    background-color: #fff;
+    box-shadow: 0 0 0 2.5px rgba(76, 87, 234, 0.724);
+   }

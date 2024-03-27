@@ -1,12 +1,19 @@
-<body style="display: flex;">
+<div style="display: flex;">
+  <button class="delete" [style.display]="name ? 'block' : 'none'" (click)="deleteBlog(this.id)">Delete this blog</button>
   <div class="headers">
-    <a class="headers_container_domain" *ngFor="let basliks of baslik" href="{{href}}#{{basliks}}">
+
+    <a class="headers_container_domain" *ngFor="let basliks of baslik" href="{{href}}#{{basliks}}"
+      (click)="setActiveLink(basliks)" [class.active]="activeLink === basliks">
       <div class="headers_container">
         <p>{{removeHyphens(basliks)}}</p>
+
       </div>
     </a>
+    
   </div>
+
   <article class="postcard dark blue">
+
 
     <a class="postcard__img_link" href="#">
       <img class="postcard__img" [src]="blogs.imageURL" alt="Image Title" />
@@ -25,12 +32,19 @@
         </div>
 
       </div>
+      <div class="tagDomain">
+        <div class="tagbox" *ngFor="let tag of alltags">
+          <p>{{tag}}</p>
+        </div>
+      </div>
+      
       <div class="editor">
         <img class="editor_image" src="http://localhost:4000/images/Profile.jpg" alt="">
         <div class="editor_info">
           <p class="editor_name">
             {{blogs.author}}
           </p>
+
           <p>Yazar</p>
         </div>
       </div>
@@ -44,4 +58,4 @@
 
   <app-latestblogs class="latestblogs"></app-latestblogs>
 
-</body>
+</div>

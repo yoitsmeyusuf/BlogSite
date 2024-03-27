@@ -2,6 +2,9 @@ body {
     background: linear-gradient(to right bottom, rgb(0, 33, 218), #0055ff, #0d214b, #091a3f);
     height: 3500px;
 }
+ html{
+    width: 99.5%;
+ }
 
 .blue_tag {
     background: linear-gradient(to right, #1f41ff 20%, #637dff 50%, #1d52ff 100%);
