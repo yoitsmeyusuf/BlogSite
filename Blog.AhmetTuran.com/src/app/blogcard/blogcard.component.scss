@@ -7,6 +7,21 @@ $main-red: #bd150b !default;
 $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+.viewing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 20px;
+    height: 20px;
+  }
+  p{
+    font-size: 15px;
+    color: #18151f59;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+}
 .divider {
   width: 100%;
   height: 1px;
@@ -223,7 +238,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 .gundem {
   width: 15%;
   position: fixed;
-  right: 62px;
+  right: 70px;
 
   height: 100%;
   z-index: 100;
