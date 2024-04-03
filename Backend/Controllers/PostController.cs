@@ -94,6 +94,7 @@ public async Task<IActionResult> GetAllTags()
     public async Task<IActionResult> GeById(int id)
     {
         var Post = await _PostService.GetById(id);
+
         return Ok(Post);
     }
 
@@ -109,8 +110,7 @@ if (string.IsNullOrEmpty(token))
     return BadRequest();    
 }
 User? a = await _PostService.GetByUsername(_AuthService.GetUsernameFromToken(token));
-  var imageData = model.Images; 
-
+var imageData = model.Images; 
 model.Author = a.UserID.ToString();
 Console.WriteLine(model);
 if (model.ImageURL != null)

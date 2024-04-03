@@ -3,7 +3,7 @@
   <div class="secenekler">
     <div class="search_div">
       <i class="fa fa-search search-icon"></i>
-      <input class="search" type="text" placeholder="Ara...">
+      <input [(ngModel)]="searchTerm" class="search" type="text" placeholder="Ara..." (change)="filterBlogs()">
     </div>
     <a href="#" class="lorem">
       <svg style="margin-left: 10px; position: relative; bottom: 1px;" width="14px" height="14px" viewBox="0 0 34 34"
@@ -222,7 +222,7 @@
               <img
                 src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!--%20License%3A%20MIT.%20Made%20by%20Microsoft%3A%20https%3A%2F%2Fgithub.com%2Fmicrosoft%2Fvscode-codicons%20--%3E%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%2318151f59%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M1%2010c0-3.9%203.1-7%207-7s7%203.1%207%207h-1c0-3.3-2.7-6-6-6s-6%202.7-6%206H1zm4%200c0-1.7%201.3-3%203-3s3%201.3%203%203-1.3%203-3%203-3-1.3-3-3zm1%200c0%201.1.9%202%202%202s2-.9%202-2-.9-2-2-2-2%20.9-2%202z%22%2F%3E%3C%2Fsvg%3E"
                 alt="">
-              <p class="viewing_number">{{blog?.viewCount}}0</p>
+              <p class="viewing_number">{{blog?.views}}</p>
             </div>
 
           </div>
@@ -253,7 +253,7 @@
     <div class="popularblogs_div">
       <p class="otherblogs_text">Popüler Bloglar</p>
       <div style="margin-top: 20px;">
-        <article class="popularblogs" *ngFor="let blog of blogs">
+        <article class="popularblogs" *ngFor="let blog of blogsrecent">
           <img class="" src="http://localhost:4000/images/Profile.jpg" alt="">
           <div class="popularblogs_info">
 

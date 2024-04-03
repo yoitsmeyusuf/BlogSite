@@ -10,6 +10,8 @@ using WebApi.Repositories;
 public interface  IPostService
 {
     Task<IEnumerable<Post>> GetAll();
+    // add a add view function
+   
     Task<Post> GetById(int id);
     Task Create(CreateRequest model);
     Task Update(int id, UpdateRequest model);
@@ -46,6 +48,8 @@ public class PostService : IPostService
         return await _PostRepository.GetAll();
     }
 
+   //add a view function
+  
     public async Task<Post> GetById(int id)
     {
         var Post = await _PostRepository.GetById(id);
@@ -55,6 +59,8 @@ public class PostService : IPostService
             throw new KeyNotFoundException("Post not found");
 
 
+        Post.Views++;
+        await _PostRepository.Update(Post);
         return Post;
     }
     public async Task<Post> GetByCategory(string category)

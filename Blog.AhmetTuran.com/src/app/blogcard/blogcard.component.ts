@@ -15,16 +15,21 @@ import { LatestblogsComponent } from '../latestblogs/latestblogs.component';
     imports: [CommonModule, RouterModule, TopblogsComponent,FormsModule,LatestblogsComponent]
 }) 
 export class CardComponent implements OnInit {
+  allblogs: any = [];
   blogs: any = [];
   blogsrecent: any = [];
   daysAgo: number[] = [];
   alltags: any = []; // Yayınlanalı kaç gün geçtiğini tutacak dizi
   tagcounts: any = [];
-
+  searchTerm: string = '';
   highestCount: number = 0; // Assign an initial value to 'highestCount'
   constructor(private blogService: BlogService) { }
   
   name!: User;
+
+  filterBlogs(): void {
+    this.blogs = this.allblogs.filter((blog: any ) => blog.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
+  }
   ngAfterViewInit(): void {
     this.blogService.whoami().subscribe((data: any) => {
 
@@ -54,7 +59,7 @@ export class CardComponent implements OnInit {
           let count = blogs.filter(blog => blog.tags.includes(tag)).length;
           tagCounts[tag] = count;
         });
-
+        
         this.tagcounts = tagCounts;
         this.highestCount = Math.max(...Object.values(this.tagcounts) as number[]); // Fix: Cast the values to numbers
       });
@@ -77,7 +82,8 @@ export class CardComponent implements OnInit {
           blog.category = "Diğer";
         }
       });
-
+      // get most viewed 3 blogs
+      this.blogsrecent = blogs.sort((a: any, b: any) => b.views - a.views).slice(0, 3);
       
      
       blogs.forEach((blog: any) => {
@@ -116,8 +122,9 @@ export class CardComponent implements OnInit {
         // Ayı sayıdan isme dönüştür ve blog nesnesine kaydet
         blog.publishDate = `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
       });
-
-      this.blogs = blogs;
+     
+      this.allblogs = blogs;
+      this.filterBlogs();
     });
 
 

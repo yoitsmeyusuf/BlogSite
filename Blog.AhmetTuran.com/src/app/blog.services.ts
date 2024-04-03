@@ -14,6 +14,7 @@ export interface Blog {
     imageURL: string;
     author: string;
     tags: string;
+    views:string;
 }
 export interface User{
     userID : string;
@@ -76,7 +77,8 @@ export class BlogService {
                 imageURL: blog.imageURL,
                 category:blog.category,
                 author:blog.author,
-                tags:blog.tags// Add the missing property
+                tags:blog.tags,
+                views:blog.views// Add the missing property
             })))
         );
     }

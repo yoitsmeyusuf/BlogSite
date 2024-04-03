@@ -192,7 +192,7 @@ removeTag(index: number) {
     const images = htmlContent.match(/<img src="(.*?)"/g);
      
     //match with img if its not link
-
+if(images){
     for (const image of images!) {
       console.log(image);
       //remove data:image/png;base64, from the base64 string and the last "
@@ -215,7 +215,7 @@ removeTag(index: number) {
         }
       }
     }
- 
+  }
     // delete the selectedfile's data:image/png;base64, from the base64 string
     this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
     console.log(this.selectedFile);

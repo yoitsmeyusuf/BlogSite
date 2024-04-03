@@ -13,6 +13,8 @@ public class Post
     public DateTime PublishDate { get; set; } = DateTime.Now;
     public int Author { get; set; }
     public string ImageURL { get; set; }= "https://via.placeholder.com/150";
+
+    public int Views { get; set; } = 0;
     
     public string Tags { get; set; } = "";
     [NotMapped]    

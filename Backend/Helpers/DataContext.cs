@@ -71,9 +71,7 @@ public class DataContext
                     UserID INT PRIMARY KEY AUTO_INCREMENT,
                     Username VARCHAR(255) NOT NULL,
                     Password VARCHAR(255) NOT NULL,
-                    ImageURL VARCHAR(255)
-                    
-
+                    ImageURL VARCHAR(255) DEFAULT 'localhost:4000/images/Profile.jpg'
                 );";
             await connection.ExecuteAsync(sql);
         }
@@ -88,8 +86,10 @@ public class DataContext
                     Category TEXT NOT NULL,
                     PublishDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     ImageURL VARCHAR(255),
+                    Tags TEXT,
                     AuthorID INT,
-                                        FOREIGN KEY (AuthorID) REFERENCES Users(UserID)
+                    FOREIGN KEY (AuthorID) REFERENCES Users(UserID),
+                    Views INT DEFAULT 0
                 );";
             await connection.ExecuteAsync(sql);
         }
