@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BlogService, User } from '../blog.services';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,14 +12,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './userupdate.component.css'
 })
 export class UserupdateComponent {
-  constructor(private blogService: BlogService) {
+
+  constructor(private blogService: BlogService,private router: Router) {
 
   }
   inputType: string = 'password';
   toggleInputType() {
     this.inputType = this.inputType === 'password' ? 'text' : 'password';
   }
-  user : User ={
+  user: User = {
     userID: '',
     username: '',
     password: '',
@@ -45,7 +47,7 @@ export class UserupdateComponent {
 
     reader.addEventListener('load', (event: any) => {
 
-        this.selectedFile = event.target.result;
+      this.selectedFile = event.target.result;
     });
 
     reader.readAsDataURL(file);
@@ -60,29 +62,31 @@ export class UserupdateComponent {
       .subscribe(response => {
         console.log(this.user.password);
         console.log(this.user.username);
-      
-console.log(response);
+        this.router.navigate(['/']).then(() => {
+          window.location.reload();
+        });
+        console.log(response);
 
       }, error => {
         // Handle error here
         console.error(error);
       });
 
-      //upload image
+    //upload image
 
-      if (this.selectedFile) {
-        this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
-        const formData = new FormData();
-        formData.append('Filecode', this.selectedFile);
-        formData.append('Names', "profile");
-        this.blogService.uploadImage(formData).subscribe(response => {
-         console.log(response);
-        }
-        ,error => {
+    if (this.selectedFile) {
+      this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
+      const formData = new FormData();
+      formData.append('Filecode', this.selectedFile);
+      formData.append('Names', "profile");
+      this.blogService.uploadImage(formData).subscribe(response => {
+        console.log(response);
+      }
+        , error => {
           // Handle error here
           console.error(error);
         });
-      }
+    }
 
 
 

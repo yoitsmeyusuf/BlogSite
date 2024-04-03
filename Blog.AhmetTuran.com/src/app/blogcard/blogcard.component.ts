@@ -5,23 +5,25 @@ import { TopblogsComponent } from "../topblogs/topblogs.component";
 import { FormsModule } from '@angular/forms';
 import { BlogService, User } from '../blog.services';
 import { KeyValue } from '@angular/common';
-
+import { LatestblogsComponent } from '../latestblogs/latestblogs.component';
 @Component({
     standalone: true,
     selector: 'app-blog',
     templateUrl: 'blogcard.component.html',
     providers: [],
     styleUrls: ['./blogcard.component.scss'],
-    imports: [CommonModule, RouterModule, TopblogsComponent,FormsModule]
-})
+    imports: [CommonModule, RouterModule, TopblogsComponent,FormsModule,LatestblogsComponent]
+}) 
 export class CardComponent implements OnInit {
   blogs: any = [];
   blogsrecent: any = [];
   daysAgo: number[] = [];
   alltags: any = []; // Yayınlanalı kaç gün geçtiğini tutacak dizi
   tagcounts: any = [];
-  constructor(private blogService: BlogService) { }
 
+  highestCount: number = 0; // Assign an initial value to 'highestCount'
+  constructor(private blogService: BlogService) { }
+  
   name!: User;
   ngAfterViewInit(): void {
     this.blogService.whoami().subscribe((data: any) => {
@@ -34,27 +36,29 @@ export class CardComponent implements OnInit {
     return b.value - a.value;
   }
   ngOnInit(): void {
+    
 
      // use blogservice.getalltags func
      
 
     
 
-    this.blogService.getBlogs().subscribe(blogs => {
-
+     this.blogService.getBlogs().subscribe(blogs => {
       this.blogService.getAllTags().subscribe(tags => {
         this.alltags = tags;
         console.log(this.alltags);
-  
+
         let tagCounts: { [tag: string]: number } = {};
-  
+
         this.alltags.forEach((tag: string) => {
           let count = blogs.filter(blog => blog.tags.includes(tag)).length;
           tagCounts[tag] = count;
         });
-  
+
         this.tagcounts = tagCounts;
+        this.highestCount = Math.max(...Object.values(this.tagcounts) as number[]); // Fix: Cast the values to numbers
       });
+    
       
 
     

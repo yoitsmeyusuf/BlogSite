@@ -1,14 +1,21 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
 .tagislem {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 94.5vw; /* Add this line */
+  max-width: 94.5vw;
+  /* Add this line */
   height: 50px;
   position: relative;
   margin-top: 20px;
-  overflow-x: auto; /* Add this line */
-  white-space: nowrap; /* Add this line */
-  input{
+  overflow-x: auto;
+  /* Add this line */
+  white-space: nowrap;
+  scrollbar-width: none;
+
+  /* Add this line */
+  input {
     width: 70px;
     height: 50px;
     border: none;
@@ -17,7 +24,8 @@
     border-radius: 10px;
     margin-right: 10px;
   }
-  button{
+
+  button {
     width: 100px;
     height: 50px;
     border: none;
@@ -26,9 +34,28 @@
     color: #f9f9f9;
     cursor: pointer;
     margin-right: 10px;
-    p{
-      &::before{
+    transition: .3s ease-in-out;
+    p {
+      &::before {
         content: "#";
+      }
+    }
+
+    &:hover {
+      p {
+        opacity: 0;
+      }
+      background-color: rgb(255, 0, 0);
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 20px; /* Adjust as needed */
+        height: 20px; /* Adjust as needed */
+        background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3C!--%20License%3A%20PD.%20Made%20by%20zurb%3A%20https%3A%2F%2Fgithub.com%2Fzurb%2Ffoundation-icon-fonts%20--%3E%3Csvg%20fill%3D%22%23ffffff%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22M75.834%2C33.388h-51.67c-1.311%2C0-2.375%2C1.058-2.375%2C2.373v49.887c0%2C1.314%2C1.064%2C2.377%2C2.375%2C2.377h51.67c1.314%2C0%2C2.375-1.063%2C2.375-2.377V35.76C78.209%2C34.446%2C77.148%2C33.388%2C75.834%2C33.388z%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M79.004%2C17.352H59.402v-2.999c0-1.314-1.061-2.377-2.373-2.377H42.971c-1.312%2C0-2.375%2C1.063-2.375%2C2.377v2.999H20.996c-1.312%2C0-2.375%2C1.059-2.375%2C2.373v6.932c0%2C1.314%2C1.063%2C2.373%2C2.375%2C2.373h58.008c1.314%2C0%2C2.375-1.059%2C2.375-2.373v-6.932C81.379%2C18.41%2C80.318%2C17.352%2C79.004%2C17.352z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 13px;
       }
     }
   }
@@ -46,6 +73,10 @@
   line-height: 30px;
 }
 
+.richText {
+  margin-top: 20px;
+}
+
 .control-panel {
   padding-left: 50px;
   padding-right: 50px;
@@ -60,43 +91,45 @@
 
 .inputPosition {
   position: relative;
-  bottom: 15px;
   height: 70px;
   border: none;
   box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
   /* Renksiz gölge oluşturur */
   border-radius: 10px;
   padding-left: 20px;
+  padding-top: 10px;
   transition: .3s ease;
   font-size: 18px;
 
   &::placeholder {
-    color: #000000;
-    font-size: 18px;
+    color: #0000005b;
+    font-size: 25px;
+    font-weight: 500;
+
   }
 }
 
 input:focus,
 input:hover {
   outline: none;
-  border-color: rgba(76, 105, 234, 0.772);
-  background-color: #fff;
-  box-shadow: 0 0 0 2.5px rgba(76, 87, 234, 0.724);
+
 }
 
 .titledomain {
-  width: 95%;
-  margin-right: 10px;
+  width: 100%;
 
 }
 
 .category {
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
   background-color: #fff;
-  color: #333;
+  color: #2f2f2f;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
 }
 
 .submitButton {
@@ -139,10 +172,8 @@ input:hover {
 
 .ex {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
-  height: 70px;
   position: relative;
   margin-top: 35px;
 }
@@ -157,7 +188,7 @@ input:hover {
   padding: 0px;
   border-radius: 10px;
   background-color: #f9f9f9;
-  height: 500px;
+  height: 800px;
   cursor: pointer;
 
   &:hover {
@@ -192,12 +223,13 @@ input:hover {
 
 
 .imageElement p {
-  color: rgba(0, 0, 0, 0.123);
+  color: rgba(0, 0, 0, 0.300);
   ;
 }
 
 .imageDesign .imageIcon {
-  fill: rgba(0, 0, 0, 0.123);
+  fill: rgba(0, 0, 0, 0.300);
+  font-weight: 600;
 }
 
 /* İsteğe Bağlı Olarak Ekstra Stil Ekleyebilirsiniz */
@@ -211,3 +243,51 @@ input:hover {
 }
 
 /* quill-editor */
+
+@media only screen and (max-width: 600px) {
+  .tagislem {
+    max-width: 90vw;
+  }
+
+  .control-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .inputPosition {
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 16px;
+  }
+
+  .inputPosition::placeholder {
+    font-size: 20px;
+  }
+
+  .category {
+    height: 40px;
+    margin-top: 10px;
+  }
+
+  .submitButton {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .buttonDomain {
+    top: 10px;
+  }
+
+  .titleText {
+    font-size: 20px;
+  }
+
+  .ex {
+    margin-top: 20px;
+  }
+
+  .imageDesign {
+    height: 400px;
+  }
+}

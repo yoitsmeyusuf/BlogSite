@@ -12,7 +12,7 @@
   cursor: pointer;
   &:hover {
     background-color: #6b6b6b;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out;
   }
 }
 

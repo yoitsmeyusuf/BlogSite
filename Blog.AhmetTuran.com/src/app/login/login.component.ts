@@ -35,13 +35,21 @@ export class LoginComponent {
   model = { password: '' , username: ''}
 
   constructor(private blogService: BlogService, private router: Router) { }
-
+  ngOnInit() {
+    
+  }
   login() {
     this.blogService.login(this.model.password,this.model.username).subscribe(
       (response) => {
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+          this.router.navigate(['/']);
+        }
         if (response == 200) {
           console.log("selam")
-          this.router.navigate(['/control-panel']);
+          this.router.navigate(['/']).then(() => {
+            window.location.reload();
+          });
+          
         } else {
           this.router.navigate(['/login']);
         }

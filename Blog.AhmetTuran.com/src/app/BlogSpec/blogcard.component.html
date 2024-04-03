@@ -1,5 +1,7 @@
 <div style="display: flex;">
-  <button class="delete" [style.display]="name ? 'block' : 'none'" (click)="deleteBlog(this.id)">Delete this blog</button>
+  <button class="delete" [style.display]="name ? 'block' : 'none'" (click)="deleteBlog(this.id)">Delete this
+    blog
+  </button>
   <div class="headers">
 
     <a class="headers_container_domain" *ngFor="let basliks of baslik" href="{{href}}#{{basliks}}"
@@ -9,7 +11,7 @@
 
       </div>
     </a>
-    
+
   </div>
 
   <article class="postcard dark blue">
@@ -37,7 +39,7 @@
           <p>{{tag}}</p>
         </div>
       </div>
-      
+
       <div class="editor">
         <img class="editor_image" src="http://localhost:4000/images/Profile.jpg" alt="">
         <div class="editor_info">
@@ -58,4 +60,35 @@
 
   <app-latestblogs class="latestblogs"></app-latestblogs>
 
+</div>
+
+<div class="footer">
+
+  <div class="footer_text_div">
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 51 30" fill="none">
+      <g clip-path="url(#clip0_73_546)">
+        <path
+          d="M35.0766 21.3392C34.9777 21.0757 26.2085 3.75411 26.0766 3.49067C25.6151 2.37102 24.7909 1.41602 23.703 0.757406C20.9667 -0.823274 17.4722 0.0987893 15.8898 2.83205C14.8019 4.70911 14.8678 6.91547 15.9228 8.66081C16.0217 8.89132 24.3953 25.4885 24.5601 25.7519C24.659 26.0154 24.7909 26.2459 24.9228 26.5093C25.3843 27.629 26.2085 28.584 27.2964 29.2426C30.0327 30.8233 33.5272 29.9341 35.1096 27.2009C36.2305 25.3238 36.1316 23.0845 35.0766 21.3392Z"
+          fill="" fill-opacity="0.4" />
+        <path
+          d="M24.956 9.61581C25.9121 8.59495 26.5055 7.21185 26.5055 5.69704C26.5055 2.56861 23.967 0 20.8022 0C18.8571 0 17.1429 0.954995 16.1209 2.43688C15.9231 2.63447 1.71429 20.1537 1.54945 20.3842C0.593406 21.4051 0 22.7881 0 24.303C0 27.4643 2.57143 30 5.7033 30C7.64835 30 9.36264 29.045 10.3846 27.5631C10.5824 27.3326 24.8242 9.84632 24.956 9.61581Z"
+          fill="" />
+        <path
+          d="M49.4502 9.61578C50.4062 8.59492 50.9996 7.21182 50.9996 5.69701C50.9996 2.53564 48.4282 -3.05176e-05 45.2963 -3.05176e-05C43.3513 -3.05176e-05 41.637 0.954964 40.615 2.43685C40.4172 2.63444 26.1755 20.1536 26.0106 20.3842C25.0546 21.405 24.4612 22.7881 24.4612 24.3029C24.4612 27.4643 27.0326 30 30.1645 30C32.1095 30 33.8238 29.045 34.8458 27.5631C35.0766 27.3326 49.2854 9.84629 49.4502 9.61578Z"
+          fill="" />
+      </g>
+      <defs>
+        <clipPath id="clip0_73_546">
+          <rect width="51" height="30" fill="" />
+        </clipPath>
+      </defs>
+    </svg>
+    <p>
+      © <a href="ahmetturanpolat.com.tr">ahmetturanpolat.com.tr</a>, Ahmet Turan Polat'ın resmi sitesidir. 2024-2025. <a
+        href="">Gizlilik Politikası</a>. <br>
+      Tüm içeriklerimiz, <a href="">İçerik Kullanım İzinleri</a>'ne uyulduğu müddetçe kullanıma, dağıtıma ve paylaşıma
+      açıktır. <br>
+      Bu siteyi kullanan kişilerin sitedeki bütün işlemleri <a href="">Kullanıcı Sözleşmesi</a>'nin şartlarına tabidir.
+    </p>
+  </div>
 </div>

@@ -31,31 +31,41 @@ export class BlogComponent implements OnInit {
     this.activeLink = link;
   }
 
+
   removeHyphens(text: string): string {
     //make first letter uppercase and replace - with space
     text = text.charAt(0).toUpperCase() + text.slice(1);
     return text.replace(/-/g, ' ');
   }
   deleteBlog(id: number): void {
-    console.log(id)
-    this.blogService.deleteBlog(id.toString()).subscribe(
-      (response: any) => {
-        console.log('Blog post deleted successfully', response);
-        // handle successful deletion here, e.g. refresh the list of blog posts
-        this.router.navigate(['/']); // navigate to main screen
-      },
-      (error: any) => {
-        console.error('Error deleting blog post', error);
-        // handle error here
-      }
-    );
+    if (window.confirm('Are you sure you want to delete this blog?')) {
+      console.log(id)
+      this.blogService.deleteBlog(id.toString()).subscribe(
+        (response: any) => {
+          console.log('Blog post deleted successfully', response);
+          // handle successful deletion here, e.g. refresh the list of blog posts
+          this.router.navigate(['/']); // navigate to main screen
+        },
+        (error: any) => {
+          console.error('Error deleting blog post', error);
+          // handle error here
+        }
+      );
+    }
   }
 
 
 
 
 
+
+
   constructor(private router: Router, private sanitizer: DomSanitizer, private blogService: BlogService, private route: ActivatedRoute, private elementRef: ElementRef, private renderer: Renderer2,) { }
+  displayModal = false;
+
+  openModal() {
+    this.displayModal = true;
+  }
   setupSmoothScroll() {
     const links = this.elementRef.nativeElement.querySelectorAll('.headers_container_domain');
 
@@ -140,18 +150,18 @@ export class BlogComponent implements OnInit {
         }
         this.route.params.subscribe(params => {
           const blogId = params['id'];
-        
+
           this.blogService.getBlog(blogId).subscribe(blog => {
             this.alltags = blog.tags.split(','); // split the tags string into an array
             console.log(this.alltags);
-        
+
             let tagCounts: { [tag: string]: number } = {};
-        
+
             this.alltags.forEach((tag: string) => {
               let count = this.alltags.filter((tagName: string) => tagName === tag).length;
               tagCounts[tag] = count;
             });
-        
+
             console.log(tagCounts);
           });
         });

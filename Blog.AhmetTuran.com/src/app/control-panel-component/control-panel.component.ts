@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { BlogService, Blog, User } from '../blog.services';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 import { v4 as uuid } from 'uuid';
@@ -22,7 +23,7 @@ import { from } from 'rxjs';
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css'
 })
-export class ControlPanelComponent implements AfterViewInit {
+export class ControlPanelComponent implements OnInit {
 //refresh
 removeTag(index: number) {
   this.tags.splice(index, 1);
@@ -42,13 +43,13 @@ removeTag(index: number) {
     password: '',
     imageURL: ''
   }
-
+  AllTags: string[] = [];
   tags: string[] = [];
   name: string = "";
   selectedFile: any;
-  ngAfterViewInit(): void {
-    //refresh
-
+  ngOnInit(): void {
+    this.getAllTags();
+  
 
   }
   // write an function with  whoami and get the name of the user
@@ -71,7 +72,7 @@ removeTag(index: number) {
   }
   model = this.blog;
 
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService, private router: Router) {
   }
 
   
@@ -230,11 +231,14 @@ removeTag(index: number) {
       .subscribe(response => {
         // Handle response here
         console.log(response);
+        this.router.navigate(['/']).then(() => {
+          window.location.reload();
+        });
       }, error => {
         // Handle error here
         console.error(error);
       });
-
+      
     //refresh
 
   }
@@ -248,6 +252,19 @@ removeTag(index: number) {
     }
   }
 
+  addTagEnter(number:any) {
+    
+      this.tags.push(this.AllTags[number]);
+      console.log(this.tags);
+  }
+
+
+  //get all tags
+  getAllTags() {
+    this.blogService.getAllTags().subscribe((data: any) => {
+      this.AllTags = data;
+    });
+  } 
 
   updateUser() {
     this.blogService.Userupdate(this.user.username, this.user.password)

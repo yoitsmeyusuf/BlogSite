@@ -183,48 +183,7 @@
 
   <div style="margin-top: 0px; display: flex; flex-direction: column; align-items: center;">
     <a [routerLink]="['/blog', blog.postID]" class="postcard dark blue" *ngFor="let blog of blogs">
-      <div class="makale">
-        <p class="makale_text">Makale</p>
-        <p class="makale_category">{{blog?.category}}</p>
-      </div>
-      <div class="user">
-        <div style="display: flex;">
-          <img class="user_image" src="http://localhost:4000/images/Profile.jpg" alt="">
-          <div class="user_text">
-            <div class="username_div">
-              <p class="user_name">{{blog.author}}</p>
-              <div class="admin_badge">
-                <svg width="13px" height="13px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <title>crown</title>
-                  <desc>Created with Sketch.</desc>
-                  <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="ui-gambling-website-lined-icnos-casinoshunter"
-                      transform="translate(-1513.000000, -549.000000)" fill="#ffff" fill-rule="nonzero">
-                      <g id="1" transform="translate(1350.000000, 120.000000)">
-                        <path
-                          d="M180.916506,429.219311 C181.338895,429.433615 181.671927,429.790192 181.852568,430.227002 L185.648185,439.405177 L193.444286,429.905749 C194.138443,429.059929 195.397685,428.928221 196.256882,429.61157 C196.726862,429.98536 197,430.548271 197,431.143061 L197,448.04671 C197,449.677767 195.656854,451 194,451 L166,451 C164.343146,451 163,449.677767 163,448.04671 L163,431.142612 C163,430.055241 163.895431,429.173752 165,429.173752 C165.604127,429.173752 166.175881,429.442575 166.555587,429.905145 L174.353772,439.405143 L178.147704,430.227264 C178.54422,429.268054 179.621513,428.783179 180.607005,429.093228 L180.754044,429.145737 L180.916506,429.219311 Z"
-                          id="crown">
 
-                        </path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div class="writer_badge">
-                <svg width="14px" height="14px" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.29289 3.70711L1 11V15H5L12.2929 7.70711L8.29289 3.70711Z" fill="#ffff" />
-                  <path
-                    d="M9.70711 2.29289L13.7071 6.29289L15.1716 4.82843C15.702 4.29799 16 3.57857 16 2.82843C16 1.26633 14.7337 0 13.1716 0C12.4214 0 11.702 0.297995 11.1716 0.828428L9.70711 2.29289Z"
-                    fill="#ffff" />
-                </svg>
-              </div>
-            </div>
-            <p class="editor">Editor</p>
-          </div>
-        </div>
-      </div>
 
       <a class="postcard__img_link" href="#">
         <img class="postcard__img" [src]="blog?.imageURL" alt="Image Title" />
@@ -243,6 +202,23 @@
 
         </div>
         <div class="postcard__preview-txt" [innerHTML]="blog?.content"></div>
+        <div class="bloginfo">
+          <div class="user">
+            <div style="display: flex;">
+              <img class="user_image" src="http://localhost:4000/images/Profile.jpg" alt="">
+              <div class="user_text">
+                <div class="username_div">
+                  <p class="user_name">{{blog.author}}</p>
+                </div>
+                <p class="editor">Editor</p>
+              </div>
+            </div>
+          </div>
+          <div class="makale">
+            <p class="makale_category">{{blog?.category}}</p>
+          </div>
+
+        </div>
 
       </div>
     </a>
@@ -254,10 +230,62 @@
       <p class="gundem_text">Gündem</p>
     </div>
     <div class="gundemler" *ngFor="let tag of tagcounts | keyvalue: tagValueComparator">
-
-      <p class="gundem_text">{{tag.key}}</p>
+      <div style="display: flex;">
+        <p class="gundem_text">{{tag.key}}</p>
+        <img class="flameIcon" *ngIf="tag.value === highestCount"
+          src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!--%20License%3A%20Apache.%20Made%20by%20googlefonts%3A%20https%3A%2F%2Fgithub.com%2Fgooglefonts%2Fnoto-emoji%20--%3E%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%20128%20128%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20aria-hidden%3D%22true%22%20role%3D%22img%22%20class%3D%22iconify%20iconify--noto%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%3E%3CradialGradient%20id%3D%22IconifyId17ecdb2904d178eab8626%22%20cx%3D%2268.884%22%20cy%3D%22124.296%22%20r%3D%2270.587%22%20gradientTransform%3D%22matrix(-1%20-.00434%20-.00713%201.6408%20131.986%20-79.345)%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20offset%3D%22.314%22%20stop-color%3D%22%23ff9800%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.662%22%20stop-color%3D%22%23ff6d00%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.972%22%20stop-color%3D%22%23f44336%22%3E%3C%2Fstop%3E%3C%2FradialGradient%3E%3Cpath%20d%3D%22M35.56%2040.73c-.57%206.08-.97%2016.84%202.62%2021.42c0%200-1.69-11.82%2013.46-26.65c6.1-5.97%207.51-14.09%205.38-20.18c-1.21-3.45-3.42-6.3-5.34-8.29c-1.12-1.17-.26-3.1%201.37-3.03c9.86.44%2025.84%203.18%2032.63%2020.22c2.98%207.48%203.2%2015.21%201.78%2023.07c-.9%205.02-4.1%2016.18%203.2%2017.55c5.21.98%207.73-3.16%208.86-6.14c.47-1.24%202.1-1.55%202.98-.56c8.8%2010.01%209.55%2021.8%207.73%2031.95c-3.52%2019.62-23.39%2033.9-43.13%2033.9c-24.66%200-44.29-14.11-49.38-39.65c-2.05-10.31-1.01-30.71%2014.89-45.11c1.18-1.08%203.11-.12%202.95%201.5z%22%20fill%3D%22url(%23IconifyId17ecdb2904d178eab8626)%22%3E%3C%2Fpath%3E%3CradialGradient%20id%3D%22IconifyId17ecdb2904d178eab8627%22%20cx%3D%2264.921%22%20cy%3D%2254.062%22%20r%3D%2273.86%22%20gradientTransform%3D%22matrix(-.0101%20.9999%20.7525%20.0076%2026.154%20-11.267)%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20offset%3D%22.214%22%20stop-color%3D%22%23fff176%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.328%22%20stop-color%3D%22%23fff27d%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.487%22%20stop-color%3D%22%23fff48f%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.672%22%20stop-color%3D%22%23fff7ad%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.793%22%20stop-color%3D%22%23fff9c4%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.822%22%20stop-color%3D%22%23fff8bd%22%20stop-opacity%3D%22.804%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.863%22%20stop-color%3D%22%23fff6ab%22%20stop-opacity%3D%22.529%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.91%22%20stop-color%3D%22%23fff38d%22%20stop-opacity%3D%22.209%22%3E%3C%2Fstop%3E%3Cstop%20offset%3D%22.941%22%20stop-color%3D%22%23fff176%22%20stop-opacity%3D%220%22%3E%3C%2Fstop%3E%3C%2FradialGradient%3E%3Cpath%20d%3D%22M76.11%2077.42c-9.09-11.7-5.02-25.05-2.79-30.37c.3-.7-.5-1.36-1.13-.93c-3.91%202.66-11.92%208.92-15.65%2017.73c-5.05%2011.91-4.69%2017.74-1.7%2024.86c1.8%204.29-.29%205.2-1.34%205.36c-1.02.16-1.96-.52-2.71-1.23a16.09%2016.09%200%200%201-4.44-7.6c-.16-.62-.97-.79-1.34-.28c-2.8%203.87-4.25%2010.08-4.32%2014.47C40.47%20113%2051.68%20124%2065.24%20124c17.09%200%2029.54-18.9%2019.72-34.7c-2.85-4.6-5.53-7.61-8.85-11.88z%22%20fill%3D%22url(%23IconifyId17ecdb2904d178eab8627)%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E"
+          alt="flame icon">
+      </div>
       <p class="gundemler_adet">{{tag.value}}</p>
 
     </div>
+    <div class="divider"></div>
+    <div class="popularblogs_div">
+      <p class="otherblogs_text">Popüler Bloglar</p>
+      <div style="margin-top: 20px;">
+        <article class="popularblogs" *ngFor="let blog of blogs">
+          <img class="" src="http://localhost:4000/images/Profile.jpg" alt="">
+          <div class="popularblogs_info">
+  
+              <span class="blog_title">{{blog.title}}</span>
+  
+  
+            <p class="blog_date">{{blog.publishDate}}</p>
+          </div>
+  
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="footer">
+
+  <div class="footer_text_div">
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 51 30" fill="none">
+      <g clip-path="url(#clip0_73_546)">
+        <path
+          d="M35.0766 21.3392C34.9777 21.0757 26.2085 3.75411 26.0766 3.49067C25.6151 2.37102 24.7909 1.41602 23.703 0.757406C20.9667 -0.823274 17.4722 0.0987893 15.8898 2.83205C14.8019 4.70911 14.8678 6.91547 15.9228 8.66081C16.0217 8.89132 24.3953 25.4885 24.5601 25.7519C24.659 26.0154 24.7909 26.2459 24.9228 26.5093C25.3843 27.629 26.2085 28.584 27.2964 29.2426C30.0327 30.8233 33.5272 29.9341 35.1096 27.2009C36.2305 25.3238 36.1316 23.0845 35.0766 21.3392Z"
+          fill="" fill-opacity="0.4" />
+        <path
+          d="M24.956 9.61581C25.9121 8.59495 26.5055 7.21185 26.5055 5.69704C26.5055 2.56861 23.967 0 20.8022 0C18.8571 0 17.1429 0.954995 16.1209 2.43688C15.9231 2.63447 1.71429 20.1537 1.54945 20.3842C0.593406 21.4051 0 22.7881 0 24.303C0 27.4643 2.57143 30 5.7033 30C7.64835 30 9.36264 29.045 10.3846 27.5631C10.5824 27.3326 24.8242 9.84632 24.956 9.61581Z"
+          fill="" />
+        <path
+          d="M49.4502 9.61578C50.4062 8.59492 50.9996 7.21182 50.9996 5.69701C50.9996 2.53564 48.4282 -3.05176e-05 45.2963 -3.05176e-05C43.3513 -3.05176e-05 41.637 0.954964 40.615 2.43685C40.4172 2.63444 26.1755 20.1536 26.0106 20.3842C25.0546 21.405 24.4612 22.7881 24.4612 24.3029C24.4612 27.4643 27.0326 30 30.1645 30C32.1095 30 33.8238 29.045 34.8458 27.5631C35.0766 27.3326 49.2854 9.84629 49.4502 9.61578Z"
+          fill="" />
+      </g>
+      <defs>
+        <clipPath id="clip0_73_546">
+          <rect width="51" height="30" fill="" />
+        </clipPath>
+      </defs>
+    </svg>
+    <p>
+      © <a href="ahmetturanpolat.com.tr">ahmetturanpolat.com.tr</a>, Ahmet Turan Polat'ın resmi sitesidir. 2024-2025. <a
+        href="">Gizlilik Politikası</a>. <br>
+      Tüm içeriklerimiz, <a href="">İçerik Kullanım İzinleri</a>'ne uyulduğu müddetçe kullanıma, dağıtıma ve paylaşıma
+      açıktır. <br>
+      Bu siteyi kullanan kişilerin sitedeki bütün işlemleri <a href="">Kullanıcı Sözleşmesi</a>'nin şartlarına tabidir.
+    </p>
   </div>
 </div>
