@@ -1,4 +1,94 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+.contentDiv {
+  width: 96.7%;
+  border: rgba(128, 128, 128, 0.199) 2px solid;
+  border-radius: 10px;
+  padding: 30px;
+  padding-top: 15px;
+  margin-top: 20px;
+  background-color: #fff;
+  line-height: 0px;
+  p {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 600;
+  }
+}
+.titleDiv {
+  width: 100%;
+  border: rgba(128, 128, 128, 0.199) 2px solid;
+  border-radius: 10px;
+  padding-top: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+  line-height: 0px;
+
+  .radioButtons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-right: 15px;
+    input{
+      display: none;
+    }
+
+  }
+
+  .radioButtons label {
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #4b4b4b0e;
+    color: #161616;
+    font-size: 20px;
+    font-weight: 600;
+    transition: .3s ease;
+  }
+
+  .radioButtons label.selected {
+    background-color: blue;
+    color: white;
+  }
+
+  p {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #161616;
+    font-weight: 600;
+  }
+
+  textarea {
+    width: 95%;
+    margin-left: 20px;
+    height: 80px;
+    border: rgba(128, 128, 128, 0.199) 2px solid;
+    border-radius: 10px;
+    background-color: #f2f3f85f;
+    font-size: 20px;
+    text-align: left;
+    padding: 20px;
+    resize: none;
+  }
+
+  textarea:focus,
+  textarea:hover {
+    outline: none;
+  }
+
+  input::placeholder {
+    position: absolute;
+    top: 15px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
 
 .tagislem {
   display: flex;
@@ -35,6 +125,7 @@
     cursor: pointer;
     margin-right: 10px;
     transition: .3s ease-in-out;
+
     p {
       &::before {
         content: "#";
@@ -45,13 +136,16 @@
       p {
         opacity: 0;
       }
+
       background-color: rgb(255, 0, 0);
 
       &::before {
         content: "";
         display: inline-block;
-        width: 20px; /* Adjust as needed */
-        height: 20px; /* Adjust as needed */
+        width: 20px;
+        /* Adjust as needed */
+        height: 20px;
+        /* Adjust as needed */
         background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3C!--%20License%3A%20PD.%20Made%20by%20zurb%3A%20https%3A%2F%2Fgithub.com%2Fzurb%2Ffoundation-icon-fonts%20--%3E%3Csvg%20fill%3D%22%23ffffff%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22M75.834%2C33.388h-51.67c-1.311%2C0-2.375%2C1.058-2.375%2C2.373v49.887c0%2C1.314%2C1.064%2C2.377%2C2.375%2C2.377h51.67c1.314%2C0%2C2.375-1.063%2C2.375-2.377V35.76C78.209%2C34.446%2C77.148%2C33.388%2C75.834%2C33.388z%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M79.004%2C17.352H59.402v-2.999c0-1.314-1.061-2.377-2.373-2.377H42.971c-1.312%2C0-2.375%2C1.063-2.375%2C2.377v2.999H20.996c-1.312%2C0-2.375%2C1.059-2.375%2C2.373v6.932c0%2C1.314%2C1.063%2C2.373%2C2.375%2C2.373h58.008c1.314%2C0%2C2.375-1.059%2C2.375-2.373v-6.932C81.379%2C18.41%2C80.318%2C17.352%2C79.004%2C17.352z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
         background-size: contain;
         background-repeat: no-repeat;
@@ -74,7 +168,7 @@
 }
 
 .richText {
-  margin-top: 20px;
+  margin-top: 90px;
 }
 
 .control-panel {
@@ -188,7 +282,7 @@ input:hover {
   padding: 0px;
   border-radius: 10px;
   background-color: #f9f9f9;
-  height: 800px;
+  height: 500px;
   cursor: pointer;
 
   &:hover {

@@ -15,24 +15,30 @@
 
         <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
       </label>
-      <div class="ex">
-        <label class="columnSyle titledomain">
-          <input class="inputPosition" [(ngModel)]="blog.title" placeholder="Blog Title" name="title" type="text">
-        </label>
-        <label class="columnSyle categorydomain">
-          <select class="inputPosition ql-toolbar category" [(ngModel)]="blog.category" name="category">
-            <option class="option" value="0" selected>Teknoloji</option>
-            <option class="option" value="1">Bilim</option>
-            <option class="option" value="2">İşletme</option>
-          </select>
-        </label>
-      </div>
 
-      <label class="columnSyle richText">
+        <div class="titleDiv">
+          
+          <p>Caption</p>
+          <textarea [(ngModel)]="blog.title" placeholder=""  name="title" type="text"></textarea>
+          <div class="radioButtons">
+            <label>
+                <input type="radio" [(ngModel)]="blog.category" name="category" value="0" checked (change)="onCategoryChange($event)"> Teknoloji
+            </label>
+            <label>
+                <input type="radio" [(ngModel)]="blog.category" name="category" value="1" (change)="onCategoryChange($event)"> Bilim
+            </label>
+            <label>
+                <input type="radio" [(ngModel)]="blog.category" name="category" value="2" (change)="onCategoryChange($event)"> İşletme
+            </label>
+        </div>
+        </div>
 
+
+      <div class="contentDiv">
+        <p>Caption</p>
         <jodit-editor name="content" [(ngModel)]="blog.content" [config]="config"
           style=" color: black; border-radius: 20px; box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);"></jodit-editor>
-      </label>
+      </div>
       <div class="tagislem">
         <input class="taginput" [(ngModel)]="blog.tags" (keyup)="addTag($event)" placeholder="Tags" name="tags" type="text">
         <div class="tagDomain">

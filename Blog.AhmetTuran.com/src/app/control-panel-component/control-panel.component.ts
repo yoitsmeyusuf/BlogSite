@@ -93,7 +93,7 @@ removeTag(index: number) {
     width: 'auto',
     height: 'auto',
     minHeight: 500,
-    maxWidth: 30000,
+    maxWidth: 200000,
     direction: '',
     language: 'auto',
     debugLanguage: false,
@@ -165,6 +165,14 @@ removeTag(index: number) {
     events: {},
     textIcons: false,
   };
+
+  onCategoryChange(event: any) {
+    const labels = document.querySelectorAll('.radioButtons label');
+    labels.forEach((label: any) => {
+      label.classList.remove('selected');
+    });
+    event.target.parentNode.classList.add('selected');
+  }
 
   async createBlog() {
 

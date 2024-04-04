@@ -1,3 +1,14 @@
+@media screen and (max-width: 600px) { 
+    .navbar{
+        width: 87%;
+        display: none;
+    }
+}
+
+.navbar{
+    width: 100%;
+}
+
 .navbar_baslik {
     display: flex;
     position: relative;

@@ -11,6 +11,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 35px;
   img{
     width: 20px;
     height: 20px;
@@ -567,11 +568,96 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 }
 
 @media screen and (max-width: 600px) {
+
+  
+  .search {
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #dfdfdf;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .secenekler {
+    top: 12%;
+    width: 20%;
+    position: fixed;
+    left: 100px;
+    height: 100%;
+    z-index: 100;
+    line-height: 7px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.8rem;
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+    color: #777777;
+  }
+  
+  .search:focus {
+    outline: none;
+  }
+  
+  .lorem {
+    &:hover {
+      background-color: #0000001e;
+    }
+  
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 5%;
+    width: 75%;
+  
+    .lorem_text {
+      color: #000000a7;
+      margin-left: 5px;
+    }
+  }
   .footer {
-    padding: 10px;
-    font-size: 12px;
-    height: 200px;
-    margin-top: 50px;
+    background-color: #5b478a00;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    height: 50px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+  
+    a {
+      text-decoration: none;
+      color: #002fff;
+    }
+  
+    .footer_text_div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      width: 100%;
+      position: relative;
+      bottom: 80%;
+  
+      .footer_text {
+        margin-right: 10px;
+      }
+  
+    }
+  
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: #3640ff;
+    }
   }
 
   .username_div {
