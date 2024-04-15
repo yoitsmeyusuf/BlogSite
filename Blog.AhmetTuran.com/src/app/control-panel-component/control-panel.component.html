@@ -2,7 +2,7 @@
 <div style="display: flex; justify-content: center; margin-top: 100px;">
   <div class="control-panel">
 
-    <form class="formStyle" (submit)="createBlog()">
+    <form class="formStyle" >
       <label class="columnSyle imageDesign">
         <img [src]="selectedFile ? selectedFile : '#' " alt=" " class="preview-image">
         <div class="imageElement">
@@ -34,27 +34,33 @@
         </div>
 
 
-      <div class="contentDiv">
+      <div style="line-height: 30px;" class="contentDiv">
         <p>Caption</p>
         <jodit-editor name="content" [(ngModel)]="blog.content" [config]="config"
           style=" color: black; border-radius: 20px; box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);"></jodit-editor>
       </div>
-      <div class="tagislem">
-        <input class="taginput" [(ngModel)]="blog.tags" (keyup)="addTag($event)" placeholder="Tags" name="tags" type="text">
+      <div class="contentDiv">
+        <p>Tags</p>
+          <input class="taginput" [(ngModel)]="blog.tags" (keyup)="addTag($event)" placeholder="Tags" name="tags" type="text">
+        <div>
+          <div class="currentTags">
+            <p>Try:</p>
+            @for (tag of AllTags; track $index) {
+              <button class="currenttag" (click)="addTagEnter($index)"><p>{{tag}}</p></button>
+              }
+          </div>
+        </div>
+        
         <div class="tagDomain">
           @for (tag of tags; track $index) {
-          <button class="tag" (click)="removeTag($index)"><p>{{tag}}</p></button>
+          <button class="tag" (click)="removeTag($index)"><p>{{tag}}</p> <p class="trash"></p></button>
           }
         </div>
       </div>
-      <div>
-        @for (tag of AllTags; track $index) {
-          <button class="tag" (click)="addTagEnter($index)"><p>{{tag}}</p></button>
-          }
-      </div>
+      
 
       <div class="buttonDomain">
-        <button class="submitButton" type="submit">Publish</button>
+        <button class="submitButton" (click)="createBlog()" type="submit">Publish</button>
       </div>
 
 

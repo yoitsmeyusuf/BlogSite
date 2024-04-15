@@ -1,0 +1,149 @@
+.page{
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: #5b478a00;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    height: 50px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+
+    a {
+        text-decoration: none;
+        color: #002fff;
+    }
+
+    .footer_text_div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        position: relative;
+        bottom: 80%;
+
+        .footer_text {
+            margin-right: 10px;
+        }
+
+    }
+
+    svg {
+        width: 80px;
+        height: 80px;
+        fill: #3640ff;
+    }
+}
+
+
+
+
+.search {
+    border: none;
+    height: 35px;
+    width: 70%;
+    border-radius: 10px;
+    background-color: #dfdfdf;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+.secenekler {
+    top: 8%;
+    width: 20%;
+    position: fixed;
+    left: 30px;
+    height: 100%;
+    z-index: 100;
+    line-height: 7px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.8rem;
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+    color: #777777;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.lorem {
+    &:hover {
+        background-color: #0000001e;
+    }
+
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 5%;
+    width: 75%;
+
+    .lorem_text {
+        color: #000000a7;
+        margin-left: 5px;
+    }
+}
+
+.verticalPage{
+    margin-top: 70px;
+    width: 50%;
+    .experienceDomain{
+        .experienceTitle{
+            color: #000000;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .experienceBox{
+            display: flex;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            .experienceimgDomain{
+                img{
+                    width: 60px;
+                    border-radius: 10px;
+                }
+            }
+            .experienceInfo{
+                width: 100%;
+                line-height: 5px;
+                margin-left: 20px;
+                .experienceTitle{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                .experienceTitle2{
+                    margin-top: 30px;
+                    color: #000000;
+                    font-size: 20px;
+                    font-weight: 600;
+                    .date{
+                        color: #000000a7;
+                        font-size: 15px;
+                    }
+                }
+                .experienceText{
+                    line-height: 20px;
+                    font-size: 15px;
+                    color: #000000a7;
+                }
+            }
+        }
+    }
+}

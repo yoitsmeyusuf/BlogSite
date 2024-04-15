@@ -29,6 +29,19 @@ removeTag(index: number) {
   this.tags.splice(index, 1);
   console.log(this.tags);
 }
+addTag(event: any) {
+  if (this.blog.tags.includes(' ')) {
+    this.tags.push(this.blog.tags.trim());
+    console.log(this.tags);
+    this.blog.tags = '';
+  }
+}
+
+addTagEnter(number:any) {
+  
+    this.tags.push(this.AllTags[number]);
+    console.log(this.tags);
+}
   blog: any = {
     postID: '',
     title: '',
@@ -175,9 +188,6 @@ removeTag(index: number) {
   }
 
   async createBlog() {
-
-    
- 
     
     // eger title ve content bos ise alert ver
     if (!this.blog.title || !this.blog.content) {
@@ -252,19 +262,7 @@ if(images){
   }
 
 
-  addTag(event: any) {
-    if (this.blog.tags.includes(' ')) {
-      this.tags.push(this.blog.tags.trim());
-      console.log(this.tags);
-      this.blog.tags = '';
-    }
-  }
 
-  addTagEnter(number:any) {
-    
-      this.tags.push(this.AllTags[number]);
-      console.log(this.tags);
-  }
 
 
   //get all tags
