@@ -1,4 +1,4 @@
-.page{
+.page {
     display: flex;
     justify-content: center;
 }
@@ -99,46 +99,150 @@
     }
 }
 
-.verticalPage{
-    margin-top: 70px;
+.badge {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.verticalPage {
+    margin-top: 100px;
     width: 50%;
-    .experienceDomain{
-        .experienceTitle{
+
+    .aboutDiv {
+        color: #000000;
+
+        .aboutBoxDiv {
+            margin-top: -10px;
+            display: flex;
+
+            .aboutBox {
+                background-color: rgb(29, 29, 255);
+                border-radius: 10px;
+                padding: 10px;
+                margin-bottom: 20px;
+                color: white;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+            }
+        }
+
+        .aboutDivImg {
+            display: flex;
+
+            img {
+                width: 250px;
+                border-radius: 20px;
+            }
+        }
+
+        .aboutDivTitleDiv {
+            display: flex;
+            align-items: center;
+
+            .aboutDivTitle {
+                font-size: 30px;
+                font-weight: 600;
+                margin-top: 20px;
+            }
+
+            .badge {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                margin-bottom: 7px;
+                margin-left: 7px;
+                border-radius: 7px;
+                background-color: #00ab42cf;
+
+                .tooltiptext {
+                    visibility: hidden;
+                    width: 120px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 6px;
+
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 35px;
+                    left: 50%;
+                    margin-left: -60px;
+
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+
+                &:hover .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .aboutDivText {
+            font-size: 15px;
+            margin-top: -15px;
+        }
+    }
+
+    .experienceDomain {
+        .experienceTitle {
             color: #000000;
             font-size: 30px;
             font-weight: 600;
         }
-        .experienceBox{
+
+        .experienceBox {
             display: flex;
             background-color: white;
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 20px;
-            .experienceimgDomain{
-                img{
+
+            .cokgizli {
+                img {
+                    margin-top: 20px;
+                }
+            }
+
+            .experienceimgDomain {
+                img {
                     width: 60px;
                     border-radius: 10px;
                 }
             }
-            .experienceInfo{
+
+            .experienceInfo {
                 width: 100%;
-                line-height: 5px;
+                line-height: 0px;
                 margin-left: 20px;
-                .experienceTitle{
+
+                .experienceTitle {
                     font-size: 20px;
                     font-weight: 600;
                 }
-                .experienceTitle2{
+
+                .experienceTitle2 {
                     margin-top: 30px;
                     color: #000000;
                     font-size: 20px;
                     font-weight: 600;
-                    .date{
+                    line-height: 0px;
+
+                    .date {
                         color: #000000a7;
                         font-size: 15px;
                     }
                 }
-                .experienceText{
+
+                .experienceText {
                     line-height: 20px;
                     font-size: 15px;
                     color: #000000a7;

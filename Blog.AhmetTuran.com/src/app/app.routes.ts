@@ -9,8 +9,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 export const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent  },
-  { path: '', component: HomePageComponent },
-  { path: 'blog', component: CardComponent },
+  { path: 'profile', component: HomePageComponent },
+  { path: '', component: CardComponent },
   {path: 'control-panel',component: ControlPanelComponent,canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
 {path:'user-update',component:UserupdateComponent,canActivate: [AuthGuardService]}];
