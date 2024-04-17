@@ -1,6 +1,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<div class="bannerDiv">
+<div class="bannerDiv" style="position: relative;">
   <img src="/assets/banner.png" alt="">
+  <div
+    style="position: absolute; display: flex; align-items: center; justify-content: space-around; top: 0; left: 0; width: 97.9%; border-radius: 30px; margin: 20px; height: 93.7%; background-color: rgba(0, 0, 0, 0.5);">
+    <p>
+      Ahmet Turan<br>POLAT
+    </p>
+    <div></div>
+    <div style="width: 400px; height: 250px;  word-wrap: break-word; display: flex;
+    align-items: start;">
+      <p class="styleText" [ngStyle]="{ 'animation': animationStyle }" >{{ animatedText }}</p>
+    </div>
+    
+  </div>
+
 </div>
 <div class="page">
   <div class="secenekler">
@@ -37,7 +50,34 @@
       </svg>
       <p class="lorem_text">Hakkında</p>
     </a>
- 
+    <a href="/contact" class="lorem">
+      <svg style="margin-left: 10px;" version="1.1" id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="phone.svg"
+        inkscape:version="0.48.4 r9939" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="14px" height="14px" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve">
+        <path id="path16102" inkscape:connector-curvature="0" d="M1183.326,997.842l-169.187,167.83
+	c-24.974,25.612-58.077,34.289-90.316,34.328c-142.571-4.271-277.333-74.304-387.981-146.215
+	C354.22,921.655,187.574,757.82,82.984,559.832C42.87,476.809-4.198,370.878,0.299,278.209c0.401-34.86,9.795-69.073,34.346-91.543
+	L203.831,17.565c35.132-29.883,69.107-19.551,91.589,15.257l136.111,258.102c14.326,30.577,6.108,63.339-15.266,85.188l-62.332,62.3
+	c-3.848,5.271-6.298,11.271-6.36,17.801c23.902,92.522,96.313,177.799,160.281,236.486
+	c63.967,58.688,132.725,138.198,221.977,157.021c11.032,3.077,24.545,4.158,32.438-3.179l72.51-73.743
+	c24.996-18.945,61.086-28.205,87.771-12.714h1.272l245.51,144.943C1205.373,927.619,1209.131,971.279,1183.326,997.842
+	L1183.326,997.842z" />
+      </svg>
+      <p class="lorem_text">İletişim</p>
+    </a>
+    <a href="/gizlilik" class="lorem">
+      <svg style="margin-left: 10px;" width="15px" height="15px" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M6 2C3.79086 2 2 3.79086 2 6V7C2 9.20914 3.79086 11 6 11H7C9.20914 11 11 9.20914 11 7V6C11 3.79086 9.20914 2 7 2H6ZM17 2C14.7909 2 13 3.79086 13 6V7C13 9.20914 14.7909 11 17 11H18C20.2091 11 22 9.20914 22 7V6C22 3.79086 20.2091 2 18 2H17ZM6 13C3.79086 13 2 14.7909 2 17V18C2 20.2091 3.79086 22 6 22H7C9.20914 22 11 20.2091 11 18V17C11 14.7909 9.20914 13 7 13H6ZM17 13C14.7909 13 13 14.7909 13 17V18C13 20.2091 14.7909 22 17 22H18C20.2091 22 22 20.2091 22 18V17C22 14.7909 20.2091 13 18 13H17Z"
+          fill="#000000d6" />
+      </svg>
+      <p class="lorem_text">Gizlilik Politikası</p>
+    </a>
+
     <!-- <div class="lorem">
       <svg style="margin-left: 10px; position: relative; bottom: 1px;" width="14px" height="14px" viewBox="0 0 34 34"
         version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -183,7 +223,7 @@
             <div class="makale">
               <p class="makale_category">{{blog?.category}}</p>
             </div>
-            
+
 
           </div>
 

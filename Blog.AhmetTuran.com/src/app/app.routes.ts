@@ -6,11 +6,15 @@ import { ControlPanelComponent } from './control-panel-component/control-panel.c
 import { LoginComponent } from './login/login.component';
 import { UserupdateComponent } from './userupdate/userupdate.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ContactComponent } from './contact/contact.component';
+import { GizlilikComponent } from './gizlilik/gizlilik.component';
 
 export const routes: Routes = [
-  { path: 'blog/:id', component: BlogComponent  },
+  { path: 'blog/:id', component: BlogComponent },
   { path: 'profile', component: HomePageComponent },
   { path: '', component: CardComponent },
-  {path: 'control-panel',component: ControlPanelComponent,canActivate: [AuthGuardService]},
-  {path: 'login', component: LoginComponent},
-{path:'user-update',component:UserupdateComponent,canActivate: [AuthGuardService]}];
+  { path: 'control-panel', component: ControlPanelComponent, canActivate: [AuthGuardService] },
+  { path: 'login', component: LoginComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'gizlilik', component: GizlilikComponent },
+  { path: 'user-update', component: UserupdateComponent, canActivate: [AuthGuardService] }];

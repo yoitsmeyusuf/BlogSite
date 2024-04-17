@@ -5,15 +5,16 @@ import { TopblogsComponent } from "../topblogs/topblogs.component";
 import { FormsModule } from '@angular/forms';
 import { BlogService, User } from '../blog.services';
 import { KeyValue } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LatestblogsComponent } from '../latestblogs/latestblogs.component';
 @Component({
-    standalone: true,
-    selector: 'app-blog',
-    templateUrl: 'blogcard.component.html',
-    providers: [],
-    styleUrls: ['./blogcard.component.scss'],
-    imports: [CommonModule, RouterModule, TopblogsComponent,FormsModule,LatestblogsComponent]
-}) 
+  standalone: true,
+  selector: 'app-blog',
+  templateUrl: 'blogcard.component.html',
+  providers: [],
+  styleUrls: ['./blogcard.component.scss'],
+  imports: [CommonModule, RouterModule, TopblogsComponent, FormsModule, LatestblogsComponent]
+})
 export class CardComponent implements OnInit {
   allblogs: any = [];
   blogs: any = [];
@@ -24,11 +25,20 @@ export class CardComponent implements OnInit {
   searchTerm: string = '';
   highestCount: number = 0; // Assign an initial value to 'highestCount'
   constructor(private blogService: BlogService) { }
+  texts: string[] = [
+    "Head Of IT \n KUMPORT",
+    'Digital Transformation Leader',
+    'Data Analysis'
+  ];
+  animatedText: string = '';
+  count: number = 0;
+  animationStyle: string = '';
   
+
   name!: User;
 
   filterBlogs(): void {
-    this.blogs = this.allblogs.filter((blog: any ) => blog.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.blogs = this.allblogs.filter((blog: any) => blog.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
   ngAfterViewInit(): void {
     this.blogService.whoami().subscribe((data: any) => {
@@ -36,19 +46,42 @@ export class CardComponent implements OnInit {
       return this.name = data;
     });
   }
-  
+
   tagValueComparator = (a: KeyValue<string, number>, b: KeyValue<string, number>): number => {
     return b.value - a.value;
   }
+  typeText() {
+    if (this.texts[this.count].length > this.animatedText.length) {
+      this.animatedText += this.texts[this.count][this.animatedText.length];
+      this.animationStyle = 'typing 0.5s steps(1, end), blink-caret .75s step-end infinite';
+      setTimeout(() => this.typeText(), 100);
+    } else {
+      this.animationStyle = '';
+      setTimeout(() => this.deleteText(), 1200);
+    }
+  }
+
+  deleteText() {
+    if (this.animatedText.length > 0) {
+      this.animatedText = this.animatedText.slice(0, -1);
+      this.animationStyle = 'deleting 0.5s steps(1, end), blink-caret .75s step-end infinite';
+      setTimeout(() => this.deleteText(), 100);
+    } else {
+      this.animationStyle = '';
+      this.count = (this.count + 1) % this.texts.length;
+      setTimeout(() => this.typeText(), 1500);
+    }
+  }
   ngOnInit(): void {
-    
+    this.typeText();
 
-     // use blogservice.getalltags func
-     
 
-    
+    // use blogservice.getalltags func
 
-     this.blogService.getBlogs().subscribe(blogs => {
+
+
+
+    this.blogService.getBlogs().subscribe(blogs => {
       this.blogService.getAllTags().subscribe(tags => {
         this.alltags = tags;
         console.log(this.alltags);
@@ -59,15 +92,15 @@ export class CardComponent implements OnInit {
           let count = blogs.filter(blog => blog.tags.includes(tag)).length;
           tagCounts[tag] = count;
         });
-        
+
         this.tagcounts = tagCounts;
         this.highestCount = Math.max(...Object.values(this.tagcounts) as number[]); // Fix: Cast the values to numbers
       });
-    
-      
 
-    
-   
+
+
+
+
       blogs.forEach((blog: any) => {
         if (blog.category == "0") {
           blog.category = "Teknoloji";
@@ -84,8 +117,8 @@ export class CardComponent implements OnInit {
       });
       // get most viewed 3 blogs
       this.blogsrecent = blogs.sort((a: any, b: any) => b.views - a.views).slice(0, 3);
-      
-     
+
+
       blogs.forEach((blog: any) => {
         console.log(blog);
         this.blogService.getUser(blog.author).subscribe((data: any) => {
@@ -122,7 +155,7 @@ export class CardComponent implements OnInit {
         // Ayı sayıdan isme dönüştür ve blog nesnesine kaydet
         blog.publishDate = `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
       });
-     
+
       this.allblogs = blogs;
       this.filterBlogs();
     });
