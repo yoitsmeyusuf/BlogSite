@@ -7,6 +7,7 @@ import { BlogService, User } from '../blog.services';
 import { KeyValue } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LatestblogsComponent } from '../latestblogs/latestblogs.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   standalone: true,
   selector: 'app-blog',
@@ -24,16 +25,20 @@ export class CardComponent implements OnInit {
   tagcounts: any = [];
   searchTerm: string = '';
   highestCount: number = 0; // Assign an initial value to 'highestCount'
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService, private sanitizer: DomSanitizer) { }
   texts: string[] = [
-    "Head Of IT \n KUMPORT",
-    'Digital Transformation Leader',
-    'Data Analysis'
+    "Head Of IT<br>KUMPORT",
+    'Digital<br>Transformation<br>Leader',
+    'Data<br>Analysis',
+    'Algorithms',
+    'AI<br>Researcher',
+    'Information<br>Security<br>Manager'
   ];
+
   animatedText: string = '';
+  animationStyle: SafeHtml = '';
   count: number = 0;
-  animationStyle: string = '';
-  
+
 
   name!: User;
 
@@ -50,11 +55,12 @@ export class CardComponent implements OnInit {
   tagValueComparator = (a: KeyValue<string, number>, b: KeyValue<string, number>): number => {
     return b.value - a.value;
   }
+
   typeText() {
     if (this.texts[this.count].length > this.animatedText.length) {
       this.animatedText += this.texts[this.count][this.animatedText.length];
-      this.animationStyle = 'typing 0.5s steps(1, end), blink-caret .75s step-end infinite';
-      setTimeout(() => this.typeText(), 100);
+      this.animationStyle = this.sanitizer.bypassSecurityTrustHtml('typing 0.5s steps(1, end), blink-caret .75s step-end infinite');
+      setTimeout(() => this.typeText(), 50);
     } else {
       this.animationStyle = '';
       setTimeout(() => this.deleteText(), 1200);
@@ -64,8 +70,8 @@ export class CardComponent implements OnInit {
   deleteText() {
     if (this.animatedText.length > 0) {
       this.animatedText = this.animatedText.slice(0, -1);
-      this.animationStyle = 'deleting 0.5s steps(1, end), blink-caret .75s step-end infinite';
-      setTimeout(() => this.deleteText(), 100);
+      this.animationStyle = this.sanitizer.bypassSecurityTrustHtml('deleting 0.5s steps(1, end), blink-caret .75s step-end infinite');
+      setTimeout(() => this.deleteText(), 50);
     } else {
       this.animationStyle = '';
       this.count = (this.count + 1) % this.texts.length;
@@ -73,6 +79,7 @@ export class CardComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+
     this.typeText();
 
 

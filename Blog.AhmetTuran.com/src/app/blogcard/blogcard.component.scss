@@ -15,55 +15,80 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   display: flex;
   background-color: #f5f5f5;
   padding: 20px;
+  user-select: none;
+
   .styleText {
     border-right: 0em solid #000;
-  
-    
+
+
   }
-  
+
   @keyframes typing {
-    from { width: 0 }
-    to { width: 12ch }
+    from {
+      width: 0
+    }
+
+    to {
+      width: 12ch
+    }
   }
-  
+
   @keyframes deleting {
-    from { width: 12ch }
-    to { width: 0 }
+    from {
+      width: 12ch
+    }
+
+    to {
+      width: 0
+    }
   }
-  
+
   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #000 }
+
+    from,
+    to {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: #000
+    }
   }
-  p{
+
+  p {
     font-size: 50px;
     font-weight: 500;
   }
+
   img {
     border-radius: 30px;
     width: 100%;
     height: 600px;
     object-fit: cover;
-    object-position: bottom; /* Resmi üstten hizalar */
+    object-position: bottom;
+    /* Resmi üstten hizalar */
   }
 }
 
-.viewing{
+.viewing {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 35px;
-  img{
+
+  img {
     width: 20px;
     height: 20px;
   }
-  p{
+
+  p {
     font-size: 15px;
     color: #18151f59;
     font-weight: 500;
     margin-left: 5px;
   }
 }
+
 .divider {
   width: 100%;
   height: 1px;
@@ -72,17 +97,20 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   margin-bottom: 10px;
   border-radius: 20px;
 }
-.popularblogs_div{
+
+.popularblogs_div {
   margin-left: 10px;
   margin-top: 20px;
 }
-.otherblogs_text{
+
+.otherblogs_text {
   color: #18151f;
   font-weight: 600;
   font-size: 14px;
   position: relative;
 
 }
+
 .popularblogs {
   width: 120%;
   display: flex;
@@ -108,11 +136,13 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       overflow: hidden;
       line-height: 20px;
       font-size: 13px;
+      font-weight: 600;
     }
-    p{
+
+    p {
       font-size: 13px;
       color: #18151fa5;
-    
+
     }
   }
 }
@@ -238,7 +268,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 }
 
 .secenekler {
-  top: 8%;
+  top: 10%;
   width: 15%;
   position: sticky;
   left: 30px;
@@ -263,7 +293,8 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .lorem {
   &:hover {
-    background-color: #0000001e;
+    background-color: rgba(128, 128, 128, 0.192);
+    transition: 0.3s ease;
   }
 
   display: flex;
@@ -282,7 +313,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   width: 15%;
   position: sticky;
   right: 70px;
-  top: 8%;
+  top: 10%;
 
   height: 100%;
   z-index: 100;
@@ -519,14 +550,22 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 
   .postcard__preview-txt {
-    text-overflow: ellipsis;
-    text-align: justify;
     position: relative;
     width: 87%;
     font-size: 15px;
     color: #0000007d;
     bottom: 80px;
     margin-bottom: -100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    a{
+      color: #000;
+    }
+    p{
+      display: none;
+    }
   }
 
 
@@ -612,7 +651,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 @media screen and (max-width: 600px) {
 
-  
+
   .search {
     border: none;
     height: 35px;
@@ -621,7 +660,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     margin-bottom: 10px;
     transition: 0.3s ease;
   }
-  
+
   .secenekler {
     top: 12%;
     width: 20%;
@@ -631,7 +670,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     z-index: 100;
     line-height: 7px;
   }
-  
+
   .search-icon {
     position: absolute;
     top: 0.6rem;
@@ -641,28 +680,29 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     height: 1rem;
     color: #777777;
   }
-  
+
   .search:focus {
     outline: none;
   }
-  
+
   .lorem {
     &:hover {
       background-color: #0000001e;
     }
-  
+
     display: flex;
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
     height: 5%;
     width: 75%;
-  
+
     .lorem_text {
       color: #000000a7;
       margin-left: 5px;
     }
   }
+
   .footer {
     background-color: #5b478a00;
     color: #000000;
@@ -675,27 +715,27 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     flex-direction: column;
     align-items: center;
     font-size: 10px;
-  
+
     a {
       text-decoration: none;
       color: #002fff;
     }
-  
+
     .footer_text_div {
       display: flex;
       flex-direction: column;
       align-items: center;
-  
+
       width: 100%;
       position: relative;
       bottom: 80%;
-  
+
       .footer_text {
         margin-right: 10px;
       }
-  
+
     }
-  
+
     svg {
       width: 50px;
       height: 50px;

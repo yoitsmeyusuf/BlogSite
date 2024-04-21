@@ -1,561 +1,559 @@
-@media screen and (max-width: 600px) { 
-    .navbar{
-        width: 87%;
-        display: none;
-    }
+@media screen and (max-width: 600px) {
+  .navbar {
+    width: 87%;
+    display: none;
+  }
 }
 
-.navbar{
-    width: 100%;
+.navbar {
+  width: 100%;
 }
 
 .navbar_baslik {
-    display: flex;
-    position: relative;
-    bottom: 22px;
-    left: 10px;
+  display: flex;
+  position: relative;
+
+  left: 10px;
 }
 
-.navbar{
-    position: fixed;
-    background: #ffffff56;
-    z-index: 10000;
-    top: -5px;
-    backdrop-filter: blur(20px); /* Arkaplanı blur yap */
-    border-bottom: 1px solid #cccccc78;
+.navbar {
+  position: fixed;
+  background: #ffffff56;
+  z-index: 10000;
+  top: -5px;
+  backdrop-filter: blur(20px); /* Arkaplanı blur yap */
+  border-bottom: 1px solid #cccccc78;
 }
 
 #logo {
-    position: relative;
-    left: 25px;
-    top: 30px;
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
+  position: relative;
+  left: 25px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .user {
-    height: 100%;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
+  height: 100%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
 }
 
 .user_image {
-    position: relative;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 10px;
-    bottom: 3px;
-    /* Resim ile metin arasındaki boşluğu ayarlar */
-
-
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  bottom: 3px;
+  /* Resim ile metin arasındaki boşluğu ayarlar */
 }
 
 .create_button {
-    position: relative;
-    right: 20px;
-    top: 0px;
-    width: 50px;
-    height: 30px;
-    background-color: rgba(50, 50, 255, 0);
-
-    border: #20202060 1px solid;
-    color: white;
-    font-weight: 500;
-    font-style: DM Sans;
-    font-size: 10px;
-    padding-left: 7px;
-    padding-top: 4px;
-    border-radius: 10px;
-    cursor: pointer;
+  position: relative;
+  right: 20px;
+  top: 5px;
+  width: 50px;
+  height: 30px;
+  background-color: rgba(50, 50, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #20202060 1px solid;
+  color: white;
+  font-weight: 500;
+  font-style: DM Sans;
+  font-size: 10px;
+  padding-left: 7px;
+  padding-top: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  svg{
+    margin-top: 2px;
+  }
 }
 
 .create_button:hover {
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .tooltipblog {
-    visibility: hidden;
-    background-color: #20202000;
-    color: #fff;
-    font-size: 10px;
-    text-align: left;
-    border-radius: 5px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-    top: 105%;
-    width: 100px;
-    margin-left: -90px;
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-    border: #00000019 1px solid;
+  visibility: hidden;
+  background-color: #4459e8;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 115%;
+  width: 220%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  border: #00000019 1px solid;
 
-    backdrop-filter: blur(20px); /* Arkaplanı blur yap */
-    /* Normal durumda geçiş efekti */
+  backdrop-filter: blur(20px); /* Arkaplanı blur yap */
+  /* Normal durumda geçiş efekti */
 }
 
 .create_button:hover .tooltipblog {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s ease-out;
-    /* :hover durumunda geçiş efekti */
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+  /* :hover durumunda geçiş efekti */
 }
 
-
-
-
-
 .tt_create_blog {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border-radius: 7px;
 }
 
 .tt_create_blog:hover {
-    background-color: rgba(0, 110, 255, 0.357);
-    transition: 0.3s ease;
+  background-color: #3e50d0;
+  transition: 0.3s ease;
 
-    .tt_user_account_icon {
-        fill: rgba(255, 255, 255, 0.915);
-        transition: 0.3s ease;
-    }
+  .tt_user_account_icon {
+    fill: rgba(255, 255, 255, 0.915);
+    transition: 0.3s ease;
+  }
 }
 
 .tt_create_blog_icon {
-    fill: rgb(46, 46, 46);
-    position: relative;
-    top: 1px;
+  fill: rgb(255, 255, 255);
+  position: relative;
+  top: 1px;
 }
 
 .tt_create_blog_text {
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 11px;
-    top: 0.7px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 11px;
+  top: 0.7px;
 }
 
 .tt_import_blog {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border-radius: 7px;
 }
 
 .tt_import_blog:hover {
-    background-color: rgba(72, 151, 255, 0.357);
-    transition: 0.3s ease;
+  background-color: #3e50d0;
+  transition: 0.3s ease;
 
-    .tt_user_profile_icon {
-        fill: rgba(255, 255, 255, 0.915);
-        transition: 0.3s ease;
-    }
+  .tt_user_profile_icon {
+    fill: rgba(255, 255, 255, 0.915);
+    transition: 0.3s ease;
+  }
 }
 
 .tt_import_blog_icon {
-    fill: rgb(46, 46, 46);
+  fill: rgb(255, 255, 255);
 }
 
 .tt_import_blog_text {
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 8px;
-    top: 1px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 8px;
+  top: 1px;
 }
 
-
-
-
 .user .tooltiptext {
-    visibility: hidden;
-    background-color: #ffffff00;
-    color: #ffffff00;
-    font-size: 10px;
-    text-align: left;
-    border-radius: 5px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1000000;
-    top: 105%;
-    width: 220px;
-    height: 1000%;
-    margin-left: -210px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    border: #00000019 1px solid;
-    backdrop-filter: blur(20px); /* Arkaplanı blur yap */
-    /* Normal durumda geçiş efekti */
+  visibility: hidden;
+  background-color: #4459e8;
+  color: #ffffff;
+  font-size: 10px;
+  text-align: left;
+  border-radius: 20px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1000000;
+  top: 100%;
+  width: 420%;
+  height: 1000%;
+  margin-left: -210px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border: #00000019 1px solid;
 }
 
 .user:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s;
-    /* :hover durumunda geçiş efekti */
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
+  /* :hover durumunda geçiş efekti */
 }
 
-
-
 .user_text {
-    color: black;
-    position: relative;
+  color: white;
+  position: relative;
 
-    margin: 0;
-    /* Metnin dış boşluğunu sıfırlar */
-    background-color: red;
-    width: 50%;
-
+  margin: 0;
+  /* Metnin dış boşluğunu sıfırlar */
+  background-color: red;
+  width: 50%;
 }
 
 .tt_user {
-    display: flex;
-    margin-top: 5px;
-    margin-bottom: 0px;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .tt_user_image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-
-.tt_username_div{
-    line-height: 2px;
+.tt_username_div {
+  line-height: 2px;
 }
 
-.tt_user_fullname{
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.327);
-    position: relative;
-    bottom: 5px;
+.tt_user_fullname {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.327);
+  position: relative;
+  bottom: 5px;
 }
-
 
 .tt_user_name {
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    bottom: 5px;
-    text-transform: lowercase;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  bottom: 5px;
+  text-transform: lowercase;
 }
 
 .tt_user_account {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
 .tt_user_account:hover {
-    background-color: rgba(0, 110, 255, 0.858);
-    transition: 0.3s ease;
+  background-color: #3e50d0;
+  transition: 0.3s ease;
 
-    .tt_user_account_icon {
-        fill: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-    .tt_user_account_text {
-        color: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
+  .tt_user_account_icon {
+    fill: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
+  .tt_user_account_text {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
 }
 
 .tt_user_account_icon {
-    fill: rgb(46, 46, 46);
-    position: relative;
-    top: 1px;
+  fill: rgb(255, 255, 255);
+  position: relative;
+  margin-right: 5px;
 }
 
 .tt_user_account_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 5px;
-    top: 0.7px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 5px;
+  top: 0.7px;
 }
 
 .tt_user_add_profile {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
 .tt_user_add_profile:hover {
-    background-color: rgba(0, 110, 255, 0.858);
-    transition: 0.3s ease;
+  background-color: #3c50cf;
+  transition: 0.3s ease;
 
-    .tt_user_profile_icon {
-        fill: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-    .tt_user_profile_text {
-        color: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
+  .tt_user_profile_icon {
+    fill: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
+  .tt_user_profile_text {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
 }
 
 .tt_user_profile_icon {
-    fill: rgb(46, 46, 46);
+  fill: rgb(255, 255, 255);
+  margin-right: 8px;
 }
 
 .tt_user_profile_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 3px;
-    top: 1px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  top: 2px;
 }
 
 .tt_blogs {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
 .tt_blogs:hover {
-    background-color: rgba(0, 110, 255, 0.858);
+  background-color: #3c50cf;
+  transition: 0.3s ease;
+
+  .tt_blogs_icon {
+    fill: rgb(255, 255, 255);
     transition: 0.3s ease;
-
-    .tt_blogs_icon {
-        fill: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-    .tt_blogs_text {
-        color: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-
+  }
+  .tt_blogs_text {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
 }
 
 .tt_blogs_icon {
-    fill: rgb(46, 46, 46);
-    position: relative;
-    top: 1px;
+  fill: rgb(255, 255, 255);
+  position: relative;
+  margin-right: 5px;
 }
 
 .tt_blogs_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 8px;
-    top: 0.7px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 8px;
+  top: 0.7px;
 }
 
 .tt_top_blogs {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
 .tt_top_blogs:hover {
-    background-color: rgba(0, 110, 255, 0.858);
-    transition: 0.3s ease;
+  background-color: #3c50cf;
+  transition: 0.3s ease;
 
-    .tt_top_blogs_icon {
-        fill: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-    .tt_top_blogs_text {
-        color: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
+  .tt_top_blogs_icon {
+    fill: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
+  .tt_top_blogs_text {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
 }
 
 .tt_top_blogs_icon {
-    fill: rgb(46, 46, 46);
-    position: relative;
-    top: 1px;
+  fill: rgb(255, 255, 255);
+  position: relative;
+  margin-right: 5px;
 }
 
 .tt_top_blogs_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 8px;
-    top: 0.7px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 8px;
+  top: 0.7px;
 }
 
 .tt_favorites {
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
 .tt_favorites:hover {
-    background-color: rgba(0, 110, 255, 0.858);
-    transition: 0.3s ease;
+  background-color: #3c50cf;
+  transition: 0.3s ease;
 
-    .tt_favorites_icon {
-        fill: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-    .tt_favorites_text {
-        color: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
+  .tt_favorites_icon {
+    fill: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
+  .tt_favorites_text {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
 }
 
-
 .tt_favorites_icon {
-    fill: rgb(46, 46, 46);
-    position: relative;
-    top: 1px;
+  fill: rgb(255, 255, 255);
+  position: relative;
+  margin-right: 5px;
 }
 
 .tt_favorites_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 8px;
-    top: 1px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 8px;
+  top: 1px;
 }
 
 .tt_settings {
-
-    width: 98%;
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    border-radius: 7px;
+  width: 98%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
 .tt_settings:hover {
-    background-color: rgba(0, 110, 255, 0.858);
-    transition: 0.3s ease;
+  background-color: #3c50cf;
 
-    .tt_settings_icon {
-        fill: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
-    .tt_settings_text {
-        color: rgb(255, 255, 255);
-        transition: 0.3s ease;
-    }
+  .tt_settings_icon {
+    fill: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
+  .tt_settings_text {
+    color: rgb(255, 255, 255);
+    transition: 0s ease;
+  }
 }
 
 .tt_settings_icon {
-    fill: rgb(46, 46, 46);
-    position: relative;
-    top: 1.2px;
+  fill: rgb(255, 255, 255);
+  position: relative;
+  margin-right: 5px;
 }
 
 .tt_settings_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(32, 32, 32, 0.915);
-    position: relative;
-    margin-left: 8px;
-    top: 1.2px;
+  font-size: 15px;
+
+  color: rgba(255, 255, 255, 0.915);
+  position: relative;
+  margin-left: 8px;
+  top: 1.2px;
 }
-
-
 
 .divider {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.085);
-    margin-top: 5px;
-    margin-bottom: 9px;
-    border-radius: 20px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.085);
+  margin-top: 5px;
+  margin-bottom: 9px;
+  border-radius: 20px;
 }
 
-
-
-
 #logo_text_div {
-    position: relative;
-    left: 35px;
-    top: 80px;
-    top: 1px;
+  position: relative;
+  left: 35px;
+  top: 80px;
+  top: 1px;
 }
 
 .logo_text {
-    color: #FFF;
-    font-family: DM Sans;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1px;
-    /* 125% */
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    margin-bottom: -15px;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1px;
+  /* 125% */
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: -15px;
 }
 
 .baslik_icon {
-    position: relative;
-    top: 25px;
+  position: relative;
+  top: 25px;
 }
 
 .baslik_text {
-    font-size: 25px;
-    position: relative;
+  font-size: 25px;
+  position: relative;
 }
 
 .login_button {
-    position: relative;
-    display: flex;
-    right: 10px;
-    top: 10px;
-}
-
-.login_button:hover .login_text {
-    color: rgba(0, 0, 0, 0.633);
-}
-
-.login_button:hover .login_icon path {
-    fill: rgba(0, 0, 0, 0.633);
-    transition: fill 0.3s ease;
-}
-
-
-.login_icon {
-    position: relative;
-
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  height: 25px;
+  font-size: 20px;
+  background-color: #5168ff00;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  transition: .3s;
+  &:hover{
+    background-color: #0000000c;
+  }
 }
 
 .login_text {
-    position: relative;
-    right: 3px;
-    bottom: 17px;
-    color: rgb(0, 0, 0);
-    transition: fill 0.3s ease;
-    font-weight: 600;
-    font-style: DM Sans;
+  margin: auto;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-style: DM Sans;
+}
+
+
+
+.signin_button {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  height: 25px;
+  font-size: 20px;
+    background-color: #2353ff;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  transition: .3s;
+  &:hover{
+    background-color: #2149d8;
+  }
+}
+
+.signin_text {
+  margin: auto;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-style: DM Sans;
 }

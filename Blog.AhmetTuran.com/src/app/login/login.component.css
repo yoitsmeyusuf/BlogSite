@@ -16,15 +16,19 @@
 input{
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 5px;
+    padding-left: 15px;
+    border-radius: 15px;
     border: none;
     position: relative;
     transition: .3s ease;
-    
+    height: 30px;
+    font-size: 16px;
+
 }
 
 h2{
     color: black;
+    font-size: 40px;
 }
 
 .submit_button{
@@ -34,6 +38,13 @@ h2{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    transition: .3s;
+    &:hover{
+      background-color: #2149d8;
+    }
 }
 
 .remember_div{
@@ -46,14 +57,14 @@ h2{
 
 
 
-  
+
   .password-toggle-icon {
     position: absolute;
-    right: 40.5%;
-    top: 60%;
+    right: 35.5%;
+    top: 68%;
     transform: translateY(-50%);
     cursor: pointer;
-    width: 20px;
+    width: 35px;
     opacity: 0.5;
   }
 
@@ -61,5 +72,5 @@ h2{
     outline: none;
     border-color: rgba(76, 105, 234, 0.772);
     background-color: #fff;
-    box-shadow: 0 0 0 2.5px rgba(76, 87, 234, 0.724);
+    box-shadow: 0 0 0 4px rgba(76, 87, 234, 0.724);
    }

@@ -1,20 +1,20 @@
 <div class="positionDiv">
-  <div style="width: 20%;" class="">
+  <div style="width: 30%;" class="">
     <div style="display: flex; justify-content: center;">
       <h2 class="">Login</h2>
     </div>
     <div class="islemler">
       <input [(ngModel)]="model.username" placeholder="Username" class="" type="username">
-      
+
         <input [(ngModel)]="model.password"  placeholder="Password" class="" [type]="passwordInputType">
         <img [src]="passwordIcon" class="password-toggle-icon" (click)="togglePasswordVisibility()">
-      
-      <div class="">
+
+      <!-- <div class="">
         <label class="remember_div" for="remember-me">
           <input class="" id="remember-me" type="checkbox">
           Remember me
         </label>
-      </div>
+      </div> -->
       <button (click)="login()" class="submit_button" type="submit">Login</button>
     </div>
   </div>
