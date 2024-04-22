@@ -1,0 +1,52 @@
+.archivepage {
+    color: black;
+    margin-top: 150px;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    .yeartext {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: -20px;
+        user-select: none;
+    }
+
+    .archivemonth {
+        margin-top: 30px;
+        .blogcard {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: white;
+            transition: 0.3s;
+            color: black;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.566);
+                cursor: pointer;
+            }
+
+
+            .blogcarddate {
+                font-size: 20px;
+                font-weight: 600;
+                margin-right: 60px;
+                margin-left: 20px;
+                color: rgba(0, 0, 0, 0.417);
+            }
+
+            .blogcardtitle {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+
+
+
+
+        }
+    }
+
+}

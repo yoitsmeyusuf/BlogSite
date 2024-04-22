@@ -1,0 +1,15 @@
+<div class="archivepage">
+    <div class="archiveyear" *ngFor="let year of uniqueYears | keyvalue">
+        <p class="yeartext">{{ year.key }}</p>
+        <div class="archivemonth">
+            <a *ngFor="let blog of year.value" href="" class="blogcard">
+                <p class="blogcarddate">{{ blog.publishDate }}</p>
+                <p class="blogcardtitle">{{ blog.title }}</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+
