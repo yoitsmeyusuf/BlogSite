@@ -76,10 +76,10 @@
 
     <!-- Buton içeriği buraya gelecek -->
     <div class="user" [style.display]="name ? 'block' : 'none'">
-      <img class="user_image" src="http://localhost:4000/images/Profile.jpg" alt="">
+      <img class="user_image" src="http://devapi.ahmetturanpolat.com/images/Profile.jpg" alt="">
       <div class="tooltiptext">
         <div class="tt_user">
-          <img class="tt_user_image" src="http://localhost:4000/images/Profile.jpg" alt="">
+          <img class="tt_user_image" src="http://devapi.ahmetturanpolat.com/images/Profile.jpg" alt="">
           <div class="tt_username_div">
             <p class="tt_user_name">{{name?.username}}</p>
             <p class="tt_user_fullname">Ahmet Turan POLAT</p>
@@ -155,11 +155,7 @@
       <!-- <p class="user_text">{{this.name}}</p> -->
     </div>
 
-    <a [style.display]="name ? 'none' : 'block'" class="login_button" href="/controlpanel">
-
-      <p class="login_text">Login</p>
-    </a>
-    <a [style.display]="name ? 'none' : 'block'" class="signin_button" href="">
+    <a [style.display]="name ? 'none' : 'block'" class="signin_button" href="/controlpanel">
 
       <p class="signin_text">Sign in</p>
     </a>

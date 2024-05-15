@@ -1,7 +1,62 @@
+.page{
+    display: flex;
+}
+.search {
+    border: none;
+    height: 35px;
+    width: 70%;
+    border-radius: 10px;
+    background-color: #dfdfdf;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .secenekler {
+    top: 10%;
+    width: 15%;
+    position: sticky;
+    left: 30px;
+    height: 100%;
+    z-index: 100;
+    line-height: 7px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.8rem;
+    fill: none;
+    width: 1rem;
+    height: 1rem;
+    color: #777777;
+  }
+  
+  .search:focus {
+    outline: none;
+  }
+  
+  .lorem {
+    &:hover {
+      background-color: rgba(128, 128, 128, 0.192);
+      transition: 0.3s ease;
+    }
+  
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 75%;
+  
+    .lorem_text {
+      color: #000000d6;
+      margin-left: 5px;
+    }
+  }
 .archivepage {
     color: black;
     margin-top: 150px;
-    margin-left: 20%;
+    margin-left: 10%;
     margin-right: 20%;
 
     .yeartext {

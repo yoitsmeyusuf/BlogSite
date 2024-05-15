@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Configuration;
+using System.Text.Json.Serialization;
 using WebApi.Helpers;
 using WebApi.Middleware;
 using WebApi.Repositories;
@@ -34,17 +35,22 @@ var builder = WebApplication.CreateBuilder(args);
     services.AddScoped<IAuthServices, AuthServices>();
     services.AddScoped<IPostService, PostService>();
 }
+
 // use swagger for api documentation
+builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseDeveloperExceptionPage();
 
-// ensure database and tables exist
-{
-    using var scope = app.Services.CreateScope();
-    var context = scope.ServiceProvider.GetRequiredService<DataContext>();
-    await context.Init();
-}
+// // ensure database and tables exist
+// {
+//     using var scope = app.Services.CreateScope();
+//     var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+//     // await context.Init();
+// }
 
 // configure HTTP request pipeline
 {
@@ -56,9 +62,10 @@ var app = builder.Build();
 app.UseStaticFiles();
     // global error handler
     app.UseMiddleware<ErrorHandlerMiddleware>();
+ 
     app.UseMiddleware<TokenAuthenticationMiddleware>();
 
     app.MapControllers();
 }
 
-app.Run("http://localhost:4000");
+app.Run();

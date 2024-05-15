@@ -119,7 +119,7 @@ if (model.ImageURL != null)
     byte[] imageBytes = Convert.FromBase64String(model.ImageURL);
     var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", isim + ".jpg");
     await System.IO.File.WriteAllBytesAsync(path, imageBytes);
-    model.ImageURL = Path.Combine("http://localhost:4000", "images", isim + ".jpg");
+    model.ImageURL = Path.Combine("http://devapi.ahmetturanpolat.com", "images", isim + ".jpg");
 }
 
 

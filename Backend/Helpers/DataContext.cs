@@ -20,11 +20,11 @@ public class DataContext
         return new MySqlConnection(connectionString);
     }
 
-    public async Task Init()
-    {
-        await _initDatabase();
-        await _initTables();
-    }
+    //public async Task Init()
+    //{
+    //    //await _initDatabase();
+    //    //await _initTables();
+    //}
 
     private async Task _initDatabase()
     {

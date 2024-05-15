@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.services';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-archive',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './archive.component.html',
   styleUrl: './archive.component.css'
 })
 export class ArchiveComponent implements OnInit {
   uniqueYears: { [key: string]: any[] } = {};
 
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService,private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
