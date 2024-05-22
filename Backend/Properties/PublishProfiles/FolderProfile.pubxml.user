@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\oguz\Documents\GitHub\AhmetTuran.com.tr\Backend\bin\Release\net7.0\publish\</_PublishTargetUrl>
+    <History>True|2024-05-15T09:53:09.3835783Z;True|2024-05-15T12:44:44.1421680+03:00;True|2024-05-15T12:31:25.5670426+03:00;True|2024-05-15T11:07:45.9259678+03:00;True|2024-05-15T10:44:57.0296932+03:00;True|2024-05-14T17:56:54.7086548+03:00;False|2024-05-14T17:56:39.3762791+03:00;True|2024-05-14T17:11:47.5381109+03:00;True|2024-05-14T11:58:39.6334959+03:00;True|2024-05-14T11:27:43.5787999+03:00;True|2024-05-14T10:42:18.4475709+03:00;True|2024-05-14T08:45:22.6892827+03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

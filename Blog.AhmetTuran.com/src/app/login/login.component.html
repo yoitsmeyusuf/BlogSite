@@ -1,12 +1,12 @@
 <div class="positionDiv">
   <div style="width: 30%;" class="">
     <div style="display: flex; justify-content: center;">
-      <h2 class="">Login</h2>
+      <h2 class="">Admin Giriş</h2>
     </div>
     <div class="islemler">
-      <input [(ngModel)]="model.username" placeholder="Username" class="" type="username">
+      <input [(ngModel)]="model.username" placeholder="Kullanıcı Adı" class="" type="username">
 
-        <input [(ngModel)]="model.password"  placeholder="Password" class="" [type]="passwordInputType">
+        <input [(ngModel)]="model.password"  placeholder="Şifre" class="" [type]="passwordInputType">
         <img [src]="passwordIcon" class="password-toggle-icon" (click)="togglePasswordVisibility()">
 
       <!-- <div class="">
@@ -15,7 +15,7 @@
           Remember me
         </label>
       </div> -->
-      <button (click)="login()" class="submit_button" type="submit">Login</button>
+      <button (click)="login()" class="submit_button" type="submit">Giriş</button>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@
     flex-direction: column;
     height: 100%;
     position: relative;
-    top: 100px;
+    top: 200px;
 }
 
 .islemler{
@@ -68,9 +68,9 @@ h2{
     opacity: 0.5;
   }
 
-  input:focus, input:hover {
+  input:focus {
     outline: none;
     border-color: rgba(76, 105, 234, 0.772);
-    background-color: #fff;
+    background-color: #f5f5f5;
     box-shadow: 0 0 0 4px rgba(76, 87, 234, 0.724);
    }
