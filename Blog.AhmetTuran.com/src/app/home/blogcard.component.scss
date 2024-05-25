@@ -7,7 +7,18 @@ $main-red: #bd150b !default;
 $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
-
+.logo_text {
+  color: #FFF;
+  font-family: DM Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 5px;
+  /* 125% */
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: -15px;
+}
 .bannerDiv {
   margin-top: 60px;
   margin-bottom: 50px;

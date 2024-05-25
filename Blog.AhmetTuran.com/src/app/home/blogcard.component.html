@@ -9,7 +9,7 @@
     <div></div>
     <div style="width: 400px; height: 250px;  word-wrap: break-word; display: flex;
     align-items: start;">
-      <p class="styleText"  [innerHTML]="animatedText"  ></p>
+      <p class="styleText" [innerHTML]="animatedText"></p>
     </div>
 
   </div>
@@ -252,7 +252,7 @@
     <div class="popularblogs_div">
       <p class="otherblogs_text">Popüler Bloglar</p>
       <div style="margin-top: 20px;">
-        <article class="popularblogs" *ngFor="let blog of blogsrecent">
+        <article [routerLink]="['/blog', blog.postID]" class="popularblogs" *ngFor="let blog of blogsrecent">
           <img class="" src="http://devapi.ahmetturanpolat.com/images/Profile.jpg" alt="">
           <div class="popularblogs_info">
 
@@ -268,33 +268,152 @@
     </div>
   </div>
 </div>
-<div class="footer">
+<div id="footer_domain"
+  style="position: relative; top: 80px; left: -10px; height: 500px;  display: flex; justify-content: center; align-items: center;">
+  <div style="width: 100%; height: 500px; background-color: #010D50; position: relative; top: 200px;">
+    <div style="background-color: #0326ee00; height: 130px;">
+      <div style="position: relative; left: 130px; top: 50px; display: flex; width: 500px;">
+        <svg style="width: 5%; height: 5%; margin-top: 5px;" id="katman_1" data-name="katman 1" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 225.08 256.33">
+          <defs>
+            <style>
+              .cls-3 {
+                fill: #ffffff;
+              }
 
-  <div class="footer_text_div">
-    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 51 30" fill="none">
-      <g clip-path="url(#clip0_73_546)">
-        <path
-          d="M35.0766 21.3392C34.9777 21.0757 26.2085 3.75411 26.0766 3.49067C25.6151 2.37102 24.7909 1.41602 23.703 0.757406C20.9667 -0.823274 17.4722 0.0987893 15.8898 2.83205C14.8019 4.70911 14.8678 6.91547 15.9228 8.66081C16.0217 8.89132 24.3953 25.4885 24.5601 25.7519C24.659 26.0154 24.7909 26.2459 24.9228 26.5093C25.3843 27.629 26.2085 28.584 27.2964 29.2426C30.0327 30.8233 33.5272 29.9341 35.1096 27.2009C36.2305 25.3238 36.1316 23.0845 35.0766 21.3392Z"
-          fill="" fill-opacity="0.4" />
-        <path
-          d="M24.956 9.61581C25.9121 8.59495 26.5055 7.21185 26.5055 5.69704C26.5055 2.56861 23.967 0 20.8022 0C18.8571 0 17.1429 0.954995 16.1209 2.43688C15.9231 2.63447 1.71429 20.1537 1.54945 20.3842C0.593406 21.4051 0 22.7881 0 24.303C0 27.4643 2.57143 30 5.7033 30C7.64835 30 9.36264 29.045 10.3846 27.5631C10.5824 27.3326 24.8242 9.84632 24.956 9.61581Z"
-          fill="" />
-        <path
-          d="M49.4502 9.61578C50.4062 8.59492 50.9996 7.21182 50.9996 5.69701C50.9996 2.53564 48.4282 -3.05176e-05 45.2963 -3.05176e-05C43.3513 -3.05176e-05 41.637 0.954964 40.615 2.43685C40.4172 2.63444 26.1755 20.1536 26.0106 20.3842C25.0546 21.405 24.4612 22.7881 24.4612 24.3029C24.4612 27.4643 27.0326 30 30.1645 30C32.1095 30 33.8238 29.045 34.8458 27.5631C35.0766 27.3326 49.2854 9.84629 49.4502 9.61578Z"
-          fill="" />
-      </g>
-      <defs>
-        <clipPath id="clip0_73_546">
-          <rect width="51" height="30" fill="" />
-        </clipPath>
-      </defs>
-    </svg>
-    <p>
-      © <a href="ahmetturanpolat.com.tr">ahmetturanpolat.com.tr</a>, Ahmet Turan Polat'ın resmi sitesidir. 2024-2025. <a
-        href="">Gizlilik Politikası</a>. <br>
-      Tüm içeriklerimiz, <a href="">İçerik Kullanım İzinleri</a>'ne uyulduğu müddetçe kullanıma, dağıtıma ve paylaşıma
-      açıktır. <br>
-      Bu siteyi kullanan kişilerin sitedeki bütün işlemleri <a href="">Kullanıcı Sözleşmesi</a>'nin şartlarına tabidir.
-    </p>
+              .cls-4 {
+                fill: none;
+                stroke: #fff;
+                stroke-miterlimit: 10;
+                stroke-width: 7px;
+              }
+            </style>
+          </defs>
+          <path class="cls-3"
+            d="M368.65,398V351.17q0-48.37-21.07-71.55t-65-23.18q-45.63,0-70.82,25.56t-25.19,71.73v159h74.39V453.22h21.43v-66H260.92V356.11q0-26,17.4-26,9,0,12.46,5.68t3.48,20.33v97.41C333,452.93,364.72,428.81,368.65,398Z"
+            transform="translate(-143.57 -256.44)" />
+          <path class="cls-3" d="M294.26,466.27v46.5h74.39v-79C352.35,453.09,325.16,465.88,294.26,466.27Z"
+            transform="translate(-143.57 -256.44)" />
+          <rect class="cls-3" y="130.82" width="152.28" height="65.96" />
+          <path class="cls-4" d="M-30.45,243.64" transform="translate(-143.57 -256.44)" />
+        </svg>
+        <div style="position: relative; left: 10px;">
+          <h1 style="font-size: 13px;" class="logo_text">ahmet turan</h1> <br>
+          <h1 style="font-size: 13px;" class="logo_text">polat</h1>
+        </div>
+
+      </div>
+      <div style="left: 900px; top: 22px; position: relative; width: 100px; display: flex;">
+        <a href="https://www.instagram.com/ahmettp/"
+          style="background-color: rgba(255, 255, 255, 0.288); padding: 5px; width: 20px; height: 20px; border-radius: 50px; margin-right: 5px;">
+          <svg fill="#fff" width="20px" height="20px" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"
+            data-name="Layer 1">
+            <path
+              d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z" />
+          </svg>
+        </a>
+        <div
+          style="background-color: rgba(255, 255, 255, 0.288); padding: 5px; width: 20px; height: 20px; border-radius: 50px; margin-right: 5px;">
+          <svg fill="#fff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+            data-name="Layer 1">
+            <path
+              d="M22,5.8a8.49,8.49,0,0,1-2.36.64,4.13,4.13,0,0,0,1.81-2.27,8.21,8.21,0,0,1-2.61,1,4.1,4.1,0,0,0-7,3.74A11.64,11.64,0,0,1,3.39,4.62a4.16,4.16,0,0,0-.55,2.07A4.09,4.09,0,0,0,4.66,10.1,4.05,4.05,0,0,1,2.8,9.59v.05a4.1,4.1,0,0,0,3.3,4A3.93,3.93,0,0,1,5,13.81a4.9,4.9,0,0,1-.77-.07,4.11,4.11,0,0,0,3.83,2.84A8.22,8.22,0,0,1,3,18.34a7.93,7.93,0,0,1-1-.06,11.57,11.57,0,0,0,6.29,1.85A11.59,11.59,0,0,0,20,8.45c0-.17,0-.35,0-.53A8.43,8.43,0,0,0,22,5.8Z" />
+          </svg>
+        </div>
+        <div
+          style="background-color: rgba(255, 255, 255, 0.288); padding: 5px; width: 20px; height: 20px; border-radius: 50px; margin-right: 5px;">
+          <svg fill="#fff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+            data-name="Layer 1">
+            <path
+              d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48h0a1.56,1.56,0,1,1,0-3.12,1.57,1.57,0,1,1,0,3.12ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z" />
+          </svg>
+        </div>
+      </div>
+
+    </div>
+    <div style="display: flex;">
+      <div style="position: relative; left: 130px; width: 200px;">
+        <p style="color: white; font-family: DM Sans; font-size: 14px;">MENU</p>
+        <div style="position: relative;
+                top: 10px;
+                background: var(--dark-blue, #ffffff8e);
+                /* Çizgi rengi ve özellikleri */
+                /* Alt ve üst boşluklar */
+                /* Diğer stillendirmeler */
+                width: 200px;
+
+                height: 0.4px;"></div>
+        <div style="display: flex;">
+          <a href="#"
+            style="color: rgba(255, 255, 255, 0.719);; font-family: DM Sans; font-size: 12px; top: 38px; position: relative; text-transform: uppercase; text-decoration: none;">
+            Ana sayfa</a>
+          <a href="/archive"
+            style="color: rgba(255, 255, 255, 0.719); font-family: DM Sans; font-size: 12px; top: 38px; left: 95px; position: relative; text-transform: uppercase; text-decoration: none;">
+            Arşiv</a>
+        </div>
+        <a href="/profile"
+          style="color: rgba(255, 255, 255, 0.719);; font-family: DM Sans; font-size: 12px; top: 45px; position: relative; text-transform: uppercase; text-decoration: none;">
+          Hakkında</a>
+        <a href="/contact"
+          style="color: rgba(255, 255, 255, 0.719);; font-family: DM Sans; font-size: 12px; top: 70px; right: 59px; position: relative; text-transform: uppercase; text-decoration: none;">
+          iletişim</a>
+
+      </div>
+      <div
+        style="width: 400px; height: 210px; border-radius: 20px; background-color: #ffffff28; position: relative; left: 400px; top: 10px;">
+        <p
+          style="color: white; font-family: DM Sans; font-size: 15px; text-transform: uppercase; position: relative; left: 25px; top: 15px;">
+          mail</p>
+        <h6 style="color: var(--white, #ffffff9d);  /* Desktop/body */
+                    position: relative;
+                    left: 25px;
+                    top: 5px;
+                        font-family: DM Sans;
+                        font-size: 13px;
+                        font-style: normal;
+                        text-align: left;
+                        width: 250px;
+                        font-weight: 50;
+                        line-height: 17.004px; /* 177.8% */">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet .
+        </h6>
+        <a href="mailto:ahmet.tp@gmail.com" id="mailButton"
+          style="text-decoration: none; width: 110px; height: 40px; background-color: #0328EE; transition: background-color 0.3s ease; border: none; position: relative; left: 25px; border-radius: 10px; display: flex;">
+          <svg style="position: relative; top: 9.5px; left: 10px;" width="20px" height="20px" viewBox="0 0 48 48"
+            version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Uploaded to SVGRepo https://www.svgrepo.com -->
+            <title>ic_fluent_mail_48_filled</title>
+            <desc>Created with Sketch.</desc>
+            <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="ic_fluent_mail_48_filled" fill="#fff" fill-rule="nonzero">
+                <path
+                  d="M43,16.976 L43,33.75 C43,36.6494949 40.6494949,39 37.75,39 L10.25,39 C7.35050506,39 4.99976748,36.6494949 4.99976748,33.75 L4.99976748,16.976 L23.3976016,27.0952699 C23.7727049,27.3015767 24.2272951,27.3015767 24.6023984,27.0952699 L43,16.976 Z M37.75,9 C40.6074055,9 42.9316438,11.2827599 42.9985196,14.1240842 L24,24.573411 L5.00176748,14.124 L5.00437905,14.0335954 C5.11786837,11.2344489 7.42299244,9 10.25,9 L37.75,9 Z"
+                  id="🎨-Color"></path>
+              </g>
+            </g>
+          </svg>
+
+          <p
+            style="color: white; font-family: DM Sans; font-size: 10px; text-transform: uppercase; position: relative; left: 17px; top: 3px; font-weight: 50; letter-spacing: 2px;">
+            CONTACT</p>
+        </a>
+      </div>
+    </div>
+    <div style="position: relative;
+                top: 100px;
+                left: 130px;
+                background: var(--dark-blue, #ffffff49);
+                /* Çizgi rengi ve özellikleri */
+                /* Alt ve üst boşluklar */
+                /* Diğer stillendirmeler */
+                width: 870px;
+
+                height: 0.4px;"></div>
+    <p
+      style="width: 200px; color: rgb(255, 255, 255); font-family: DM Sans; font-size: 13px; top: 110px; left: 130px; position: relative;">
+      Tüm hakları saklıdır © 2024</p>
+
   </div>
+
+
 </div>
