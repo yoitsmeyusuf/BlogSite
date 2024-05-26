@@ -7,8 +7,9 @@ $main-red: #bd150b !default;
 $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+
 .logo_text {
-  color: #FFF;
+  color: #fff;
   font-family: DM Sans;
   font-size: 10px;
   font-style: normal;
@@ -20,7 +21,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   margin-bottom: -15px;
 }
 .bannerDiv {
-  margin-top: 60px;
+  margin-top: 70px;
   margin-bottom: 50px;
   position: relative;
   display: flex;
@@ -32,51 +33,48 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   .styleText {
     border-right: 0em solid #000;
-
-
   }
 
   @keyframes typing {
     from {
-      width: 0
+      width: 0;
     }
 
     to {
-      width: 12ch
+      width: 12ch;
     }
   }
 
   @keyframes deleting {
     from {
-      width: 12ch
+      width: 12ch;
     }
 
     to {
-      width: 0
+      width: 0;
     }
   }
 
   @keyframes blink-caret {
-
     from,
     to {
-      border-color: transparent
+      border-color: transparent;
     }
 
     50% {
-      border-color: #000
+      border-color: #000;
     }
   }
 
   p {
-    font-size: 50px;
+    font-size: 3vw;
     font-weight: 500;
   }
 
   img {
-    border-radius: 30px;
-    width: 100%;
-    height: 600px;
+    border-radius: 2vw;
+    width: 100vw;
+    height: 70vh;
     object-fit: cover;
     object-position: bottom;
     /* Resmi üstten hizalar */
@@ -121,26 +119,52 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   font-weight: 600;
   font-size: 14px;
   position: relative;
-
 }
 
 .popularblogs {
-  width: 120%;
+  height: 65px;
+  width: 100%;
   display: flex;
-  margin-bottom: -30px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
   line-height: 0px;
-  height: 100px;
+  transition: 0.3s;
+  border-radius: 20px;
+  position: relative;
+  &:hover {
+    background-color: rgba(50, 99, 205, 0.37);
+    padding-left: 15px;
+    &::after {
+      content: "İncele";
+      color: rgba(50, 99, 205, 0.699);
+      position: absolute;
+      font-weight: bold;
+      font-size: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    img {
+      opacity: 0.1;
+    }
 
+    .popularblogs_info {
+      opacity: 0.1;
+    }
+  }
   img {
     margin-right: 10px;
     width: 50px;
     height: 50px;
     border-radius: 100px;
+    transition: 0.3s;
   }
 
   .popularblogs_info {
     width: 60%;
     line-height: 0px;
+    transition: 0.3s;
 
     span {
       display: -webkit-box;
@@ -155,7 +179,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     p {
       font-size: 13px;
       color: #18151fa5;
-
     }
   }
 }
@@ -166,7 +189,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   padding: 20px;
   text-align: center;
   font-size: 15px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   height: 200px;
   margin-top: 300px;
   display: flex;
@@ -191,7 +214,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     .footer_text {
       margin-right: 10px;
     }
-
   }
 
   svg {
@@ -208,7 +230,12 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background: linear-gradient(90deg, rgba(97, 154, 255, 1) 0%, rgba(36, 115, 255, 1) 64%, rgba(0, 93, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(97, 154, 255, 1) 0%,
+    rgba(36, 115, 255, 1) 64%,
+    rgba(0, 93, 255, 1) 100%
+  );
   position: relative;
   left: 5px;
 
@@ -231,7 +258,12 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background: linear-gradient(90deg, rgba(97, 154, 255, 1) 0%, rgba(36, 115, 255, 1) 64%, rgba(0, 93, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(97, 154, 255, 1) 0%,
+    rgba(36, 115, 255, 1) 64%,
+    rgba(0, 93, 255, 1) 100%
+  );
   position: relative;
   left: 10px;
 
@@ -241,7 +273,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     top: 4.7px;
     left: 3.3px;
   }
-
 }
 
 .makale {
@@ -258,7 +289,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 .makale_category {
   margin: auto;
   color: #ffffff;
-  font-size: 'Red Hat Display', sans-serif;
+  font-size: "Red Hat Display", sans-serif;
 }
 
 .page {
@@ -266,18 +297,20 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   user-select: none;
   justify-content: space-around;
   position: relative;
-
 }
 
 .search {
   border: none;
-  height: 35px;
+  height: 3.7vh;
   width: 70%;
-  border-radius: 10px;
+  border-radius: 0.5vw;
   background-color: #dfdfdf;
-  padding-left: 35px;
+  padding-left: 2vw;
   margin-bottom: 10px;
   transition: 0.3s ease;
+  &::placeholder {
+    font-size: 0.7vw;
+  }
 }
 
 .secenekler {
@@ -292,11 +325,10 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .search-icon {
   position: absolute;
-  top: 0.6rem;
-  left: 0.8rem;
+  top: 1vh;
+  left: 0.7vw;
   fill: none;
-  width: 1rem;
-  height: 1rem;
+  font-size: 0.9vw;
   color: #777777;
 }
 
@@ -346,7 +378,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 .gundem_text {
   font-size: 14px;
   font-weight: 600;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 .gundemler {
@@ -393,7 +425,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   text-align: center;
   position: relative;
   color: #ffffff;
-
 }
 
 .category p {
@@ -455,8 +486,8 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 }
 
 .postcard {
-
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
   width: 100%;
   background-color: white;
   border-radius: 15px;
@@ -467,14 +498,15 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   //I want to make them centered
 
-
   color: #ffffff;
 
-  &:nth-child(2n+1) .tag__item {}
+  &:nth-child(2n + 1) .tag__item {
+  }
 
-  &:nth-child(2n+0) .tag__item {}
+  &:nth-child(2n + 0) .tag__item {
+  }
 
-  &:nth-child(2n+1) .date_text {
+  &:nth-child(2n + 1) .date_text {
     color: #0000004e;
     font-size: 15px;
     left: 20px;
@@ -490,7 +522,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     }
   }
 
-  &:nth-child(2n+0) .date_text {
+  &:nth-child(2n + 0) .date_text {
     bottom: 55px;
     position: relative;
     color: #0000004e;
@@ -522,8 +554,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     color: inherit;
   }
 
-
-
   h1,
   .h1 {
     margin-bottom: 0rem;
@@ -544,7 +574,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   .postcard__img {
     max-height: 10px;
-    width: 96%;
+    width: 47.5vw;
     object-fit: fill;
     position: relative;
   }
@@ -553,14 +583,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     display: contents;
   }
 
-
-
   .postcard__text {
     position: relative;
     display: flex;
     flex-direction: column;
   }
-
 
   .postcard__preview-txt {
     position: relative;
@@ -573,28 +600,17 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    a{
+    a {
       color: #000;
     }
-    p{
+    p {
       display: none;
     }
   }
-
-
-
-
-
-
 }
-
-
-
 
 @media screen and (min-width: 769px) {
   .postcard {
-    flex-wrap: inherit;
-
     .postcard__title {
       font-size: 1.5rem;
       position: relative;
@@ -620,22 +636,20 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       width: 100%;
     }
 
-
-
-    &:nth-child(2n+1) {
+    &:nth-child(2n + 1) {
       flex-direction: row;
     }
 
-    &:nth-child(2n+0) {
+    &:nth-child(2n + 0) {
       flex-direction: row-reverse;
     }
 
-    &:nth-child(2n+1) .postcard__text::before {
+    &:nth-child(2n + 1) .postcard__text::before {
       left: -12px !important;
       transform: rotate(4deg);
     }
 
-    &:nth-child(2n+0) .postcard__text::before {
+    &:nth-child(2n + 0) .postcard__text::before {
       right: -12px !important;
       transform: rotate(-4deg);
     }
@@ -646,8 +660,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   .postcard__text {
     padding: 2rem 3.5rem;
   }
-
-
 
   .postcard.dark {
     .postcard__text:before {
@@ -663,8 +675,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 }
 
 @media screen and (max-width: 600px) {
-
-
   .search {
     border: none;
     height: 35px;
@@ -721,7 +731,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     color: #000000;
     padding: 20px;
     text-align: center;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     height: 50px;
     margin-top: 100px;
     display: flex;
@@ -746,7 +756,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
       .footer_text {
         margin-right: 10px;
       }
-
     }
 
     svg {
