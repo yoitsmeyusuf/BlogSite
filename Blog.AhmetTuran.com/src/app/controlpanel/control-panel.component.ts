@@ -38,7 +38,7 @@ addTag(event: any) {
 }
 
 addTagEnter(number:any) {
-  
+
     this.tags.push(this.AllTags[number]);
     console.log(this.tags);
 }
@@ -46,7 +46,7 @@ addTagEnter(number:any) {
     postID: '',
     title: '',
     content: '',
-    category: '1',
+    category: '',
     publishDate: '',
     tags: '',
   };
@@ -62,7 +62,7 @@ addTagEnter(number:any) {
   selectedFile: any;
   ngOnInit(): void {
     this.getAllTags();
-  
+
 
   }
   // write an function with  whoami and get the name of the user
@@ -88,8 +88,8 @@ addTagEnter(number:any) {
   constructor(private blogService: BlogService, private router: Router) {
   }
 
-  
-  
+
+
 
   config: object = {
     uploader: { "insertImageAsBase64URI": true },
@@ -164,7 +164,7 @@ addTagEnter(number:any) {
       'print',
       'about'
     ],
-      
+
     buttonsXS: [
       'bold',
       'image', '|',
@@ -188,7 +188,7 @@ addTagEnter(number:any) {
   }
 
   async createBlog() {
-    
+
     // eger title ve content bos ise alert ver
     if (!this.blog.title || !this.blog.content) {
       alert('Başlık ve içerik alanlarını doldurunuz.');
@@ -208,7 +208,7 @@ addTagEnter(number:any) {
     // Resim verilerinin HTML kodundan ayrıştırılması
 
     const images = htmlContent.match(/<img src="(.*?)"/g);
-     
+
     //match with img if its not link
 if(images){
     for (const image of images!) {
@@ -237,7 +237,7 @@ if(images){
     // delete the selectedfile's data:image/png;base64, from the base64 string
     this.selectedFile = this.selectedFile.replace(/data:image\/(png|jpeg|jpg);base64,/, '');
     console.log(this.selectedFile);
-  
+
     formData.append('content', newcon);
     formData.append('Title', this.blog.title);
     formData.append('Category', this.blog.category);
@@ -256,7 +256,7 @@ if(images){
         // Handle error here
         console.error(error);
       });
-      
+
     //refresh
 
   }
@@ -270,7 +270,7 @@ if(images){
     this.blogService.getAllTags().subscribe((data: any) => {
       this.AllTags = data;
     });
-  } 
+  }
 
   updateUser() {
     this.blogService.Userupdate(this.user.username, this.user.password)

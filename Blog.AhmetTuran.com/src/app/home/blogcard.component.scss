@@ -280,7 +280,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   height: 35px;
   width: 80px;
   border-radius: 10px;
-  background-color: rgba(17, 0, 255, 0.759);
+  background-color: #edf0fc;
   margin-left: 15px;
   position: relative;
   margin-top: 20px;
@@ -288,7 +288,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .makale_category {
   margin: auto;
-  color: #ffffff;
+  color: #6d85ea;
   font-size: "Red Hat Display", sans-serif;
 }
 
@@ -346,7 +346,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
-  width: 75%;
+  width: 12.6vw;
 
   .lorem_text {
     color: #000000d6;
@@ -560,7 +560,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     font-weight: 500;
     line-height: 1.2;
     color: #1100ff;
-    width: 90%;
+    width: 46.5vw;
     position: relative;
   }
 
@@ -574,7 +574,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   .postcard__img {
     max-height: 10px;
-    width: 47.5vw;
+    width: 48.2vw;
     object-fit: fill;
     position: relative;
   }
@@ -591,7 +591,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
   .postcard__preview-txt {
     position: relative;
-    width: 87%;
+    width: 46.5vw;
     font-size: 15px;
     color: #0000007d;
     bottom: 80px;

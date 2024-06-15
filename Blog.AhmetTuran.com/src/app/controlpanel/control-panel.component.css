@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 .contentDiv {
   width: 96.7%;
   border: rgba(128, 128, 128, 0.199) 2px solid;
@@ -27,12 +27,11 @@
   margin-top: 20px;
   background-color: #fff;
   line-height: 0px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 
-  textarea{
-    font-family: 'Red Hat Display', sans-serif;
+  textarea {
+    font-family: "Red Hat Display", sans-serif;
     font-weight: 600;
-
   }
 
   .radioButtons {
@@ -46,7 +45,6 @@
     input {
       display: none;
     }
-
   }
 
   .radioButtons label {
@@ -58,16 +56,16 @@
     align-items: center;
     border-radius: 10px;
     margin-right: 10px;
-    background-color: #4b4b4b0e;
-    color: #161616;
+    background-color: #edf0fc;
+    color: #6d85ea;
     font-size: 20px;
     font-weight: 600;
-    transition: .3s ease;
+    transition: 0.3s ease;
     user-select: none;
   }
 
   .radioButtons label.selected {
-    background-color: blue;
+    background-color: #506fe4;
     color: white;
   }
 
@@ -113,7 +111,8 @@
   margin-bottom: 20px;
   margin-top: 10px;
   font-size: 15px;
-  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!--%20License%3A%20MIT.%20Made%20by%20developmentseed%3A%20https%3A%2F%2Fgithub.com%2Fdevelopmentseed%2Fcollecticons-lib%20--%3E%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2016%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Crect%20width%3D%2216%22%20height%3D%2216%22%20id%3D%22icon-bound%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20fill%3D%22blue%22%20d%3D%22M14.497%2C0H9.988C9.162%2C0%2C8.007%2C0.478%2C7.423%2C1.063L0.438%2C8.047c-0.585%2C0.585-0.585%2C1.541%2C0%2C2.125l5.389%2C5.389%20c0.584%2C0.585%2C1.541%2C0.585%2C2.125%2C0l6.984-6.984C15.522%2C7.993%2C16%2C6.838%2C16%2C6.012V1.503C16%2C0.676%2C15.324%2C0%2C14.497%2C0z%20M12.5%2C5%20C11.672%2C5%2C11%2C4.328%2C11%2C3.5S11.672%2C2%2C12.5%2C2S14%2C2.672%2C14%2C3.5S13.328%2C5%2C12.5%2C5z%22%20%2F%3E%3C%2Fsvg%3E") no-repeat left;
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!--%20License%3A%20MIT.%20Made%20by%20developmentseed%3A%20https%3A%2F%2Fgithub.com%2Fdevelopmentseed%2Fcollecticons-lib%20--%3E%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2016%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Crect%20width%3D%2216%22%20height%3D%2216%22%20id%3D%22icon-bound%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20fill%3D%22blue%22%20d%3D%22M14.497%2C0H9.988C9.162%2C0%2C8.007%2C0.478%2C7.423%2C1.063L0.438%2C8.047c-0.585%2C0.585-0.585%2C1.541%2C0%2C2.125l5.389%2C5.389%20c0.584%2C0.585%2C1.541%2C0.585%2C2.125%2C0l6.984-6.984C15.522%2C7.993%2C16%2C6.838%2C16%2C6.012V1.503C16%2C0.676%2C15.324%2C0%2C14.497%2C0z%20M12.5%2C5%20C11.672%2C5%2C11%2C4.328%2C11%2C3.5S11.672%2C2%2C12.5%2C2S14%2C2.672%2C14%2C3.5S13.328%2C5%2C12.5%2C5z%22%20%2F%3E%3C%2Fsvg%3E")
+    no-repeat left;
   background-size: 17px;
   background-position: 20px center;
   text-indent: 45px;
@@ -132,12 +131,12 @@
   button {
     display: flex;
     align-items: center;
-    background-color: #00b50fb0;
+    background-color: #ecfaf3;
     border: none;
-    border-radius: 10px;
+    border-radius: 7px;
     padding: 10px;
     cursor: pointer;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
     font-size: 15px;
     color: #ffffff;
     height: 40px;
@@ -146,63 +145,64 @@
     p {
       display: flex;
       align-items: center;
-      color: #ffffff;
+      color: #56d495;
       font-weight: 500;
       font-size: 16px;
+      font-family: "Red Hat Display", sans-serif;
+      margin-left: 10px;
 
       &::after {
         content: "+";
-        margin-left: 20px;
+        margin-left: 10px;
         font-size: 25px;
       }
     }
-
   }
-
 }
 
 .tagDomain {
   margin-top: 10px;
+  margin-bottom: -10px;
 }
-
 
 .tag {
   height: 50px;
   border: none;
   border-radius: 10px;
-  background-color: rgb(0, 89, 255);
+  background-color: #edf0fc;
   color: #f9f9f9;
   cursor: pointer;
   margin-right: 10px;
   margin-bottom: 10px;
-
-
-
+  padding-left: 20px;
+  padding-right: 20px;
 
   p {
-    color: white;
+    color: #6d85ea;
     font-weight: 500;
-    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+    font-size: 17px;
     display: block;
-
+    font-family: "Red Hat Display", sans-serif;
     &::before {
       content: "#";
     }
   }
 
   &:hover {
-    background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3C!--%20License%3A%20PD.%20Made%20by%20zurb%3A%20https%3A%2F%2Fgithub.com%2Fzurb%2Ffoundation-icon-fonts%20--%3E%3Csvg%20fill%3D%22%23fff%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22M75.834%2C33.388h-51.67c-1.311%2C0-2.375%2C1.058-2.375%2C2.373v49.887c0%2C1.314%2C1.064%2C2.377%2C2.375%2C2.377h51.67c1.314%2C0%2C2.375-1.063%2C2.375-2.377V35.76C78.209%2C34.446%2C77.148%2C33.388%2C75.834%2C33.388z%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M79.004%2C17.352H59.402v-2.999c0-1.314-1.061-2.377-2.373-2.377H42.971c-1.312%2C0-2.375%2C1.063-2.375%2C2.377v2.999H20.996c-1.312%2C0-2.375%2C1.059-2.375%2C2.373v6.932c0%2C1.314%2C1.063%2C2.373%2C2.375%2C2.373h58.008c1.314%2C0%2C2.375-1.059%2C2.375-2.373v-6.932C81.379%2C18.41%2C80.318%2C17.352%2C79.004%2C17.352z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat;
-    background-size: 17px;
+    background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!--%20License%3A%20MIT.%20Made%20by%20vmware%3A%20https%3A%2F%2Fgithub.com%2Fvmware%2Fclarity-assets%20--%3E%3Csvg%20fill%3D%22%23fc7485%22%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2036%2036%22%20version%3D%221.1%22%20%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3Etrash-solid%3C%2Ftitle%3E%3Cpath%20class%3D%22clr-i-solid%20clr-i-solid-path-1%22%20d%3D%22M6%2C9V31a2.93%2C2.93%2C0%2C0%2C0%2C2.86%2C3H27.09A2.93%2C2.93%2C0%2C0%2C0%2C30%2C31V9Zm9%2C20H13V14h2Zm8%2C0H21V14h2Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22clr-i-solid%20clr-i-solid-path-2%22%20d%3D%22M30.73%2C5H23V4A2%2C2%2C0%2C0%2C0%2C21%2C2h-6.2A2%2C2%2C0%2C0%2C0%2C13%2C4V5H5A1%2C1%2C0%2C1%2C0%2C5%2C7H30.73a1%2C1%2C0%2C0%2C0%2C0-2Z%22%3E%3C%2Fpath%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2236%22%20height%3D%2236%22%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E")
+      no-repeat;
+    background-size: 23px;
     background-position: center;
     .trash {
-     display: block;
+      display: block;
     }
     p {
       opacity: 0;
     }
 
-
-    background-color: rgb(255, 0, 0);
+    background-color: #feeff0;
 
     /* &::before {
         content: "";
@@ -215,12 +215,10 @@
   }
 }
 
-
 .formStyle {
   display: flex;
   flex-direction: column;
 }
-
 
 .columnSyle {
   display: flex;
@@ -253,26 +251,23 @@
   border-radius: 10px;
   padding-left: 20px;
   padding-top: 10px;
-  transition: .3s ease;
+  transition: 0.3s ease;
   font-size: 18px;
 
   &::placeholder {
     color: #0000005b;
     font-size: 25px;
     font-weight: 500;
-
   }
 }
 
 input:focus,
 input:hover {
   outline: none;
-
 }
 
 .titledomain {
   width: 100%;
-
 }
 
 .category {
@@ -289,23 +284,26 @@ input:hover {
 
 .submitButton {
   cursor: pointer;
-  height: 50px;
+  height: 80px;
   width: 100%;
   border: none;
   border-radius: 10px;
-  background-color: rgb(0, 89, 255);
+  background-color: #506fe4;
   margin-bottom: 20px;
   color: #f9f9f9;
+  font-size: 25px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  transition: 0.3s ease;
 
   &:hover {
-    background-color: rgb(0, 79, 226);
-    transition: 0.3s ease;
+    background-color: #3a5de1;
+
   }
 }
 
 .customeditor {
   border: none;
-
 }
 
 .buttonDomain {
@@ -318,7 +316,6 @@ input:hover {
 }
 
 /* Açılır menüdeki seçeneklerin stilini ayarlamak için */
-
 
 .titleText {
   color: #161616;
@@ -345,10 +342,11 @@ input:hover {
   background-color: #f9f9f9;
   height: 600px;
   cursor: pointer;
+  transition: 0.3s ease;
 
   &:hover {
     background-color: #f0f0f0;
-    transition: 0.3s ease;
+
   }
 }
 
@@ -377,14 +375,12 @@ input:hover {
   line-height: 0px;
 }
 
-
 .imageElement p {
-  color: rgba(0, 0, 0, 0.300);
-  ;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .imageDesign .imageIcon {
-  fill: rgba(0, 0, 0, 0.300);
+  fill: rgba(0, 0, 0, 0.3);
   font-weight: 600;
 }
 

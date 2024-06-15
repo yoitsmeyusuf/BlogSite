@@ -10,7 +10,7 @@
             <path
               d="M0 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm11 9l-3-3-6 6h16l-5-5-2 2zm4-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
           </svg>
-          <p>Choose Blog Image</p>
+          <p>Resim Seç</p>
         </div>
 
         <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
@@ -18,7 +18,7 @@
 
       <div class="titleDiv">
 
-        <p>Caption</p>
+        <p>Başlık</p>
         <textarea [(ngModel)]="blog.title" placeholder="" name="title" type="text"></textarea>
         <div class="radioButtons">
           <label>
@@ -37,12 +37,12 @@
       </div>
 
       <div class="contentDiv">
-        <p>Tags</p>
+        <p>Etiketler</p>
         <input class="taginput" [(ngModel)]="blog.tags" (keyup)="addTag($event)" placeholder="Tags" name="tags"
           type="text">
         <div>
           <div class="currentTags">
-            <p>Try:</p>
+            <p>Yakın zamanda:</p>
             @for (tag of AllTags; track $index) {
             <button class="currenttag" (click)="addTagEnter($index)">
               <p>{{tag}}</p>
@@ -61,7 +61,7 @@
         </div>
       </div>
       <div style="line-height: 30px;" class="contentDiv">
-        <p>Caption</p>
+        <p>İçerik</p>
         <jodit-editor name="content" [(ngModel)]="blog.content" [config]="config"
           style=" color: black; border-radius: 20px; box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);"></jodit-editor>
       </div>
@@ -69,7 +69,7 @@
 
 
       <div class="buttonDomain">
-        <button class="submitButton" (click)="createBlog()" type="submit">Publish</button>
+        <button class="submitButton" (click)="createBlog()" type="submit">Yayınla</button>
       </div>
 
 
