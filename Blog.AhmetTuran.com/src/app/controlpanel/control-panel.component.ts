@@ -309,15 +309,12 @@ export class ControlPanelComponent implements OnInit {
             let uuidnew = uuid();
             formData.append('names', uuidnew);
 
-            //change the image source to the new one
-            newcon = newcon.replace(
-              imageSrc,
-              'http://devapi.ahmetturanpolat.com/images/' + uuidnew + '.jpg'
-            );
-          }
+          //change the image source to the new one
+          newcon = newcon.replace(imageSrc, 'http://devapi.ahmetturanpolat.com/images/' + uuidnew + ".jpg");
         }
       }
     }
+  }
     // delete the selectedfile's data:image/png;base64, from the base64 string
     this.selectedFile = this.selectedFile.replace(
       /data:image\/(png|jpeg|jpg);base64,/,
