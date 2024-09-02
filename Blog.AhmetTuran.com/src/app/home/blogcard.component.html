@@ -204,7 +204,7 @@
         <div class="bloginfo">
           <div class="user">
             <div style="display: flex;">
-              <img class="user_image" src="http://devapi.ahmetturanpolat.com/images/Profile.jpg" alt="">
+              <img class="user_image" src="http://localhost:56115/images/Profile.jpg" alt="">
               <div class="user_text">
                 <div class="username_div">
                   <p class="user_name">{{blog.author}}</p>
@@ -253,7 +253,7 @@
       <p class="otherblogs_text">Popüler Bloglar</p>
       <div style="margin-top: 20px;">
         <article [routerLink]="['/blog', blog.postID]" class="popularblogs" *ngFor="let blog of blogsrecent">
-          <img class="" src="http://devapi.ahmetturanpolat.com/images/Profile.jpg" alt="">
+          <img class="" src="http://localhost:56115/images/Profile.jpg" alt="">
           <div class="popularblogs_info">
 
             <span class="blog_title">{{blog.title}}</span>

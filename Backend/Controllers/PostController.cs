@@ -209,7 +209,7 @@ public async Task<IActionResult> UploadProfile([FromForm]UploadModel uploadModel
         return Ok(new { message = "Post updated" });
     }
 
-    [HttpDelete("delete/{id}")]
+    [HttpPost("delete/{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         Console.WriteLine("babalar sözünü tutar");

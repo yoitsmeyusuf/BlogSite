@@ -28,7 +28,7 @@ export interface User{
 })
 export class BlogService {
 
-    private url = 'http://devapi.ahmetturanpolat.com/'; // Replace with your server URL
+    private url = 'http://localhost:56115/'; // Replace with your server URL
 
     constructor(private http: HttpClient) { }
     Userupdate(username: string, password: string): Observable<any> {
@@ -107,7 +107,7 @@ export class BlogService {
             console.error('No token');
         }
         const headers = { 'Authorization': `Bearer ${token}` };
-        return this.http.delete(`${this.url}posts/delete/${Id}`, { headers, observe: 'response', responseType: 'text' });
+        return this.http.post(`${this.url}posts/delete/${Id}`, { headers, observe: 'response', responseType: 'text' });
     }
     createBlog(image: FormData): Observable<any> {
         const token = sessionStorage.getItem('token');

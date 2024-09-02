@@ -229,7 +229,7 @@ if(images){
           formData.append('names', uuidnew)
 
           //change the image source to the new one
-          newcon = newcon.replace(imageSrc, 'http://devapi.ahmetturanpolat.com/images/' + uuidnew + ".jpg");
+          newcon = newcon.replace(imageSrc, 'http://localhost:4200/images/' + uuidnew + ".jpg");
         }
       }
     }
