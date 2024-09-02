@@ -1,67 +1,274 @@
 .page {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
-    background-color: #5b478a00;
-    color: #000000;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Red Hat Display', sans-serif;
-    height: 50px;
-    margin-top: 100px;
+  background-color: #5b478a00;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  height: 50px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 17px;
+
+  a {
+    text-decoration: none;
+    color: #002fff;
+  }
+
+  .footer_text_div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 17px;
 
-    a {
-        text-decoration: none;
-        color: #002fff;
+    width: 100%;
+    position: relative;
+    bottom: 80%;
+
+    .footer_text {
+      margin-right: 10px;
     }
+  }
 
-    .footer_text_div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        width: 100%;
-        position: relative;
-        bottom: 80%;
-
-        .footer_text {
-            margin-right: 10px;
-        }
-
-    }
-
-    svg {
-        width: 80px;
-        height: 80px;
-        fill: #3640ff;
-    }
+  svg {
+    width: 80px;
+    height: 80px;
+    fill: #3640ff;
+  }
 }
 
-
-
-
 .search {
-    border: none;
-    height: 35px;
-    width: 70%;
-    border-radius: 10px;
-    background-color: #dfdfdf;
-    padding-left: 35px;
-    margin-bottom: 10px;
-    transition: 0.3s ease;
+  border: none;
+  height: 35px;
+  width: 70%;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+  padding-left: 35px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
 }
 
 .secenekler {
-    top: 10%;
-    width: 15%;
-    position: fixed;
-    left: 30px;
+  top: 10%;
+  width: 15%;
+  position: fixed;
+  left: 30px;
+  height: 100%;
+  z-index: 100;
+  line-height: 7px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.8rem;
+  fill: none;
+  width: 1rem;
+  height: 1rem;
+  color: #777777;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.lorem {
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.192);
+    transition: 0.3s ease;
+  }
+
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 75%;
+
+  .lorem_text {
+    color: #000000d6;
+    margin-left: 5px;
+  }
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+}
+
+.verticalPage {
+  margin-top: 100px;
+  width: 50%;
+
+  .aboutDiv {
+    color: #000000;
+
+    .aboutBoxDiv {
+      margin-top: -10px;
+      display: flex;
+
+      .aboutBox {
+        background-color: rgb(29, 29, 255);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+    }
+
+    .aboutDivImg {
+      display: flex;
+
+      img {
+        width: 250px;
+        border-radius: 20px;
+      }
+    }
+
+    .aboutDivTitleDiv {
+      display: flex;
+      align-items: center;
+
+      .aboutDivTitle {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 20px;
+      }
+
+      .badge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 7px;
+        margin-left: 7px;
+        border-radius: 7px;
+        background-color: #00ab42cf;
+
+        .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: #555;
+          color: #fff;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 6px;
+
+          position: absolute;
+          z-index: 1;
+          bottom: 35px;
+          left: 50%;
+          margin-left: -60px;
+
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        &:hover .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    .aboutDivText {
+      font-size: 15px;
+      margin-top: -15px;
+    }
+  }
+
+  .experienceDomain {
+    .experienceTitle {
+      color: #000000;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .experienceBox {
+      display: flex;
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      .cokgizli {
+        img {
+          margin-top: 20px;
+        }
+      }
+
+      .experienceimgDomain {
+        img {
+          width: 60px;
+          border-radius: 10px;
+        }
+      }
+
+      .experienceInfo {
+        width: 100%;
+        line-height: 0px;
+        margin-left: 20px;
+
+        .experienceTitle {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .experienceTitle2 {
+          margin-top: 30px;
+          color: #000000;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 0px;
+
+          .date {
+            color: #000000a7;
+            font-size: 15px;
+            margin-top: 25px;
+          }
+        }
+
+        .experienceText {
+          line-height: 20px;
+          font-size: 15px;
+          color: #000000a7;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search {
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #dfdfdf;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+  }
+
+  .secenekler {
+    top: 90px;
+    width: 100%;
+    position: relative;
+
     height: 100%;
     z-index: 100;
     line-height: 7px;
@@ -70,7 +277,6 @@
   .search-icon {
     position: absolute;
     top: 0.6rem;
-    left: 0.8rem;
     fill: none;
     width: 1rem;
     height: 1rem;
@@ -83,172 +289,175 @@
 
   .lorem {
     &:hover {
-      background-color: rgba(128, 128, 128, 0.192);
-      transition: 0.3s ease;
+      background-color: #0000001e;
     }
 
     display: flex;
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
+    height: 5%;
     width: 75%;
 
     .lorem_text {
-      color: #000000d6;
+      color: #000000a7;
       margin-left: 5px;
     }
   }
 
-.badge {
-    position: relative;
-    display: inline-block;
-}
-
-
-
-.verticalPage {
-    margin-top: 100px;
-    width: 50%;
+  .verticalPage {
+    margin-top: 120px;
+    width: 80%;
 
     .aboutDiv {
-        color: #000000;
+      color: #000000;
 
-        .aboutBoxDiv {
-            margin-top: -10px;
-            display: flex;
+      .aboutBoxDiv {
+        margin-top: 1px;
+        display: flex;
+        flex-wrap: wrap;
 
-            .aboutBox {
-                background-color: rgb(29, 29, 255);
-                border-radius: 10px;
-                padding: 10px;
-                margin-bottom: 20px;
-                color: white;
-                font-size: 13px;
-                display: flex;
-                align-items: center;
-                margin-right: 10px;
-            }
+      }
+
+      .aboutBox {
+        background-color: rgb(29, 29, 255);
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: -10px;
+        color: white;
+        font-size: 13px;
+        align-items: center;
+        position: relative;
+        margin-right: 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .aboutDivImg {
+        display: flex;
+
+        img {
+          width: 150px;
+          border-radius: 20px;
+        }
+      }
+
+      .aboutDivTitleDiv {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .aboutDivTitle {
+          font-size: 25px;
+          font-weight: 600;
+          margin-top: 10px;
         }
 
-        .aboutDivImg {
-            display: flex;
+        .badge {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          margin-bottom: 13px;
+          margin-left: 7px;
+          border-radius: 7px;
+          background-color: #00ab42cf;
 
-            img {
-                width: 250px;
-                border-radius: 20px;
-            }
+          .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            position: absolute;
+            z-index: 1;
+            bottom: 35px;
+            left: 50%;
+            margin-left: -60px;
+
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+
+          &:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+          }
         }
+      }
 
-        .aboutDivTitleDiv {
-            display: flex;
-            align-items: center;
-
-            .aboutDivTitle {
-                font-size: 30px;
-                font-weight: 600;
-                margin-top: 20px;
-            }
-
-            .badge {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 30px;
-                height: 30px;
-                margin-bottom: 7px;
-                margin-left: 7px;
-                border-radius: 7px;
-                background-color: #00ab42cf;
-
-                .tooltiptext {
-                    visibility: hidden;
-                    width: 120px;
-                    background-color: #555;
-                    color: #fff;
-                    text-align: center;
-                    padding: 5px 0;
-                    border-radius: 6px;
-
-                    position: absolute;
-                    z-index: 1;
-                    bottom: 35px;
-                    left: 50%;
-                    margin-left: -60px;
-
-                    opacity: 0;
-                    transition: opacity 0.3s;
-                }
-
-                &:hover .tooltiptext {
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
-        }
-
-        .aboutDivText {
-            font-size: 15px;
-            margin-top: -15px;
-        }
+      .aboutDivText {
+        font-size: 15px;
+        margin-top: -15px;
+        margin-right: 10px;
+      }
     }
 
     .experienceDomain {
-        .experienceTitle {
-            color: #000000;
-            font-size: 30px;
+      .experienceTitle {
+        color: #000000;
+        font-size: 30px;
+        font-weight: 600;
+      }
+
+      .experienceBox {
+        display: flex;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .cokgizli {
+          img {
+            margin-top: 20px;
+          }
+        }
+
+        .experienceimgDomain {
+          img {
+            width: 60px;
+            border-radius: 10px;
+          }
+        }
+
+        .experienceInfo {
+          width: 100%;
+          margin-left: 20px;
+
+          .experienceTitle {
+            font-size: 15px;
             font-weight: 600;
+            line-height: 15px;
+          }
+
+          .experienceTitle2 {
+            margin-top: 30px;
+            color: #000000;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 0px;
+
+            .date {
+              color: #000000a7;
+              font-size: 15px;
+              margin-top: 25px;
+            }
+          }
+
+          .experienceText {
+            line-height: 20px;
+            font-size: 15px;
+            color: #000000a7;
+          }
+          .line_height{
+            line-height: 20px;
+          }
         }
-
-        .experienceBox {
-            display: flex;
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-
-            .cokgizli {
-                img {
-                    margin-top: 20px;
-                }
-            }
-
-            .experienceimgDomain {
-                img {
-                    width: 60px;
-                    border-radius: 10px;
-                }
-            }
-
-            .experienceInfo {
-                width: 100%;
-                line-height: 0px;
-                margin-left: 20px;
-
-                .experienceTitle {
-                    font-size: 20px;
-                    font-weight: 600;
-                }
-
-                .experienceTitle2 {
-                    margin-top: 30px;
-                    color: #000000;
-                    font-size: 20px;
-                    font-weight: 600;
-                    line-height: 0px;
-
-                    .date {
-                        color: #000000a7;
-                        font-size: 15px;
-                        margin-top: 25px;
-                    }
-                }
-
-                .experienceText {
-                    line-height: 20px;
-                    font-size: 15px;
-                    color: #000000a7;
-                }
-            }
-        }
+      }
     }
+  }
 }

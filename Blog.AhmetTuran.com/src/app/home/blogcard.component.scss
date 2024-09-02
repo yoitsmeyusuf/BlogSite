@@ -7,7 +7,24 @@ $main-red: #bd150b !default;
 $main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
-
+.textDomain {
+  width: 20vw;
+  height: 28vh;
+  word-wrap: break-word;
+  display: flex;
+  align-items: start;
+}
+.bannerDomain {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 30px;
+  height: 93.7%;
+}
 .logo_text {
   color: #fff;
   font-family: DM Sans;
@@ -675,6 +692,103 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 }
 
 @media screen and (max-width: 600px) {
+  .textDomain {
+    width: 20vw;
+    height: 6.7vh;
+    word-wrap: break-word;
+    display: flex;
+    align-items: start;
+  }
+  .bannerDomain {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 30px;
+    height: 50%;
+  }
+  .bannerDiv {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    user-select: none;
+
+    .styleText {
+      border-right: 0em solid #000;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 12ch;
+      }
+    }
+
+    @keyframes deleting {
+      from {
+        width: 12ch;
+      }
+
+      to {
+        width: 0;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: #000;
+      }
+    }
+
+    p {
+      font-size: 3vw;
+      font-weight: 500;
+    }
+
+    img {
+      border-radius: 2vw;
+      width: 100vw;
+      height: 20vh;
+      object-fit: cover;
+      object-position: bottom;
+      /* Resmi üstten hizalar */
+    }
+  }
+
+  .viewing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #18151f59;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+  }
   .search {
     border: none;
     height: 35px;
@@ -738,6 +852,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
     flex-direction: column;
     align-items: center;
     font-size: 10px;
+    width: 100%;
 
     a {
       text-decoration: none;
