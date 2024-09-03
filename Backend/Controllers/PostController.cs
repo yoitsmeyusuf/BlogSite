@@ -209,10 +209,11 @@ public async Task<IActionResult> UploadProfile([FromForm]UploadModel uploadModel
         return Ok(new { message = "Post updated" });
     }
 
-    [HttpPost("delete/{id}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpPost("delete")]
+    public async Task<IActionResult> Delete([FromForm]int id)
     {
-        Console.WriteLine("babalar sözünü tutar");
+        Console.WriteLine(id);
+        
         await _PostService.Delete(id);
         return Ok(new { message = "Post deleted" });
     }

@@ -58,12 +58,13 @@ namespace WebApi.Middleware
                 {
                     await next(context);
                 }else{
+                    Console.WriteLine("Invalid Token");
                     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                 
                 }
             }
             else
-            {
+            {Console.WriteLine("not found");
                 // Token bulunamadı veya geçerli değilse, isteği reddet
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             }

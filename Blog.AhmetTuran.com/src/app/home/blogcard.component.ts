@@ -46,9 +46,10 @@ export class CardComponent implements OnInit {
     this.blogs = this.allblogs.filter((blog: any) => blog.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
   filterTag(tag: string): void {
-    this.blogs = this.blogs.filter((blog: any) => blog.tags.includes(tag));
+    this.blogs = this.allblogs.filter((blog: any) => blog.tags.includes(tag));
+    console.log(this.blogs);
   }
-  
+
 
   ngAfterViewInit(): void {
     this.blogService.whoami().subscribe((data: any) => {

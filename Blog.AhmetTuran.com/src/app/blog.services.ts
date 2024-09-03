@@ -85,7 +85,7 @@ export class BlogService {
     getBlogsByTag(tag: string): Observable<Blog[]> {
         return this.http.get<Blog[]>(`${this.url}posts/tags/${tag}`);
     }
-    
+
     getAllTags(): Observable<string[]> {
         return this.http.get<string[]>(`${this.url}posts/tags`);
     }
@@ -101,14 +101,19 @@ export class BlogService {
     getBlog(Id: string): Observable<Blog> {
         return this.http.get<Blog>(`${this.url}posts/${Id}`);
     }
+    //write me a http delete function
     deleteBlog(Id: string): Observable<any> {
         const token = sessionStorage.getItem('token');
         if (!token) {
             console.error('No token');
         }
+        var formdata = new FormData();
+        formdata.append("id", Id);
+
         const headers = { 'Authorization': `Bearer ${token}` };
-        return this.http.post(`${this.url}posts/delete/${Id}`, { headers, observe: 'response', responseType: 'text' });
+        return this.http.post(`${this.url}posts/delete`, formdata ,{ headers, observe: 'response', responseType: 'text' });
     }
+
     createBlog(image: FormData): Observable<any> {
         const token = sessionStorage.getItem('token');
         if (!token) {

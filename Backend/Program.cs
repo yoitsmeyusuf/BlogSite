@@ -55,10 +55,11 @@ app.UseDeveloperExceptionPage();
 // configure HTTP request pipeline
 {
     // global cors policy
-    app.UseCors(x => x
-        .AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader());
+app.UseCors(x => x.WithOrigins("http://localhost:4200", "https://ahmetturanpolat.com", "https://devapi.ahmetturanpolat.com")
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
+
 app.UseStaticFiles();
     // global error handler
     app.UseMiddleware<ErrorHandlerMiddleware>();
