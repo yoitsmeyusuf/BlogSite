@@ -25,6 +25,7 @@ export class CardComponent implements OnInit {
   tagcounts: any = [];
   searchTerm: string = '';
   highestCount: number = 0; // Assign an initial value to 'highestCount'
+  selectedTag: string | null = null; // Seçilen etiketi tutan değişken
   constructor(private blogService: BlogService, private sanitizer: DomSanitizer) { }
   texts: string[] = [
     "Head Of IT<br>KUMPORT",
@@ -42,13 +43,45 @@ export class CardComponent implements OnInit {
 
   name!: User;
 
+  fetchBlogs(): void {
+    this.blogService.getBlogs().subscribe((data: any) => {
+      this.allblogs = data;
+      this.blogs = data;
+      this.calculateTagCounts();
+    });
+  }
+
+  calculateTagCounts(): void {
+    const tagMap: { [key: string]: number } = {};
+    this.allblogs.forEach((blog: { tags: string[]; }) => {
+      blog.tags.forEach((tag: string) => {
+        if (tagMap[tag]) {
+          tagMap[tag]++;
+        } else {
+          tagMap[tag] = 1;
+        }
+      });
+    });
+    this.tagcounts = Object.keys(tagMap).map(key => ({ key, value: tagMap[key] }));
+    this.highestCount = Math.max(...this.tagcounts.map((tag: { value: any; }) => tag.value));
+  }
+
   filterBlogs(): void {
     this.blogs = this.allblogs.filter((blog: any) => blog.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
+
   filterTag(tag: string): void {
-    this.blogs = this.blogs.filter((blog: any) => blog.tags.includes(tag));
+    if (this.selectedTag === tag) {
+      // Aynı butona tekrar basıldığında seçimi kaldır ve filtrelemeyi iptal et
+      this.selectedTag = null;
+      this.blogs = this.allblogs;
+    } else {
+      // Yeni bir butona basıldığında seçimi güncelle ve filtrele
+      this.selectedTag = tag;
+      this.blogs = this.allblogs.filter((blog: any) => blog.tags.includes(tag));
+    }
   }
-  
+
 
   ngAfterViewInit(): void {
     this.blogService.whoami().subscribe((data: any) => {
@@ -86,6 +119,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
 
     this.typeText();
+    this.fetchBlogs();
 
 
     // use blogservice.getalltags func
