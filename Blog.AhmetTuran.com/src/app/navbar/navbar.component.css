@@ -47,15 +47,19 @@
   border-radius: 50%;
   margin-right: 10px;
   bottom: 3px;
+  transition: .3s;
+  &:hover {
+    box-shadow: 0 0 0 5px #4d50f7;
+  }
   /* Resim ile metin arasındaki boşluğu ayarlar */
 }
 
 .create_button {
   position: relative;
-  top: 2px;
+  top: 3px;
   right: 25px;
   height: 40px;
-  background-color: #f7bb4d;
+  background-color: #4d50f7;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,6 +68,10 @@
   cursor: pointer;
   padding-left: 10px;
   padding-right: 10px;
+  transition: .3s;
+  &:hover {
+    background-color: #3e50d0;
+  }
 
   p {
     color: rgb(255, 255, 255);
