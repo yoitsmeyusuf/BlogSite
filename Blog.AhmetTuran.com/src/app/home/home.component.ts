@@ -11,9 +11,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   standalone: true,
   selector: 'app-blog',
-  templateUrl: 'blogcard.component.html',
+  templateUrl: 'home.component.html',
   providers: [],
-  styleUrls: ['./blogcard.component.scss'],
+  styleUrls: ['./home.component.scss'],
   imports: [CommonModule, RouterModule, TopblogsComponent, FormsModule, LatestblogsComponent]
 })
 export class CardComponent implements OnInit {

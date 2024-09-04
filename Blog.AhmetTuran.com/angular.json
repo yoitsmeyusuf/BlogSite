@@ -25,7 +25,7 @@
               "src/assets"
             ],
             "styles": [
-            
+
               "src/styles.scss"
             ],
             "scripts": []
@@ -41,7 +41,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "10kb"
+                  "maximumError": "25kb"
                 }
               ],
               "outputHashing": "all"

@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-home-page',
   standalone: true,
   imports: [],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css'
+  templateUrl: './deneyim.component.html',
+  styleUrl: './deneyim.component.css'
 })
 export class HomePageComponent {
 

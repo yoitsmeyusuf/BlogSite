@@ -28,7 +28,7 @@ export interface User{
 })
 export class BlogService {
 
-    private url = 'http://localhost:56115/'; // Replace with your server URL
+    private url = 'https://devapi.ahmetturanpolat.com/'; // Replace with your server URL
 
     constructor(private http: HttpClient) { }
     Userupdate(username: string, password: string): Observable<any> {

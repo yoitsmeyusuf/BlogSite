@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router, RouterLink } from '@angular/router';
 import { BlogService, User } from '../blog.services';
-import { BlogComponent } from '../BlogSpec/blog.component';
+import { BlogComponent } from '../Blog-page/blog.component';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -19,13 +19,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
   name!: User;
   // if route is blog/{id} function that returns boolean
 
-  
 
-  
 
-  
+
+
+
 ngOnInit(): void {
-  
+
 }
   ngAfterViewInit(): void {
     // URL'den alınan parametrelere göre yönlendirmeyi kontrol edin
@@ -33,7 +33,7 @@ ngOnInit(): void {
 
       return this.name = data;
     });
-    // 
+    //
     this.route.queryParams.subscribe(params => {
       // Eğer URL'de admin parametresi varsa ve değeri true ise isAdmin true olacak
       this.isAdmin = params['admin'] === 'true';

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BlogComponent } from "../BlogSpec/blog.component";
+import { BlogComponent } from "../Blog-page/blog.component";
 import { BlogService } from '../blog.services';
 import { CommonModule } from '@angular/common';
 import { ElementRef } from '@angular/core';

@@ -71,7 +71,7 @@ public class DataContext
                     UserID INT PRIMARY KEY AUTO_INCREMENT,
                     Username VARCHAR(255) NOT NULL,
                     Password VARCHAR(255) NOT NULL,
-                    ImageURL VARCHAR(255) DEFAULT 'localhost:4000/images/Profile.jpg'
+                    ImageURL VARCHAR(255) DEFAULT 'https://devapi.ahmetturanpolat.com/Profile.jpg'
                 );";
             await connection.ExecuteAsync(sql);
         }

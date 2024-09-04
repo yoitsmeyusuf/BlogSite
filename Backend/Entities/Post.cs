@@ -33,6 +33,6 @@ public class User
     public string Username { get; set; }
     public string Password { get; set; }
 
-     public string ImageURL { get; set; }= "localhost:4000/images/Profile.jpg";
+     public string ImageURL { get; set; }= "https://devapi.ahmetturanpolat.com/images/Profile.jpg";
 
 }
